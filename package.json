@@ -21,8 +21,17 @@
     "@angular/platform-browser": "^5.0.0",
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
+    "angular-bootstrap-md": "^5.0.5",
+    "angular2-toaster": "^4.0.1",
+    "angularfire2": "^5.0.0-rc.4",
+    "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
+    "firebase": "^4.8.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "primeng": "^5.0.2",
     "rxjs": "^5.5.2",
+    "tether": "^1.4.3",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
