@@ -1,6 +1,36 @@
-# Angular4ShoppingCart
+# Angular2+ - ShoppingCart
+
+Developing a **ShoppingCart (Ecommerce) Application using Angular2+**.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
+
+## Functionalities
+
+1. User Registration
+2. CRUD Operations like
+
+* User can add product to his cart.
+* Admin can add product to the product list
+* Admin can edit/delete the product.
+
+3. Security
+
+* Implmented Authentication and Authorization
+
+## Tools and Technologies
+
+* Technology: HTML, MDBootstrap, CSS, Angular2+, Firebase, Charts, Progressive Web Application.
+* Database : Angular Firebase.
+
+#### This Projects covers all fundamentals of Angular
+
+* Template and DataBinding
+* Form Validation
+* Multiple Modules
+* HttpClient
+* Routing & Navigation
+* Service Workers
+* Pipes.. etc.
 
 ## Development server
 
