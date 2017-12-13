@@ -27,7 +27,7 @@
     "animate.css": "^3.5.2",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
-    "firebase": "^4.6.2",
+    "firebase": "^4.6.0",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "owl.carousel": "^2.2.0",
