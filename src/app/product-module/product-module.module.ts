@@ -6,6 +6,7 @@ import { ProductService } from "./common/product.service";
 @NgModule({
   imports: [CommonModule],
   declarations: [ProductComponent],
-  providers: [ProductService]
+  providers: [ProductService],
+  exports: [ProductComponent]
 })
-export class ProductModule {}
+export class ProductModule { }

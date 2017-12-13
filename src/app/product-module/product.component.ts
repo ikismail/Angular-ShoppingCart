@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+declare var $: any;
 
 @Component({
   selector: "app-product",
@@ -6,7 +7,18 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./product.component.scss"]
 })
 export class ProductComponent implements OnInit {
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    $(document).ready(function () {
+      $(".bestSeller").owlCarousel({
+        // nav: true,
+        dots: false,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        autoplayHoverPause: true,
+        lazyLoad: true
+      });
+    });
+  }
 }

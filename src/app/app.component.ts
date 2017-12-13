@@ -10,7 +10,7 @@ export class AppComponent implements OnInit {
   title = "app";
   ngOnInit() {
     $(document).ready(function() {
-      $(".owl-carousel").owlCarousel({
+      $(".banner").owlCarousel({
         autoHeight: true,
         center: true,
         nav: true,
