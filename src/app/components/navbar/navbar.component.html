@@ -1,9 +1,10 @@
-
 <!--Navbar-->
 <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo scrolling-navbar">
 
   <!-- Navbar brand -->
-  <logo><a class="navbar-brand" href="#">ikismail</a></logo>
+  <logo>
+    <a class="navbar-brand" href="#">ikismail</a>
+  </logo>
 
   <!-- Collapsible content -->
   <links>
@@ -11,7 +12,9 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-light" mdbRippleRadius>Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link waves-light" mdbRippleRadius>Home
+          <span class="sr-only">(current)</span>
+        </a>
       </li>
       <li class="nav-item">
         <a class="nav-link waves-light" mdbRippleRadius>Features</a>
@@ -21,9 +24,11 @@
       </li>
 
       <!-- Dropdown -->
-      <li class="nav-item dropdown" dropdown>
+      <!-- <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
-          Basic dropdown<span class="caret"></span></a>
+          Basic dropdown
+          <span class="caret"></span>
+        </a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
           <a class="dropdown-item waves-light" mdbRippleRadius href="#">Action</a>
           <a class="dropdown-item waves-light" mdbRippleRadius href="#">Another action</a>
@@ -31,27 +36,32 @@
           <div class="divider dropdown-divider"></div>
           <a class="dropdown-item waves-light" mdbRippleRadius href="#">Separated link</a>
         </div>
-      </li><!-- Dropdown -->
+      </li> -->
+      <!-- Dropdown -->
 
     </ul>
     <!-- Links -->
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="javascript:;;"><i class="fa fa-envelope"></i> Contact <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="javascript:;;">
+          <i class="fa fa-envelope"></i> Contact
+          <span class="sr-only">(current)</span>
+        </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="javascript:;;"><i class="fa fa-gear"></i> Settings</a>
+        <a class="nav-link" href="javascript:;;">
+          <i class="fa fa-gear"></i> Settings</a>
       </li>
       <!-- Dropdown -->
-      <li class="nav-item dropdown" dropdown>
+      <!-- <li class="nav-item dropdown" dropdown>
         <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
           <i class="fa fa-user"></i> Profile </a>
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
           <a class="dropdown-item waves-light" mdbRippleRadius href="#">My Account</a>
           <a class="dropdown-item waves-light" mdbRippleRadius href="#">Logout</a>
         </div>
-      </li>
+      </li> -->
     </ul>
   </links>
   <!-- Collapsible content -->
