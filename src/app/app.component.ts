@@ -9,7 +9,7 @@ declare var $: any;
 export class AppComponent implements OnInit {
   title = "app";
   ngOnInit() {
-    $(document).ready(function() {
+    $(document).ready(function () {
       $(".banner").owlCarousel({
         autoHeight: true,
         center: true,

@@ -1,8 +1,12 @@
+import { PageNotFoundComponent } from './components/pageNotFound/pageNotFound.component';
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule, Routes } from "@angular/router";
+import { AppComponent } from "./app.component";
+import { ProductComponent } from './product-module/product.component';
 
-export const appRoutes: Routes = [];
+export const appRoutes: Routes = [
+  { path: "", component: AppComponent }];
 
 @NgModule({
   imports: [
@@ -11,4 +15,4 @@ export const appRoutes: Routes = [];
   ],
   declarations: []
 })
-export class AppRouterModule {}
+export class AppRouterModule { }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-declare var $: any;
 
 @Component({
   selector: "app-product",
@@ -10,15 +9,10 @@ export class ProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    $(document).ready(function () {
-      $(".bestSeller").owlCarousel({
-        // nav: true,
-        dots: false,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-        lazyLoad: true
-      });
-    });
+  
+  }
+
+  getProductById(key: string) {
+
   }
 }

@@ -9,5 +9,6 @@ export class Product {
   productAdded: Date;
   quantity: number;
   ratings: number;
+  favourite: boolean;
   seller: string;
 }
