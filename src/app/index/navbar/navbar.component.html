@@ -12,12 +12,12 @@
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-light" mdbRippleRadius>Home
+        <a class="nav-link waves-light" mdbRippleRadius [routerLink]="[ '/' ]">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbRippleRadius>Features</a>
+        <a class="nav-link waves-light" mdbRippleRadius [routerLink]="[ '/products/all-products' ]">Our Products</a>
       </li>
       <li class="nav-item">
         <a class="nav-link waves-light" mdbRippleRadius>Pricing</a>
@@ -54,12 +54,8 @@
           <i class="fa fa-user"></i> My Account</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="javascript:;;" (click)="openFormModal()">
-          <i class="fa fa-sign-in"></i> Signin</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="javascript:;;" (click)="openRegisterModal()">
-          <i class="fa fa-user-plus"></i> Signup</a>
+        <a class="nav-link" [routerLink]="[ '/index/login' ]">
+          <i class="fa fa-sign-in"></i> Signin / Signup</a>
       </li>
       <!-- Dropdown -->
       <!-- <li class="nav-item dropdown" dropdown>
@@ -76,5 +72,3 @@
 
 </mdb-navbar>
 <!--/.Navbar-->
-
-<app-login></app-login>

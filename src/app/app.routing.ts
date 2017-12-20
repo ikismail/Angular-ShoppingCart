@@ -5,6 +5,15 @@ export const AppRoutes: Routes = [
   {
     path: "",
     component: IndexComponent,
-    children: []
+    children: [
+      {
+        path: "index",
+        loadChildren: "./index/index.module#IndexModule"
+      },
+      {
+        path: "products",
+        loadChildren: "./product/product.module#ProductModule"
+      }
+    ]
   }
 ];

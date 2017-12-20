@@ -10,11 +10,4 @@ export class NavbarComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  openFormModal() {
-    $("#loginModal").modal();
-  }
-  openRegisterModal() {
-    $("#registerModal").modal();
-  }
 }

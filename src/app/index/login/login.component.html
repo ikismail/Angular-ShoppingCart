@@ -1,97 +1,29 @@
-<!--Modal: Login Form-->
-<div mdbModal #form="mdb-modal" class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog cascading-modal" role="document">
-    <!--Content-->
-    <div class="modal-content">
+<br>
+<br>
+<br>
+<section class="container">
+  <!-- Login form -->
+  <form style="width:22rem">
+    <p class="h5 text-center mb-4">Sign in</p>
 
-      <!--Header-->
-      <div class="modal-header light-blue darken-3 white-text">
-        <h4 class="title">
-          <i class="fa fa-user"></i> Log in</h4>
-        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="form.hide()">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <!--Body-->
-      <div class="modal-body">
-        <div class="md-form form-sm">
-          <i class="fa fa-envelope prefix"></i>
-          <input mdbActive type="text" id="form30" class="form-control">
-          <label for="form30">Your email</label>
-        </div>
-
-        <div class="md-form form-sm">
-          <i class="fa fa-lock prefix"></i>
-          <input mdbActive type="password" id="form31" class="form-control">
-          <label for="form31">Your password</label>
-        </div>
-
-        <div class="text-center mt-2">
-          <button class="btn btn-info waves-light" mdbRippleRadius>Log in
-            <i class="fa fa-sign-in ml-1"></i>
-          </button>
-        </div>
-
-      </div>
-      <!--Footer-->
-      <!-- <div class="modal-footer">
-      <div class="options text-center text-md-right mt-1">
-        <p>Forgot
-          <a href="#">Password?</a>
-        </p>
-      </div>
-    </div> -->
+    <div class="md-form">
+      <i class="fa fa-envelope prefix grey-text"></i>
+      <input type="text" id="defaultForm-email" class="form-control" mdbActive>
+      <label for="defaultForm-email">Your email</label>
     </div>
-    <!--/.Content-->
-  </div>
-</div>
-<!--Modal: Login Form-->
 
-<!--Modal: Register Form-->
-<div mdbModal #registerForm="mdb-modal" class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog cascading-modal" role="document">
-    <!--Content-->
-    <div class="modal-content">
-
-      <!--Header-->
-      <div class="modal-header light-blue darken-3 white-text">
-        <h4 class="title">
-          <i class="fa fa-user-plus"></i> Register</h4>
-        <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close" (click)="registerForm.hide()">
-          <span aria-hidden="true">×</span>
-        </button>
-      </div>
-      <!--Body-->
-      <div class="modal-body">
-        <div class="md-form form-sm">
-          <i class="fa fa-envelope prefix"></i>
-          <input mdbActive type="text" id="form32" class="form-control">
-          <label for="form32">Your email</label>
-        </div>
-
-        <div class="md-form form-sm">
-          <i class="fa fa-lock prefix"></i>
-          <input mdbActive type="password" id="form33" class="form-control">
-          <label for="form33">Your password</label>
-        </div>
-
-        <div class="md-form form-sm">
-          <i class="fa fa-lock prefix"></i>
-          <input mdbActive type="password" id="form34" class="form-control">
-          <label for="form34">Repeat password</label>
-        </div>
-
-        <div class="text-center mt-2">
-          <button class="btn btn-info waves-light" mdbRippleRadius>Sign up
-            <i class="fa fa-sign-in ml-1"></i>
-          </button>
-        </div>
-
-      </div>
+    <div class="md-form">
+      <i class="fa fa-lock prefix grey-text"></i>
+      <input type="password" id="defaultForm-pass" class="form-control" mdbActive>
+      <label for="defaultForm-pass">Your password</label>
     </div>
-    <!--/.Content-->
-  </div>
-</div>
-<!--Modal: Register Form-->
+
+    <div class="text-center">
+      <button class="btn btn-primary waves-light" mdbRippleRadius>Login</button>
+    </div>
+  </form>
+  <!-- Login form -->
+</section>
+<br>
+<br>
+<br>

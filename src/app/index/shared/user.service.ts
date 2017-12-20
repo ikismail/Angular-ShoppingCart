@@ -41,14 +41,4 @@ export class UserService {
     this.location.lat = lat;
     this.location.lon = lon;
   }
-
-  getUsersByUserName(searchText: string) {
-    this.usersName = this.db.list("clients", ref =>
-      ref
-        .orderByChild("userName")
-        .startAt(searchText)
-        .endAt(searchText + "\uf8ff")
-    );
-    return this.usersName;
-  }
 }
