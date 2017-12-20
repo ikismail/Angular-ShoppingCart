@@ -1,18 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 declare var $: any;
 
-
 @Component({
-  selector: 'app-bestProduct',
-  templateUrl: './bestProduct.component.html',
-  styleUrls: ['./bestProduct.component.scss']
+  selector: "app-best-product",
+  templateUrl: "./best-product.component.html",
+  styleUrls: ["./best-product.component.scss"]
 })
 export class BestProductComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
-    $(document).ready(function () {
+    $(document).ready(function() {
       $(".bestSeller").owlCarousel({
         // nav: true,
         dots: false,
@@ -23,5 +21,4 @@ export class BestProductComponent implements OnInit {
       });
     });
   }
-
 }

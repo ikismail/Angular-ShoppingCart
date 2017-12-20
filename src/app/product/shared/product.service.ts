@@ -4,7 +4,7 @@ import {
   AngularFireList,
   AngularFireObject
 } from "angularfire2/database";
-import { Product } from "./product";
+import { Product } from "../model/product";
 
 @Injectable()
 export class ProductService {
