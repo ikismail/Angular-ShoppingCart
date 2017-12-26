@@ -37,15 +37,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ##### Home Page shot 1:
 
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/Home.jpg "Home Page")
+![Alt text](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/screenshots/home.PNG "Home Page")
 
 ##### Home Page shot 2:
 
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/Home.jpg "Home Page")
+![Alt text](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/screenshots/home1.PNG "Home Page")
 
 ##### Products Page:
 
-![Alt text](https://github.com/ikismail/ShoppingCart/blob/master/src/main/webapp/WEB-INF/resource/images/screenshots/Home.jpg "Home Page")
+![Alt text](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/screenshots/products.PNG "Home Page")
 
 
 
