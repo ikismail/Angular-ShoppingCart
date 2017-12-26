@@ -4,8 +4,8 @@ import { RouterModule } from "@angular/router";
 import { AppComponent } from "./app.component";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
-
 import { IndexModule } from "./index/index.module";
+import { LoaderSpinnerModule } from "./modules/loader-spinner/loader-spinner";
 
 @NgModule({
   declarations: [AppComponent],
@@ -13,6 +13,7 @@ import { IndexModule } from "./index/index.module";
     BrowserModule,
     IndexModule,
     ProductModule,
+    LoaderSpinnerModule,
     RouterModule.forRoot(AppRoutes, { enableTracing: true })
   ],
   providers: [],

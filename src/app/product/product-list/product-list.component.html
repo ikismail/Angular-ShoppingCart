@@ -1,8 +1,16 @@
 <br>
 <br>
 <br>
-
 <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="float-right">
+        <button type="button" class="btn btn-primary waves-light" data-toggle="modal" data-target="#exampleModalLong">
+          Add Product
+        </button>
+      </div>
+    </div>
+  </div>
   <div class="row">
     <div class="col-md-3">
       <ul class="list-group">
@@ -17,11 +25,10 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-sm-3">
+          <div class="col-sm-4" *ngFor="let product of productList; let i=index">
             <!--Card-->
-            <div class="card" style="margin-top:10px">
+            <!-- <div class="card" style="margin-top:10px">
 
-              <!--Card image-->
               <div class="view hm-white-slight waves-light" mdbRippleRadius>
                 <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
                 <a>
@@ -29,108 +36,65 @@
                 </a>
               </div>
 
-              <!--Card content-->
               <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
+                <h6 class="card-title">{{ product.productName }}</h6>
                 <a class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
               </div>
 
-            </div>
+            </div> -->
             <!--/.Card-->
-          </div>
-          <div class="col-sm-3">
-            <!--Card-->
-            <div class="card" style="margin-top:10px">
+            <div class="item">
+              <div class=" mb-r">
 
-              <!--Card image-->
-              <div class="view hm-white-slight waves-light" mdbRippleRadius>
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-                <a>
-                  <div class="mask"></div>
-                </a>
+                <!--Card-->
+                <div class="card card-cascade wider">
+
+                  <!--Card image-->
+                  <div class="view overlay hm-white-slight">
+                    <img [src]="product.productImageUrl" class="img-fluid" alt="" width="360px" height="640px">
+                    <a>
+                      <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+                    </a>
+                  </div>
+                  <!--/.Card image-->
+
+                  <!--Card content-->
+                  <div class="card-body text-center no-padding">
+                    <!--Category & Title-->
+                    <a href="" class="text-muted">
+                      <h5>{{ product.productCategory }}</h5>
+                    </a>
+                    <h5 class="card-title">
+                      <strong>
+                        <a href="">{{ product.productName }}</a>
+                      </strong>
+                    </h5>
+
+                    <!--Description-->
+                    <p class="card-text">{{ product.productDescription }}
+                    </p>
+
+                    <!--Card footer-->
+                    <div class="card-footer">
+                      <span class="left">{{ product.productPrice }} $</span>
+                      <span class="right">
+                        <a placement="top" mdbTooltip="Quick Look" container="body">
+                          <i class="fa fa-eye"></i>
+                        </a>
+                        <a placement="top" mdbTooltip="Add to Wishlist" container="body">
+                          <i class="fa fa-heart"></i>
+                        </a>
+                      </span>
+                    </div>
+
+                  </div>
+                  <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+
               </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <a class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-              </div>
-
             </div>
-            <!--/.Card-->
-          </div>
-          <div class="col-sm-3">
-            <!--Card-->
-            <div class="card" style="margin-top:10px">
-
-              <!--Card image-->
-              <div class="view hm-white-slight waves-light" mdbRippleRadius>
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-                <a>
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <a class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-          </div>
-          <div class="col-sm-3">
-            <!--Card-->
-            <div class="card" style="margin-top:10px">
-
-              <!--Card image-->
-              <div class="view hm-white-slight waves-light" mdbRippleRadius>
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-                <a>
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <a class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-          </div>
-          <div class="col-sm-3">
-            <!--Card-->
-            <div class="card" style="margin-top:10px">
-
-              <!--Card image-->
-              <div class="view hm-white-slight waves-light" mdbRippleRadius>
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-                <a>
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <a class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-              </div>
-
-            </div>
-            <!--/.Card-->
           </div>
         </div>
       </div>
@@ -140,3 +104,5 @@
 <br>
 <br>
 <br>
+<app-add-product></app-add-product>
+<ng2-toasty></ng2-toasty>

@@ -1,0 +1,91 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Add Product</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #addProductForm="ngForm" (ngSubmit)="createProduct(addProductForm)">
+          <!--First row-->
+          <div class="row">
+            <!--First column-->
+            <div class="col-md-6">
+              <div class="md-form">
+                <input type="text" class="form-control" id="form9" name="productName" [(ngModel)]="product.productName" placeholder="Product Name">
+              </div>
+            </div>
+
+            <!--Second column-->
+            <div class="col-md-6">
+              <div class="md-form">
+                <input type="text" class="form-control" id="form10" name="productCategory" [(ngModel)]="product.productCategory" placeholder="Product Category">
+              </div>
+            </div>
+          </div>
+          <!--/.First row-->
+
+          <!--Second row-->
+          <div class="row">
+            <!--First column-->
+            <div class="col-md-12">
+
+              <div class="md-form">
+                <textarea type="text" id="form76" class="md-textarea" placeholder="Product Description" name="productDescription" [(ngModel)]="product.productDescription"></textarea>
+              </div>
+
+            </div>
+          </div>
+          <!--/.Second row-->
+
+          <!--Third row-->
+          <div class="row">
+
+            <!--First column-->
+            <div class="col-md-6">
+              <div class="md-form">
+                <input type="number" id="form41" name="productPrice" class="form-control" [(ngModel)]="product.productPrice" placeholder="Product Price">
+              </div>
+            </div>
+
+            <!--Second column-->
+            <div class="col-md-6">
+              <div class="md-form">
+                <input type="text" id="form51" class="form-control" name="productQuatity" [(ngModel)]="product.quantity" placeholder="Product Quantity">
+              </div>
+            </div>
+
+          </div>
+          <!--/.Third row-->
+          <!--Fourth row-->
+          <div class="row">
+
+            <!--First column-->
+            <!-- <div class="col-md-6">
+              <div class="md-form">
+                <input type="file" id="form41" #fileupload [(ngModel)]="file" name="file" class="form-control" (change)="uploadFile(fileupload.files)">
+              </div>
+            </div> -->
+
+            <!--Second column-->
+            <div class="col-md-6">
+              <div class="md-form">
+                <input type="text" id="form51" [(ngModel)]="product.seller" class="form-control" name="productSeller" placeholder="Seller">
+              </div>
+            </div>
+
+          </div>
+          <!--/.Fourth row-->
+
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Add Product</button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>

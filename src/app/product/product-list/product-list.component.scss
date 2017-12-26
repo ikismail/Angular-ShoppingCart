@@ -1,4 +1,3 @@
-
 .section .section-heading {
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -78,6 +77,12 @@
 .no-padding .fa,
 .rating {
   padding: 0;
+}
+
+.card-text {
+  line-height: 20px;
+  height: 60px;
+  overflow: hidden;
 }
 
 .card .card-footer {

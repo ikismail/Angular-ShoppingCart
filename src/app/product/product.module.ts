@@ -5,10 +5,24 @@ import { ProductComponent } from "./product.component";
 import { BestProductComponent } from "./best-product/best-product.component";
 import { ProductListComponent } from "./product-list/product-list.component";
 import { RouterModule } from "@angular/router";
-
+import { ProductService } from "./shared/product.service";
+import { AddProductComponent } from "./add-product/add-product.component";
+import { FormsModule } from "@angular/forms";
+import { ToastyModule } from "ng2-toasty";
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(ProductRoutes)],
-  declarations: [ProductComponent, BestProductComponent, ProductListComponent],
-  exports: [BestProductComponent]
+  imports: [
+    CommonModule,
+    RouterModule.forChild(ProductRoutes),
+    FormsModule,
+    ToastyModule.forRoot()
+  ],
+  declarations: [
+    ProductComponent,
+    BestProductComponent,
+    ProductListComponent,
+    AddProductComponent
+  ],
+  exports: [BestProductComponent],
+  providers: [ProductService]
 })
 export class ProductModule {}

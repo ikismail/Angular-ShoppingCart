@@ -34,6 +34,7 @@
     "owl.carousel": "^2.2.0",
     "primeng": "^4.2.4",
     "rxjs": "^5.4.2",
+    "shortid": "^2.2.8",
     "tether": "^1.4.1",
     "zone.js": "^0.8.14"
   },
