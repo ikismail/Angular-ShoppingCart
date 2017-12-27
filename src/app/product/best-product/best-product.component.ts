@@ -10,20 +10,23 @@ declare var $: any;
 })
 export class BestProductComponent implements OnInit {
   bestProducts: Product[] = [];
+  options: any;
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    $(document).ready(function() {
-      $(".bestSeller").owlCarousel({
-        // nav: true,
-        dots: false,
-        autoplay: true,
-        loop: true,
-        autoplayTimeout: 3000,
-        lazyLoad: true
-      });
-    });
-
+    this.options = {
+      dots: false,
+      responsive: {
+        "0": { items: 1, margin: 5 },
+        "430": { items: 2, margin: 5 },
+        "550": { items: 3, margin: 5 },
+        "670": { items: 4, margin: 5 }
+      },
+      autoplay: true,
+      loop: true,
+      autoplayTimeout: 3000,
+      lazyLoad: true
+    };
     this.getAllProducts();
   }
 

@@ -7,12 +7,16 @@
     veritatis totam voluptas nostrum quisquam eum porro a pariatur accusamus veniam.</p> -->
 
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-6">
+      <blockquote class="blockquote float-left bq-primary">
+        <h3 class="bq-title">Our Best Products</h3>
+      </blockquote>
+    </div>
+    <div class="col-md-6">
       <a class="btn btn-default float-right" [routerLink]="[ '/products/all-products' ]">View All</a>
     </div>
   </div>
-  <owl-carousel [options]="{dots: false, autoplay: true,loop: true, autoplayTimeout: 3000, lazyLoad: true}" [items]="bestProducts"
-    [carouselClasses]="['owl-theme', 'row', 'sliding']">
+  <owl-carousel [options]="options" [items]="bestProducts" [carouselClasses]="['owl-theme', 'row', 'sliding']">
     <!--First column-->
     <div class="item" style="padding:20px" *ngFor="let product of bestProducts;let i = index">
       <div class=" mb-r">
