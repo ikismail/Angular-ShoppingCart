@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private toastyConfig: ToastyConfig
   ) {
-    this.toastyConfig.position = "bottom-right";
+    this.toastyConfig.position = "top-right";
     this.toastyConfig.theme = "material";
   }
 
@@ -80,7 +80,7 @@ export class LoginComponent implements OnInit {
         msg: "Invalid Credentials, Please Check your credentials",
         showClose: true,
         timeout: 5000,
-        theme: "bootstrap"
+        theme: "material"
       };
       this.toastyService.error(toastOption);
       this.emailId = this.password = "";

@@ -11,10 +11,11 @@ import { LoaderSpinnerService } from "../../modules/loader-spinner/loader-spinne
 })
 export class ProductListComponent implements OnInit {
   productList: Product[];
+  page: number = 1;
   constructor(
+    public authService: AuthServiceService,
     private productService: ProductService,
-    private spinnerService: LoaderSpinnerService,
-    public authService: AuthServiceService
+    private spinnerService: LoaderSpinnerService
   ) {}
 
   ngOnInit() {

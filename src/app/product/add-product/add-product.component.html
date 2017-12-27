@@ -63,14 +63,6 @@
           <!--Fourth row-->
           <div class="row">
 
-            <!--First column-->
-            <!-- <div class="col-md-6">
-              <div class="md-form">
-                <input type="file" id="form41" #fileupload [(ngModel)]="file" name="file" class="form-control" (change)="uploadFile(fileupload.files)">
-              </div>
-            </div> -->
-
-            <!--Second column-->
             <div class="col-md-6">
               <div class="md-form">
                 <input type="text" id="form51" [(ngModel)]="product.seller" class="form-control" name="productSeller" placeholder="Seller">
@@ -79,6 +71,17 @@
 
           </div>
           <!--/.Fourth row-->
+          <!--Fifth row-->
+          <div class="row">
+
+            <div class="col-md-12">
+              <div class="md-form">
+                <input type="text" id="form51" [(ngModel)]="product.productImageUrl" class="form-control" name="productImageUrl" placeholder="Image Url exactly 640*360 dimensions">
+              </div>
+            </div>
+
+          </div>
+          <!--/.Fifth row-->
 
           <div class="modal-footer">
             <button type="submit" class="btn btn-primary">Add Product</button>

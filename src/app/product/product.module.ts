@@ -9,11 +9,15 @@ import { ProductService } from "./shared/product.service";
 import { AddProductComponent } from "./add-product/add-product.component";
 import { FormsModule } from "@angular/forms";
 import { ToastyModule } from "ng2-toasty";
+import { OwlModule } from "ng2-owl-carousel";
+import { NgxPaginationModule } from "ngx-pagination";
 @NgModule({
   imports: [
     CommonModule,
     RouterModule.forChild(ProductRoutes),
     FormsModule,
+    OwlModule,
+    NgxPaginationModule,
     ToastyModule.forRoot()
   ],
   declarations: [

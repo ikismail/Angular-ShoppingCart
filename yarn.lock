@@ -3101,7 +3101,7 @@ jasminewd2@^2.1.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/jasminewd2/-/jasminewd2-2.2.0.tgz#e37cf0b17f199cce23bea71b2039395246b4ec4e"
 
-jquery@>=1.8.3, jquery@^3.2.1:
+"jquery@>= 2.2.0", jquery@>=1.8.3, jquery@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
@@ -3691,9 +3691,20 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
+ng2-owl-carousel@^0.1.15:
+  version "0.1.15"
+  resolved "https://registry.yarnpkg.com/ng2-owl-carousel/-/ng2-owl-carousel-0.1.15.tgz#b2fb8f5c68e0764ca6fdd58cc5c29137938bbfbe"
+  dependencies:
+    jquery ">= 2.2.0"
+    owl.carousel "^2.2.0"
+
 ng2-toasty@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/ng2-toasty/-/ng2-toasty-4.0.3.tgz#ea78ef8d18757d41ebaba11bd9f90a543f58fd7a"
+
+ngx-pagination@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/ngx-pagination/-/ngx-pagination-3.0.3.tgz#314145263613738d8c544da36cd8dacc5aa89a6f"
 
 no-case@^2.2.0:
   version "2.3.2"

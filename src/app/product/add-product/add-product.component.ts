@@ -32,6 +32,7 @@ export class AddProductComponent implements OnInit {
   ngOnInit() {}
 
   createProduct(productForm: NgForm) {
+    console.log("before product", productForm.value);
     const toastOptions: ToastOptions = {
       title: "Product Creation",
       msg:
@@ -43,13 +44,19 @@ export class AddProductComponent implements OnInit {
     productForm.value["productId"] = "PROD_" + shortId.generate();
     productForm.value["productAdded"] = moment().unix();
     productForm.value["ratings"] = Math.floor(Math.random() * 5 + 1);
-    productForm.value["productImageUrl"] =
-      "http://via.placeholder.com/640x360/007bff/ffffff";
+    if (productForm.value["productImageUrl"] === undefined) {
+      productForm.value["productImageUrl"] =
+        "http://via.placeholder.com/640x360/007bff/ffffff";
+    }
+
     productForm.value["favourite"] = false;
 
     const date = productForm.value["productAdded"];
 
+    console.log("after product", productForm.value);
+
     // console.log(moment.unix(date).format("MM/DD/YYYY hh:mm:ss"));
+
     this.productService.createProduct(productForm.value);
 
     this.product = new Product();

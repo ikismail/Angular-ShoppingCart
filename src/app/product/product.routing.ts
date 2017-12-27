@@ -13,8 +13,7 @@ export const ProductRoutes: Routes = [
       },
       {
         path: "all-products",
-        component: ProductListComponent,
-        canActivate: [AuthGuard]
+        component: ProductListComponent
       }
     ]
   }
