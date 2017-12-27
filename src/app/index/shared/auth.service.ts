@@ -1,10 +1,10 @@
-import { UserService } from "./user.service";
+import { UserService } from "./../../user/shared/user.service";
 import { Injectable } from "@angular/core";
 import * as firebase from "firebase/app";
 import { Observable } from "rxjs/Observable";
 import { log } from "util";
 import { Buffer } from "buffer";
-import { User } from "../model/user";
+import { User } from "../../user/shared/user";
 
 @Injectable()
 export class AuthServiceService {
@@ -17,8 +17,8 @@ export class AuthServiceService {
 
   login(email: string, password: string): boolean {
     let status = false;
-
     this.usersList.forEach(user => {
+      console.log("user loop", user.emailId);
       if (email === user.emailId && password === user.password) {
         const loggedInUser = user;
         const objStr = JSON.stringify(loggedInUser);
@@ -82,7 +82,9 @@ export class AuthServiceService {
       user.forEach(element => {
         const y = element.payload.toJSON();
         y["$key"] = element.key;
+        console.log("userslist", y);
         this.usersList.push(y as User);
+        console.log("userVar", this.usersList);
       });
     });
   }

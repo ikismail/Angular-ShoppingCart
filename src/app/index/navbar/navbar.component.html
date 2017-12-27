@@ -23,22 +23,6 @@
         <a class="nav-link waves-light" mdbRippleRadius>Pricing</a>
       </li>
 
-      <!-- Dropdown -->
-      <!-- <li class="nav-item dropdown" dropdown>
-          <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
-            Basic dropdown
-            <span class="caret"></span>
-          </a>
-          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-            <a class="dropdown-item waves-light" mdbRippleRadius href="#">Action</a>
-            <a class="dropdown-item waves-light" mdbRippleRadius href="#">Another action</a>
-            <a class="dropdown-item waves-light" mdbRippleRadius href="#">Something else here</a>
-            <div class="divider dropdown-divider"></div>
-            <a class="dropdown-item waves-light" mdbRippleRadius href="#">Separated link</a>
-          </div>
-        </li> -->
-      <!-- Dropdown -->
-
     </ul>
     <!-- Links -->
 
@@ -49,23 +33,18 @@
           <span class="sr-only">(current)</span>
         </a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="authService.isLoggedIn()">
         <a class="nav-link" href="javascript:;;">
           <i class="fa fa-user"></i> My Account</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item" *ngIf="!authService.isLoggedIn()">
         <a class="nav-link" [routerLink]="[ '/index/login' ]">
           <i class="fa fa-sign-in"></i> Signin / Signup</a>
       </li>
-      <!-- Dropdown -->
-      <!-- <li class="nav-item dropdown" dropdown>
-          <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
-            <i class="fa fa-user"></i> Profile </a>
-          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-            <a class="dropdown-item waves-light" mdbRippleRadius href="#">My Account</a>
-            <a class="dropdown-item waves-light" mdbRippleRadius href="#">Logout</a>
-          </div>
-        </li> -->
+      <li class="nav-item" *ngIf="authService.isLoggedIn()">
+        <a class="nav-link" (click)="logout()">
+          <i class="fa fa-sign-in"></i>Logout</a>
+      </li>
     </ul>
   </links>
   <!-- Collapsible content -->

@@ -1,10 +1,8 @@
 export class User {
   $key: string;
+  userName: string;
   emailId: string;
-  location: {
-    lat: number;
-    lon: number;
-  };
   password: string;
+  phoneNumber: string;
   isAdmin: boolean;
 }

@@ -1,3 +1,6 @@
+import { AdminGaurd } from "./shared/admin-gaurd";
+import { AuthGuard } from "./shared/auth_gaurd";
+import { AuthServiceService } from "./shared/auth.service";
 import { IndexRoutes } from "./index.routing";
 import { RouterModule } from "@angular/router";
 import { ProductModule } from "./../product/product.module";
@@ -11,17 +14,20 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { LoginComponent } from "./login/login.component";
 import { FooterComponent } from "./footer/footer.component";
 import { NavbarComponent } from "./navbar/navbar.component";
-import { UserService } from "./shared/user.service";
 import { FireBaseConfig } from "../../environments/firebaseConfig";
 import { ToastyModule } from "ng2-toasty";
+import { UserModule } from "../user/user.module";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   imports: [
     CommonModule,
+    UserModule,
     MDBBootstrapModule.forRoot(),
     ProductModule,
     AngularFireModule.initializeApp(FireBaseConfig),
     AngularFireDatabaseModule,
+    FormsModule,
     ToastyModule.forRoot(),
     RouterModule.forChild(IndexRoutes)
   ],
@@ -33,6 +39,6 @@ import { ToastyModule } from "ng2-toasty";
   ],
   schemas: [NO_ERRORS_SCHEMA],
   exports: [NavbarComponent, FooterComponent],
-  providers: [UserService]
+  providers: [AuthServiceService, AuthGuard, AdminGaurd]
 })
 export class IndexModule {}

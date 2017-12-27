@@ -1,3 +1,4 @@
+import { AuthServiceService } from "./../../index/shared/auth.service";
 import { Product } from "./../model/product";
 import { ProductService } from "./../shared/product.service";
 import { Component, OnInit } from "@angular/core";
@@ -12,7 +13,8 @@ export class ProductListComponent implements OnInit {
   productList: Product[];
   constructor(
     private productService: ProductService,
-    private spinnerService: LoaderSpinnerService
+    private spinnerService: LoaderSpinnerService,
+    public authService: AuthServiceService
   ) {}
 
   ngOnInit() {
