@@ -1,142 +1,55 @@
 <br>
 <br>
 <br>
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-3">
-      <ul class="list-group">
-        <li class="list-group-item">Cras justo odio</li>
-        <li class="list-group-item">Dapibus ac facilisis in</li>
-        <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
-      </ul>
+<div class="row">
+  <div class="col-sm">
+    <div class=" float-right">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        Add Product
+      </button>
     </div>
-    <div class="col-md-9">
+  </div>
+</div>
+<div class="">
+  <div class="row">
+    <div class="col-3" *ngFor="let product of productsList">
+      <!--Card-->
+      <div class="card" style="margin-top:10px">
 
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-3">
-            <!--Card-->
-            <div class="card" style="margin-top:10px">
-
-              <!--Card image-->
-              <div class="view hm-white-slight waves-light" mdbRippleRadius>
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-                <a>
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <a class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-          </div>
-          <div class="col-sm-3">
-            <!--Card-->
-            <div class="card" style="margin-top:10px">
-
-              <!--Card image-->
-              <div class="view hm-white-slight waves-light" mdbRippleRadius>
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-                <a>
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <a class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-          </div>
-          <div class="col-sm-3">
-            <!--Card-->
-            <div class="card" style="margin-top:10px">
-
-              <!--Card image-->
-              <div class="view hm-white-slight waves-light" mdbRippleRadius>
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-                <a>
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <a class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-          </div>
-          <div class="col-sm-3">
-            <!--Card-->
-            <div class="card" style="margin-top:10px">
-
-              <!--Card image-->
-              <div class="view hm-white-slight waves-light" mdbRippleRadius>
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-                <a>
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <a class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-          </div>
-          <div class="col-sm-3">
-            <!--Card-->
-            <div class="card" style="margin-top:10px">
-
-              <!--Card image-->
-              <div class="view hm-white-slight waves-light" mdbRippleRadius>
-                <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-                <a>
-                  <div class="mask"></div>
-                </a>
-              </div>
-
-              <!--Card content-->
-              <div class="card-body">
-                <!--Title-->
-                <h4 class="card-title">Card title</h4>
-                <!--Text-->
-                <a class="btn btn-primary waves-light" mdbRippleRadius>Button</a>
-              </div>
-
-            </div>
-            <!--/.Card-->
-          </div>
+        <!--Card image-->
+        <div class="view hm-white-slight waves-light" mdbRippleRadius>
+          <img [src]="product.productImages" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
+          <a>
+            <div class="mask"></div>
+          </a>
         </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h5 class="card-title">{{product.productName}}</h5>
+        </div>
+        <!--Card footer-->
+        <div class="card-footer">
+          <span class="left">{{product.productPrice}} $</span>
+          <span class="right">
+            <a placement="top" mdbTooltip="Quick Look" container="body">
+              <i class="fa fa-eye"></i>
+            </a>
+            <a placement="top" mdbTooltip="Add to Wishlist" container="body">
+              <i class="fa fa-heart"></i>
+            </a>
+          </span>
+        </div>
+
       </div>
+      <!--/.Card-->
     </div>
   </div>
 </div>
 <br>
 <br>
 <br>
+<!-- Modal -->
+<app-add-product></app-add-product>
