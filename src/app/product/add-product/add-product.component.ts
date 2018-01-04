@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-add-product',
-  templateUrl: './add-product.component.html',
-  styleUrls: ['./add-product.component.scss']
-})
-export class AddProductComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-=======
 import {
   ToastyService,
   ToastyConfig,
@@ -45,7 +29,7 @@ export class AddProductComponent implements OnInit {
     this.toastyConfig.theme = "material";
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   createProduct(productForm: NgForm) {
     console.log("before product", productForm.value);
@@ -81,5 +65,4 @@ export class AddProductComponent implements OnInit {
 
     this.toastyService.success(toastOptions);
   }
->>>>>>> efdb9f80e34b6149ecbceb72ed43a46bcceedc9b
 }

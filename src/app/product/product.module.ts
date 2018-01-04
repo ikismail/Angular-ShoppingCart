@@ -1,5 +1,5 @@
-import { NgxPaginationModule } from 'ngx-pagination';
-import { OwlModule } from 'ng2-owl-carousel';
+import { NgxPaginationModule } from "ngx-pagination";
+import { OwlModule } from "ng2-owl-carousel";
 import { FormsModule } from "@angular/forms";
 import { ProductRoutes } from "./product.routing";
 import { NgModule } from "@angular/core";
