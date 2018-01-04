@@ -9,7 +9,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --aot -prod",
+    "deploy": "git push origin master && git push heroku master"
   },
   "engines": {
     "node": "8.9.3",
@@ -19,6 +20,7 @@
   "dependencies": {
     "@angular/animations": "^4.2.4",
     "@angular/cli": "1.4.9",
+    "@angular/compiler-cli": "^4.2.4",
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",
     "@angular/core": "^4.2.4",
@@ -42,7 +44,8 @@
     "primeng": "^4.2.4",
     "rxjs": "^5.4.2",
     "tether": "^1.4.1",
-    "zone.js": "^0.8.14"
+    "zone.js": "^0.8.14",
+    "typescript": "~2.4.2"
   },
   "devDependencies": {
     "@angular/cli": "1.4.9",
