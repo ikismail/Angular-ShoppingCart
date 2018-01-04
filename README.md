@@ -2,6 +2,8 @@
 
 Developing a **ShoppingCart (Ecommerce) Application using Angular2+**.
 
+**Live Demo** : [angular4-shopping-cart](https://angular4-shopping-cart.herokuapp.com/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
 
 ## Functionalities
