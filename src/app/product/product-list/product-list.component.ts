@@ -1,33 +1,38 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../shared/product.service';
-import { Product } from '../model/product';
+import { AuthServiceService } from "./../../index/shared/auth.service";
+import { Product } from "./../model/product";
+import { ProductService } from "./../shared/product.service";
+import { Component, OnInit } from "@angular/core";
+import { LoaderSpinnerService } from "../../modules/loader-spinner/loader-spinner";
 
 @Component({
-  selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  selector: "app-product-list",
+  templateUrl: "./product-list.component.html",
+  styleUrls: ["./product-list.component.scss"]
 })
 export class ProductListComponent implements OnInit {
-
-  productsList: Product[];
-
-  constructor(private productService: ProductService) { }
+  productList: Product[];
+  page: number = 1;
+  constructor(
+    public authService: AuthServiceService,
+    private productService: ProductService,
+    private spinnerService: LoaderSpinnerService
+  ) { }
 
   ngOnInit() {
     this.getAllProducts();
   }
 
   getAllProducts() {
+    this.spinnerService.show();
     const x = this.productService.getProducts();
     x.snapshotChanges().subscribe(product => {
-      this.productsList = [];
+      this.spinnerService.hide();
+      this.productList = [];
       product.forEach(element => {
         const y = element.payload.toJSON();
         y["$key"] = element.key;
-        console.log("y", y);
-        this.productsList.push(y as Product);
+        this.productList.push(y as Product);
       });
     });
   }
-
 }

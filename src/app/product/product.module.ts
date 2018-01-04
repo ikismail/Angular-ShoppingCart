@@ -1,3 +1,5 @@
+import { NgxPaginationModule } from 'ngx-pagination';
+import { OwlModule } from 'ng2-owl-carousel';
 import { FormsModule } from "@angular/forms";
 import { ProductRoutes } from "./product.routing";
 import { NgModule } from "@angular/core";
@@ -8,10 +10,20 @@ import { ProductListComponent } from "./product-list/product-list.component";
 import { RouterModule } from "@angular/router";
 import { ProductService } from "./shared/product.service";
 import { AddProductComponent } from "./add-product/add-product.component";
-
+import { ToastyModule } from "ng2-toasty";
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(ProductRoutes), FormsModule],
-  declarations: [ProductComponent, BestProductComponent, ProductListComponent,
+  imports: [
+    CommonModule,
+    RouterModule.forChild(ProductRoutes),
+    FormsModule,
+    OwlModule,
+    NgxPaginationModule,
+    ToastyModule.forRoot()
+  ],
+  declarations: [
+    ProductComponent,
+    BestProductComponent,
+    ProductListComponent,
     AddProductComponent
   ],
   exports: [BestProductComponent],

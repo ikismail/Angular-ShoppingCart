@@ -22,6 +22,9 @@
         "..//node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
         "..//node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
         "..//node_modules/animate.css/animate.min.css",
+        "../node_modules/ng2-toasty/style-bootstrap.css",
+        "../node_modules/ng2-toasty/style-default.css",
+        "../node_modules/ng2-toasty/style-material.css",
         "styles.scss"
       ],
       "scripts": [

@@ -20,7 +20,7 @@ export class ProductService {
 
   createProduct(data: Product) {
     console.log("Created Product", data);
-    // this.products.push(data);
+    this.products.push(data);
   }
 
   getProductById(key: string): any {

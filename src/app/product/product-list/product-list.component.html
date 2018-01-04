@@ -1,48 +1,90 @@
 <br>
 <br>
 <br>
-<div class="row">
-  <div class="col-sm">
-    <div class=" float-right">
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        Add Product
-      </button>
+<div class="container">
+  <div class="row" *ngIf="authService.isAdmin()">
+    <div class="col-sm">
+      <div class="float-right">
+        <button type="button" class="btn btn-primary waves-light" data-toggle="modal" data-target="#exampleModalLong">
+          Add Product
+        </button>
+      </div>
     </div>
   </div>
-</div>
-<div class="">
   <div class="row">
-    <div class="col-3" *ngFor="let product of productsList">
-      <!--Card-->
-      <div class="card" style="margin-top:10px">
+    <div class="col-md-3">
+      <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+    <div class="col-md-9">
 
-        <!--Card image-->
-        <div class="view hm-white-slight waves-light" mdbRippleRadius>
-          <img [src]="product.productImageUrl" class="img-fluid" alt="Card image with a tree in a middle of a lake.">
-          <a>
-            <div class="mask"></div>
-          </a>
-        </div>
+      <div class="container">
+        <div class="row">
+          <!-- List of Products -->
+          <div class="col-sm-4" *ngFor="let product of productList | paginate: { itemsPerPage: 6, currentPage: page }">
+            <div class="item">
+              <div class=" mb-r">
 
-        <!--Card content-->
-        <div class="card-body">
-          <!--Title-->
-          <h5 class="card-title">{{product.productName}}</h5>
-        </div>
-        <!--Card footer-->
-        <div class="card-footer">
-          <span class="left">{{product.productPrice}} $</span>
-          <span class="right">
-            <a placement="top" mdbTooltip="Quick Look" container="body">
-              <i class="fa fa-eye"></i>
-            </a>
-            <a placement="top" mdbTooltip="Add to Wishlist" container="body">
-              <i class="fa fa-heart"></i>
-            </a>
-          </span>
-        </div>
+                <!--Card-->
+                <div class="card card-cascade wider">
 
+                  <!--Card image-->
+                  <div class="view overlay hm-white-slight">
+                    <img [src]="product.productImageUrl" class="img-fluid" alt="" width="360px" height="640px">
+                    <a>
+                      <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+                    </a>
+                  </div>
+                  <!--/.Card image-->
+
+                  <!--Card content-->
+                  <div class="card-body text-center no-padding">
+                    <!--Category & Title-->
+                    <a href="" class="text-muted">
+                      <h5>{{ product.productCategory }}</h5>
+                    </a>
+                    <h5 class="card-title">
+                      <strong>
+                        <a href="">{{ product.productName }}</a>
+                      </strong>
+                    </h5>
+
+                    <!--Description-->
+                    <p class="card-text">{{ product.productDescription }}
+                    </p>
+
+                    <!--Card footer-->
+                    <div class="card-footer">
+                      <span class="left">{{ product.productPrice }} $</span>
+                      <span class="right">
+                        <a placement="top" mdbTooltip="Quick Look" container="body">
+                          <i class="fa fa-eye"></i>
+                        </a>
+                        <a placement="top" mdbTooltip="Add to Wishlist" container="body">
+                          <i class="fa fa-heart"></i>
+                        </a>
+                      </span>
+                    </div>
+
+                  </div>
+                  <!--/.Card content-->
+
+                </div>
+                <!--/.Card-->
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Pagination -->
+        <div class="text-center">
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
+        </div>
       </div>
       <!--/.Card-->
     </div>
@@ -51,5 +93,5 @@
 <br>
 <br>
 <br>
-<!-- Modal -->
 <app-add-product></app-add-product>
+<ng2-toasty></ng2-toasty>

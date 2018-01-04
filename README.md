@@ -32,6 +32,19 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Service Workers
 * Pipes.. etc.
 
+
+#### Screenshots:
+
+##### Home Page shot 1:
+
+![Alt text](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/screenshots/home.PNG "Home Page")
+
+##### Products Page:
+
+![Alt text](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/screenshots/products.PNG "Home Page")
+
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.

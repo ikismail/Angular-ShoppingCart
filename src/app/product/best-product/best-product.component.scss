@@ -78,7 +78,11 @@
 .rating {
   padding: 0;
 }
-
+.card-text {
+  line-height: 20px;
+  height: 60px;
+  overflow: hidden;
+}
 .card .card-footer {
   background-color: transparent;
 }
