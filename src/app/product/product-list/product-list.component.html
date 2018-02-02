@@ -50,7 +50,8 @@
                     </a>
                     <h5 class="card-title">
                       <strong>
-                        <a href="">{{ product.productName }}</a>
+                        <a [routerLink]="['/products/product', product.productId]"
+                        routerLinkActive="router-link-active">{{ product.productName }}</a>
                       </strong>
                     </h5>
 

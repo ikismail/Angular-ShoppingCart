@@ -11,6 +11,7 @@ import { RouterModule } from "@angular/router";
 import { ProductService } from "./shared/product.service";
 import { AddProductComponent } from "./add-product/add-product.component";
 import { ToastyModule } from "ng2-toasty";
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -24,8 +25,9 @@ import { ToastyModule } from "ng2-toasty";
     ProductComponent,
     BestProductComponent,
     ProductListComponent,
-    AddProductComponent
-  ],
+    AddProductComponent,
+    ProductDetailComponent
+],
   exports: [BestProductComponent],
   providers: [ProductService]
 })
