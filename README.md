@@ -1,4 +1,4 @@
-# Angular2+ - ShoppingCart
+# Angular2+ - ShoppingCart [![HitCount](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart)
 
 Developing a **ShoppingCart (Ecommerce) Application using Angular2+**.
 
