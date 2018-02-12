@@ -23,8 +23,10 @@ export class ProductService {
     this.products.push(data);
   }
 
-  getProductById(key: string): any {
-    this.product = this.db.object("products/" + key);
+  getProductById(key: string) {
+    this.product = this.db.object("products/" + key) as AngularFireObject<
+      Product
+    >;
     return this.product;
   }
 
