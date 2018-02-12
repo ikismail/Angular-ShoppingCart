@@ -3,7 +3,7 @@ sudo: true
 dist: trusty
 
 node_js:
-   - “7”
+   - “node”
 
 branches:
    only:
