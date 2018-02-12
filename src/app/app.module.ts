@@ -14,7 +14,7 @@ import { LoaderSpinnerModule } from "./modules/loader-spinner/loader-spinner";
         IndexModule,
         ProductModule,
         LoaderSpinnerModule,
-        RouterModule.forRoot(AppRoutes, { enableTracing: true })
+        RouterModule.forRoot(AppRoutes)
     ],
     providers: [],
     bootstrap: [AppComponent],

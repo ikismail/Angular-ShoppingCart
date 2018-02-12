@@ -24,9 +24,9 @@ export class ProductService {
   }
 
   getProductById(key: string) {
-    this.product = this.db.object("products/" + key) as AngularFireObject<
-      Product
-    >;
+    console.log("key in service", key);
+    this.product = this.db.object("products/" + key);
+    console.log("product service", this.product);
     return this.product;
   }
 

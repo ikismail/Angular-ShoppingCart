@@ -10,7 +10,7 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class ProductDetailComponent implements OnInit, OnDestroy {
   private sub: any;
-  product: any;
+  product: Product = new Product();
 
   constructor(
     private route: ActivatedRoute,
@@ -27,7 +27,9 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   getProductDetail(id: string) {
     const x = this.productService.getProductById(id);
     x.snapshotChanges().subscribe(product => {
-      this.product = product.payload.toJSON();
+      const y = product.payload.toJSON() as Product;
+      y["$key"] = id;
+      this.product = y;
     });
   }
 

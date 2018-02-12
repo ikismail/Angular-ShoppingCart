@@ -11,12 +11,12 @@ import { LoaderSpinnerService } from "../../modules/loader-spinner/loader-spinne
 })
 export class ProductListComponent implements OnInit {
   productList: Product[];
-  page: number = 1;
+  page = 1;
   constructor(
     public authService: AuthServiceService,
     private productService: ProductService,
     private spinnerService: LoaderSpinnerService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getAllProducts();
@@ -31,6 +31,7 @@ export class ProductListComponent implements OnInit {
       product.forEach(element => {
         const y = element.payload.toJSON();
         y["$key"] = element.key;
+        console.log("product push", y);
         this.productList.push(y as Product);
       });
     });
