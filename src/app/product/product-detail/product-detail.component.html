@@ -8,28 +8,44 @@
         <div class="view hm-zoom z-depth-2" style="cursor: pointer">
           <img [src]="product.productImageUrl" [alt]="product.productName" width="100%" class="img-fluid rounded">
         </div>
+        <div class="z-depth-1" style="margin-top:15px">
+          <ul class="list-group">
+            <li class="list-group-item"> Product Price:
+              <span style="margin-left:15px; color:crimson">
+                <i class="fa fa-inr" aria-hidden="true"></i> {{product.productPrice}}</span>
+            </li>
+            <li class="list-group-item"> Product Seller:
+              <span style="margin-left:15px; color:darkblue">
+                <i class="fa fa-building" aria-hidden="true"></i> {{product.productSeller}}</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="product-detail z-depth-1">
-        <table class="table">
-          <thead>
-            <tr>
-              <th>Product Name</th>
-              <th>Product Description</th>
-              <th>Product </th>
-            </tr>
-          </thead>
+        <h5 class="product-head">Product Details</h5>
+        <table class="table" cellspacing="0" style="max-height: 28px">
           <tbody>
             <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
+              <th scope="row">Product Name</th>
+              <td>{{product.productName}}</td>
             </tr>
             <tr>
-              <td scope="row"></td>
-              <td></td>
-              <td></td>
+              <th scope="row">Product Description</th>
+              <td>{{product.productDescription}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Product Category</th>
+              <td>{{product.productCategory}}</td>
+            </tr>
+            <tr>
+              <th scope="row">No. of quantity available</th>
+              <td>{{product.productQuatity}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Product Added on</th>
+              <td>{{product.productAdded * 1000 | date}}</td>
             </tr>
           </tbody>
         </table>

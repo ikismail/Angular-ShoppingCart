@@ -1,3 +1,4 @@
+import { LoaderSpinnerService } from "./../../modules/loader-spinner/loader-spinner.service";
 import { Product } from "./../model/product";
 import { ProductService } from "./../shared/product.service";
 import { Component, OnInit, OnDestroy } from "@angular/core";
@@ -14,7 +15,8 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
 
   constructor(
     private route: ActivatedRoute,
-    private productService: ProductService
+    private productService: ProductService,
+    private spinnerService: LoaderSpinnerService
   ) {}
 
   ngOnInit() {
@@ -25,8 +27,10 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
   getProductDetail(id: string) {
+    this.spinnerService.show();
     const x = this.productService.getProductById(id);
     x.snapshotChanges().subscribe(product => {
+      this.spinnerService.hide();
       const y = product.payload.toJSON() as Product;
       y["$key"] = id;
       this.product = y;
