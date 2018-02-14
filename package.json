@@ -19,6 +19,7 @@
   },
   "private": true,
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.2",
     "@angular/animations": "^4.2.4",
     "@angular/cli": "1.4.9",
     "@angular/common": "^4.2.4",

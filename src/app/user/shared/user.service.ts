@@ -11,6 +11,11 @@ export class UserService {
   selectedUser: User = new User();
   users: AngularFireList<User>;
 
+  location = {
+    lat: null,
+    lon: null
+  };
+
   constructor(private db: AngularFireDatabase) {
     this.getUsers();
   }
@@ -21,6 +26,12 @@ export class UserService {
   }
 
   createUser(data: User) {
+    data.location = this.location;
     this.users.push(data);
+  }
+
+  setLocation(lat, lon) {
+    this.location.lat = lat;
+    this.location.lon = lon;
   }
 }

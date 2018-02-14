@@ -1,3 +1,4 @@
+import { UserService } from "./user/shared/user.service";
 import { Component, OnInit } from "@angular/core";
 declare var $: any;
 
@@ -8,8 +9,11 @@ declare var $: any;
 })
 export class AppComponent implements OnInit {
   title = "app";
+
+  constructor(private userService: UserService) {}
+
   ngOnInit() {
-    $(document).ready(function () {
+    $(document).ready(function() {
       $(".banner").owlCarousel({
         autoHeight: true,
         center: true,
@@ -22,5 +26,16 @@ export class AppComponent implements OnInit {
         autoplayHoverPause: true
       });
     });
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(this.setGeoLocation.bind(this));
+    }
+  }
+
+  setGeoLocation(position: any) {
+    this.userService.setLocation(
+      position["coords"].latitude,
+      position["coords"].longitude
+    );
   }
 }
