@@ -1,7 +1,8 @@
 # Angular2+ - ShoppingCart [![HitCount](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart)
 [![Build Status](https://travis-ci.org/ikismail/Angular4-ShoppingCart.svg?branch=master)](hhttps://travis-ci.org/ikismail/Angular4-ShoppingCart)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular4-ShoppingCart.svg)](https://github.com/ikismail/Angular4-ShoppingCart/issues)[![](https://img.shields.io/github/release/ikismail/Angular4-ShoppingCart.svg?style=flat-square)](https://github.com/ikismail/Angular4-ShoppingCart/releases)
+[![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular4-ShoppingCart.svg)](https://github.com/ikismail/Angular4-ShoppingCart/issues)
+[![](https://img.shields.io/github/release/ikismail/Angular4-ShoppingCart.svg?style=flat-square)](https://github.com/ikismail/Angular4-ShoppingCart/releases)
 
 Developing a **ShoppingCart (Ecommerce) Application using Angular2+**.
 

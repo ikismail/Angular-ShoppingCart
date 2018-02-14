@@ -19,14 +19,11 @@ export class ProductService {
   }
 
   createProduct(data: Product) {
-    console.log("Created Product", data);
     this.products.push(data);
   }
 
   getProductById(key: string) {
-    console.log("key in service", key);
     this.product = this.db.object("products/" + key);
-    console.log("product service", this.product);
     return this.product;
   }
 

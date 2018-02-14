@@ -32,7 +32,6 @@ export class AddProductComponent implements OnInit {
   ngOnInit() { }
 
   createProduct(productForm: NgForm) {
-    console.log("before product", productForm.value);
     const toastOptions: ToastOptions = {
       title: "Product Creation",
       msg:
@@ -52,8 +51,6 @@ export class AddProductComponent implements OnInit {
     productForm.value["favourite"] = false;
 
     const date = productForm.value["productAdded"];
-
-    console.log("after product", productForm.value);
 
     // console.log(moment.unix(date).format("MM/DD/YYYY hh:mm:ss"));
 

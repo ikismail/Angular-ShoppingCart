@@ -31,7 +31,6 @@ export class ProductListComponent implements OnInit {
       product.forEach(element => {
         const y = element.payload.toJSON();
         y["$key"] = element.key;
-        console.log("product push", y);
         this.productList.push(y as Product);
       });
     });
