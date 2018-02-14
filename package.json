@@ -21,9 +21,9 @@
   "dependencies": {
     "@angular/animations": "^4.2.4",
     "@angular/cli": "1.4.9",
-    "@angular/compiler-cli": "^4.2.4",
     "@angular/common": "^4.2.4",
     "@angular/compiler": "^4.2.4",
+    "@angular/compiler-cli": "^4.2.4",
     "@angular/core": "^4.2.4",
     "@angular/forms": "^4.2.4",
     "@angular/http": "^4.2.4",
@@ -44,12 +44,12 @@
     "ng2-toasty": "^4.0.3",
     "ngx-pagination": "^3.0.3",
     "owl.carousel": "^2.2.0",
-    "primeng": "^4.2.4",
+    "primeng": "^5.0.2",
     "rxjs": "^5.4.2",
     "shortid": "^2.2.8",
     "tether": "^1.4.1",
-    "zone.js": "^0.8.14",
-    "typescript": "~2.4.2"
+    "typescript": "~2.4.2",
+    "zone.js": "^0.8.14"
   },
   "devDependencies": {
     "@angular/cli": "1.4.9",

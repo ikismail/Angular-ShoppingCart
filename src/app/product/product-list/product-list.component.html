@@ -34,24 +34,27 @@
                 <div class="card card-cascade wider">
 
                   <!--Card image-->
-                  <div class="view overlay hm-white-slight">
-                    <img [src]="product.productImageUrl" class="img-fluid" alt="" width="360px" height="640px">
-                    <a>
-                      <div class="mask waves-effect waves-light" mdbRippleRadius></div>
-                    </a>
-                  </div>
+                  <a [routerLink]="['/products/product', product.$key]">
+
+                    <div class="view overlay hm-white-slight">
+                      <img [src]="product.productImageUrl" class="img-fluid" alt="" width="360px" height="640px">
+                      <a>
+                        <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+                      </a>
+                    </div>
+                  </a>
+
                   <!--/.Card image-->
 
                   <!--Card content-->
                   <div class="card-body text-center no-padding">
                     <!--Category & Title-->
-                    <a href="" class="text-muted">
+                    <a class="text-muted">
                       <h5>{{ product.productCategory }}</h5>
                     </a>
                     <h5 class="card-title">
                       <strong>
-                        <a [routerLink]="['/products/product', product.$key]"
-                        routerLinkActive="router-link-active">{{ product.productName }}</a>
+                        <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{ product.productName }}</a>
                       </strong>
                     </h5>
 
@@ -63,7 +66,7 @@
                     <div class="card-footer">
                       <span class="left">{{ product.productPrice }} $</span>
                       <span class="right">
-                        <a placement="top" mdbTooltip="Quick Look" container="body">
+                        <a placement="top" mdbTooltip="Quick Look" container="body" [routerLink]="['/products/product', product.$key]">
                           <i class="fa fa-eye"></i>
                         </a>
                         <a placement="top" mdbTooltip="Add to Wishlist" container="body">
