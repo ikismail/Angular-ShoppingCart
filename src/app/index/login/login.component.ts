@@ -42,7 +42,6 @@ export class LoginComponent implements OnInit {
   // }
 
   addUser(userForm: NgForm) {
-    console.log("User", userForm.value);
     userForm.value["isAdmin"] = false;
     this.userService.createUser(userForm.value);
     const toastOption: ToastOptions = {
@@ -59,7 +58,6 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.emailId, this.password);
     if (this.authService.login(this.emailId, this.password) === true) {
       const toastOption: ToastOptions = {
         title: "Authentication Success",
@@ -74,7 +72,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate([returnUrl || "/"]);
       }, 1500);
     } else {
-      console.log("login failed");
       const toastOption: ToastOptions = {
         title: "Authentication Failed",
         msg: "Invalid Credentials, Please Check your credentials",

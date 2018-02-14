@@ -18,7 +18,6 @@ export class AuthServiceService {
   login(email: string, password: string): boolean {
     let status = false;
     this.usersList.forEach(user => {
-      console.log("user loop", user.emailId);
       if (email === user.emailId && password === user.password) {
         const loggedInUser = user;
         const objStr = JSON.stringify(loggedInUser);
@@ -82,9 +81,7 @@ export class AuthServiceService {
       user.forEach(element => {
         const y = element.payload.toJSON();
         y["$key"] = element.key;
-        console.log("userslist", y);
         this.usersList.push(y as User);
-        console.log("userVar", this.usersList);
       });
     });
   }

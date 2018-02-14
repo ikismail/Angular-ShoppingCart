@@ -18,6 +18,8 @@ import { FireBaseConfig } from "../../environments/firebaseConfig";
 import { ToastyModule } from "ng2-toasty";
 import { UserModule } from "../user/user.module";
 import { FormsModule } from "@angular/forms";
+import { NoAccessComponent } from './no-access/no-access.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   imports: [
@@ -35,8 +37,10 @@ import { FormsModule } from "@angular/forms";
     IndexComponent,
     NavbarComponent,
     LoginComponent,
-    FooterComponent
-  ],
+    FooterComponent,
+    NoAccessComponent,
+    PageNotFoundComponent
+],
   schemas: [NO_ERRORS_SCHEMA],
   exports: [NavbarComponent, FooterComponent],
   providers: [AuthServiceService, AuthGuard, AdminGaurd]
