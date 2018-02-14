@@ -6,9 +6,9 @@ export class Product {
   productPrice: number;
   productDescription: string;
   productImageUrl: string;
-  productAdded: Date;
-  quantity: number;
+  productAdded: number;
+  productQuatity: number;
   ratings: number;
   favourite: boolean;
-  seller: string;
+  productSeller: string;
 }

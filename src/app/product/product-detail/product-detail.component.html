@@ -5,11 +5,9 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="product-image">
-        <a (click)="op1.toggle($event)">
-          <div class="view hm-zoom z-depth-2" style="cursor: pointer">
-            <img [src]="product.productImageUrl" [alt]="product.productName" width="100%" class="img-fluid rounded">
-          </div>
-        </a>
+        <div class="view hm-zoom z-depth-2" style="cursor: pointer">
+          <img [src]="product.productImageUrl" [alt]="product.productName" width="100%" class="img-fluid rounded">
+        </div>
         <div class="z-depth-1" style="margin-top:15px">
           <ul class="list-group">
             <li class="list-group-item"> Product Price:
