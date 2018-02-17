@@ -8,7 +8,6 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./user-locate.component.scss"]
 })
 export class UserLocateComponent implements OnInit {
-  // google maps zoom level
 
   zoom = 2;
   scrollWheel = true;
