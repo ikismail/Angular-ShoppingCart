@@ -18,7 +18,6 @@ export class UserLocateComponent implements OnInit {
   infoContent: string;
 
   users: User[];
-  // Data
   viewData = false;
 
   constructor(private userService: UserService) {}
