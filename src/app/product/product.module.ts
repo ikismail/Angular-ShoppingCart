@@ -1,17 +1,25 @@
-import { NgxPaginationModule } from "ngx-pagination";
-import { OwlModule } from "ng2-owl-carousel";
+// Core Dependencies
 import { FormsModule } from "@angular/forms";
-import { ProductRoutes } from "./product.routing";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
+import { RouterModule } from "@angular/router";
+
+// Third Party Dependencies
+import { NgxPaginationModule } from "ngx-pagination";
+import { OwlModule } from "ng2-owl-carousel";
+import { ToastyModule } from "ng2-toasty";
+
+// configuration and services
+import { ProductRoutes } from "./product.routing";
+import { ProductService } from "./shared/product.service";
+
+// Components
 import { ProductComponent } from "./product.component";
 import { BestProductComponent } from "./best-product/best-product.component";
 import { ProductListComponent } from "./product-list/product-list.component";
-import { RouterModule } from "@angular/router";
-import { ProductService } from "./shared/product.service";
 import { AddProductComponent } from "./add-product/add-product.component";
-import { ToastyModule } from "ng2-toasty";
 import { ProductDetailComponent } from "./product-detail/product-detail.component";
+
 @NgModule({
   imports: [
     CommonModule,
