@@ -1,3 +1,4 @@
+import { AuthServiceService } from "./../index/shared/auth.service";
 import { Component, OnInit } from "@angular/core";
 
 @Component({
@@ -6,10 +7,7 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./user.component.scss"]
 })
 export class UserComponent implements OnInit {
+  constructor(public authService: AuthServiceService) {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
