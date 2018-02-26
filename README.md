@@ -1,4 +1,5 @@
-# Angular2+ - ShoppingCart [![HitCount](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart)
+# Angular2+ - ShoppingCart
+ <!-- [![HitCount](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart) -->
 [![Build Status](https://travis-ci.org/ikismail/Angular4-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular4-ShoppingCart)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular4-ShoppingCart.svg)](https://github.com/ikismail/Angular4-ShoppingCart/issues)
@@ -51,6 +52,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 
+## Installation
+
+1. Angular CLI 
+    * [Download Angular CLI](https://cli.angular.io/)
+2. NodeJs
+    * [Download Nodejs](https://nodejs.org/en/download/)
+3. Package Manager - NPM / Yarn
+4. Clone the repository and run `npm install` if you use **npm** as package manager or `yarn install` if you use **yarn** as package manager.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -77,4 +87,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## License
 
-- [MIT license](https://github.com/aaradhanas/showdown-editor/blob/master/LICENSE)
+- [MIT license](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/LICENSE)
