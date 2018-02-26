@@ -27,9 +27,15 @@ export class AppComponent implements OnInit {
       });
     });
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.setGeoLocation.bind(this));
-    }
+    // if (navigator.geolocation) {
+    //   navigator.geolocation.getCurrentPosition(this.setGeoLocation.bind(this));
+    // }
+
+    const x = this.userService.getGeoLocation();
+
+    x.subscribe(data => {
+      console.log("data", data);
+    });
   }
 
   setGeoLocation(position: any) {

@@ -2,6 +2,7 @@ import { FormsModule, FormBuilder } from "@angular/forms";
 import { RouterModule } from "@angular/router";
 import { UserRoutes } from "./user.routing";
 import { UserService } from "./shared/user.service";
+import { HttpClientModule } from "@angular/common/http";
 
 import {
   NgModule,
@@ -17,6 +18,7 @@ import { AgmCoreModule } from "@agm/core";
   imports: [
     CommonModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forChild(UserRoutes),
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyDMbxW3MlwUP2vrAZVJyu7pYqZa1LthvTE"
