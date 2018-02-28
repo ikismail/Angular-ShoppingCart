@@ -1,5 +1,7 @@
 # Angular2+ - ShoppingCart
+
  [![HitCount](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart)
+
 [![Build Status](https://travis-ci.org/ikismail/Angular4-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular4-ShoppingCart)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular4-ShoppingCart.svg)](https://github.com/ikismail/Angular4-ShoppingCart/issues)
@@ -13,14 +15,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Functionalities
 
-1. User Registration
-2. CRUD Operations like
+1.  User Registration
+2.  CRUD Operations like
 
 * User can add product to his cart.
 * Admin can add product to the product list
 * Admin can edit/delete the product.
 
-3. Security
+3.  Security
 
 * Implmented Authentication and Authorization
 
@@ -39,7 +41,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Service Workers
 * Pipes.. etc.
 
-
 #### Screenshots:
 
 ##### Home Page shot 1:
@@ -50,16 +51,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Alt text](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/screenshots/products.PNG "Home Page")
 
-
-
 ## Installation
 
-1. Angular CLI 
+1.  Angular CLI
     * [Download Angular CLI](https://cli.angular.io/)
-2. NodeJs
+2.  NodeJs
     * [Download Nodejs](https://nodejs.org/en/download/)
-3. Package Manager - NPM / Yarn
-4. Clone the repository and run `npm install` if you use **npm** as package manager or `yarn install` if you use **yarn** as package manager.
+3.  Package Manager - NPM / Yarn
+4.  Clone the repository and run `npm install` if you use **npm** as package manager or `yarn install` if you use **yarn** as package manager.
 
 ## Development server
 
@@ -85,6 +84,14 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+## Contribution:
+
+* Contibutors are most welcome.
+
+## Somethings wrong!!
+
+* If you find that something's wrong with this package, you can let me know by raising an issue on the GitHub issue tracker
+
 ## License
 
-- [MIT license](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/LICENSE)
+* [MIT license](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/LICENSE)
