@@ -1,3 +1,4 @@
+import { FilterByBrandPipe } from "./shared/filterByBrand.pipe";
 // Core Dependencies
 import { FormsModule } from "@angular/forms";
 import { NgModule } from "@angular/core";
@@ -34,7 +35,8 @@ import { ProductDetailComponent } from "./product-detail/product-detail.componen
     BestProductComponent,
     ProductListComponent,
     AddProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FilterByBrandPipe
   ],
   exports: [BestProductComponent],
   providers: [ProductService]

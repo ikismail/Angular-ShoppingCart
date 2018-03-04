@@ -1,3 +1,4 @@
+import { FilterByBrandPipe } from "./../shared/filterByBrand.pipe";
 import { AuthServiceService } from "./../../index/shared/auth.service";
 import { Product } from "./../model/product";
 import { ProductService } from "./../shared/product.service";
@@ -11,6 +12,11 @@ import { LoaderSpinnerService } from "../../modules/loader-spinner/loader-spinne
 })
 export class ProductListComponent implements OnInit {
   productList: Product[];
+
+  brands = ["All", "Google", "Apple", "Samsung", "OnePlus", "Lenovo", "Nokia"];
+
+  selectedBrand: "All";
+
   page = 1;
   constructor(
     public authService: AuthServiceService,

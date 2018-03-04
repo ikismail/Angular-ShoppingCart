@@ -11,12 +11,17 @@
   </div>
   <div class="row">
     <div class="col-md-3">
+
+      <div class="form-group">
+        <label for="brand_select">By Brands:</label>
+        <select class="form-control" name="" id="brand_select" [(ngModel)]="selectedBrand">
+          <option *ngFor="let brand of brands" [ngValue]="brand">{{brand}}</option>
+        </select>
+      </div>
       <ul class="list-group">
         <li class="list-group-item">Cras justo odio</li>
         <li class="list-group-item">Dapibus ac facilisis in</li>
         <li class="list-group-item">Morbi leo risus</li>
-        <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
       </ul>
     </div>
     <div class="col-md-9">
@@ -24,7 +29,7 @@
       <div class="container">
         <div class="row">
           <!-- List of Products -->
-          <div class="col-sm-4" *ngFor="let product of productList | paginate: { itemsPerPage: 6, currentPage: page }">
+          <div class="col-sm-4" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 6, currentPage: page }">
             <div class="item">
               <div class=" mb-r">
 
