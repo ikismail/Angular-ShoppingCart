@@ -1,5 +1,5 @@
 import { FilterByBrandPipe } from "./../shared/filterByBrand.pipe";
-import { AuthServiceService } from "./../../index/shared/auth.service";
+import { AuthService } from "./../../index/shared/auth.service";
 import { Product } from "./../model/product";
 import { ProductService } from "./../shared/product.service";
 import { Component, OnInit } from "@angular/core";
@@ -19,10 +19,10 @@ export class ProductListComponent implements OnInit {
 
   page = 1;
   constructor(
-    public authService: AuthServiceService,
+    public authService: AuthService,
     private productService: ProductService,
     private spinnerService: LoaderSpinnerService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getAllProducts();
@@ -42,8 +42,11 @@ export class ProductListComponent implements OnInit {
     });
   }
 
-
   removeProduct(key: string) {
     this.productService.deleteProduct(key);
+  }
+
+  addFavourite(product: Product) {
+    this.productService.addFavouriteProduct(product);
   }
 }
