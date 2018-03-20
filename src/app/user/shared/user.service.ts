@@ -30,6 +30,10 @@ export class UserService {
     this.users.push(data);
   }
 
+  updateUser(user: User) {
+    this.users.update(user.$key, user);
+  }
+
   setLocation(lat, lon) {
     this.location.lat = lat;
     this.location.lon = lon;

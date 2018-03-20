@@ -9,7 +9,7 @@
           <a [routerLink]="['/users', {outlets: {'profileOutlet': ['']}}]">My Profile</a>
         </li>
         <li class="list-group-item hoverable">
-          <a [routerLink]="['/users', {outlets: {'profileOutlet': ['users-task']}}]">Favourite Product</a>
+          <a [routerLink]="['/users', {outlets: {'profileOutlet': ['favourite-products']}}]">Favourite Product</a>
         </li>
         <li class="list-group-item hoverable" *ngIf="authService.isAdmin()">
           <a [routerLink]="['/users', {outlets: {'profileOutlet': ['locate-users']}}]">Locate Users</a>

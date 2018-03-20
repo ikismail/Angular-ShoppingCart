@@ -20,6 +20,7 @@ import { UserService } from "./shared/user.service";
 import { UserComponent } from "./user.component";
 import { UserAccountComponent } from "./user-account/user-account.component";
 import { UserLocateComponent } from "./user-locate/user-locate.component";
+import { UserFavouriteProductsComponent } from "./user-favourite-products/user-favourite-products.component";
 
 @NgModule({
   imports: [
@@ -31,7 +32,12 @@ import { UserLocateComponent } from "./user-locate/user-locate.component";
       apiKey: "AIzaSyDMbxW3MlwUP2vrAZVJyu7pYqZa1LthvTE"
     })
   ],
-  declarations: [UserComponent, UserAccountComponent, UserLocateComponent],
+  declarations: [
+    UserComponent,
+    UserAccountComponent,
+    UserLocateComponent,
+    UserFavouriteProductsComponent
+  ],
   providers: [UserService, FormBuilder],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
