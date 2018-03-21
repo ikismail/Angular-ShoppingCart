@@ -7,7 +7,7 @@ import {
   ToastData,
   ToastyConfig
 } from "ng2-toasty";
-import { AuthServiceService } from "../shared/auth.service";
+import { AuthService } from "../shared/auth.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { User } from "../../user/shared/user";
 declare var $: any;
@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private authService: AuthServiceService,
+    private authService: AuthService,
     private toastyService: ToastyService,
     private router: Router,
     private route: ActivatedRoute,

@@ -1,4 +1,4 @@
-import { AuthServiceService } from "./../shared/auth.service";
+import { AuthService } from "./../shared/auth.service";
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 declare var $: any;
@@ -9,7 +9,7 @@ declare var $: any;
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
-  constructor(public authService: AuthServiceService, private router: Router) {}
+  constructor(public authService: AuthService, private router: Router) {}
 
   ngOnInit() {}
   logout() {
