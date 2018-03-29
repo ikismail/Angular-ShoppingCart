@@ -14,7 +14,7 @@
     "deploy": "git push origin master && git push heroku master"
   },
   "engines": {
-    "node": "8.9.4",
+    "node": "8.11.0",
     "npm": "5.6.0"
   },
   "private": true,
@@ -44,6 +44,7 @@
     "ng2-owl-carousel": "^0.1.15",
     "ng2-toasty": "^4.0.3",
     "ngx-pagination": "^3.0.3",
+    "node-sass": "^4.8.3",
     "owl.carousel": "^2.2.0",
     "primeng": "^5.0.2",
     "rxjs": "^5.4.2",
