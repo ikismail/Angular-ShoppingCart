@@ -75,6 +75,9 @@
                         <a placement="top" mdbTooltip="Add to Wishlist" container="body">
                           <i class="fa fa-heart"></i>
                         </a>
+                        <a placement="top" mdbTooltip="Delete" container="body" *ngIf="authService.isAdmin()" (click)="removeProduct(product.$key)">
+                          <i class="fa fa-trash"></i>
+                        </a>
                       </span>
                     </div>
 

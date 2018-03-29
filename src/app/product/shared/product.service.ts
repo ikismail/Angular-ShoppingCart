@@ -31,7 +31,7 @@ export class ProductService {
     this.products.update(data.$key, data);
   }
 
-  deleteTask(key: string) {
+  deleteProduct(key: string) {
     this.products.remove(key);
   }
 }
