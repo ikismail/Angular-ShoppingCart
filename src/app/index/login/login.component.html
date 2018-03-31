@@ -7,8 +7,8 @@
 
       <div class="md-form">
         <i class="fa fa-envelope prefix grey-text"></i>
-        <input type="text" class="form-control" mdbActive id="login-email" name="emailId" [(ngModel)]="emailId">
-        <label for="login-email">Your email</label>
+        <input mdbActive type="email" id="loginEmailId" class="form-control" name="emailId" [(ngModel)]="emailId" mdbInputValidate [email]="true">
+        <label for="emailId">Your email</label>
       </div>
 
       <div class="md-form">
@@ -44,7 +44,8 @@
           <div class="modal-body">
             <div class="md-form form-sm">
               <i class="fa fa-envelope prefix"></i>
-              <input mdbActive type="email" id="emailId" class="form-control" name="emailId" [(ngModel)]="createUser.emailId" mdbInputValidate>
+              <input mdbActive type="email" id="emailId" class="form-control" name="emailId" [(ngModel)]="createUser.emailId" mdbInputValidate
+                [email]="true">
               <label for="emailId">Your email</label>
             </div>
             <div class="md-form form-sm">
