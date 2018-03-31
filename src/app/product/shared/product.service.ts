@@ -11,7 +11,7 @@ export class ProductService {
   products: AngularFireList<Product>;
   product: AngularFireObject<Product>;
 
-  constructor(private db: AngularFireDatabase) {}
+  constructor(private db: AngularFireDatabase) { }
 
   getProducts() {
     this.products = this.db.list("products");
@@ -31,7 +31,7 @@ export class ProductService {
     this.products.update(data.$key, data);
   }
 
-  deleteTask(key: string) {
+  deleteProduct(key: string) {
     this.products.remove(key);
   }
 }

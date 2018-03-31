@@ -22,7 +22,7 @@ export class ProductListComponent implements OnInit {
     public authService: AuthServiceService,
     private productService: ProductService,
     private spinnerService: LoaderSpinnerService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getAllProducts();
@@ -40,5 +40,10 @@ export class ProductListComponent implements OnInit {
         this.productList.push(y as Product);
       });
     });
+  }
+
+
+  removeProduct(key: string) {
+    this.productService.deleteProduct(key);
   }
 }
