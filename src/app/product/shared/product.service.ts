@@ -8,6 +8,7 @@ import { Product } from "../model/product";
 import { AuthService } from "../../index/shared/auth.service";
 import { UserService } from "../../user/shared/user.service";
 import { query } from "@angular/core/src/animation/dsl";
+import { ToastOptions, ToastyService, ToastyConfig } from "ng2-toasty";
 
 @Injectable()
 export class ProductService {
@@ -20,8 +21,14 @@ export class ProductService {
   constructor(
     private db: AngularFireDatabase,
     private authService: AuthService,
-    private userService: UserService
+    private userService: UserService,
+    private toastyService: ToastyService,
+    private toastyConfig: ToastyConfig
   ) {
+    // Toaster Config
+    this.toastyConfig.position = "top-right";
+    this.toastyConfig.theme = "material";
+
     const a = [];
     sessionStorage.setItem("avf_item", JSON.stringify(a));
   }
@@ -67,7 +74,18 @@ export class ProductService {
 
       a.push(data);
 
-      sessionStorage.setItem("avf_item", JSON.stringify(a));
+      const toastOption: ToastOptions = {
+        title: "Adding Product to Local",
+        msg:
+          "Please add favourite products after signing in to update to server",
+        showClose: true,
+        timeout: 5000,
+        theme: "material"
+      };
+      this.toastyService.wait(toastOption);
+      setTimeout(() => {
+        sessionStorage.setItem("avf_item", JSON.stringify(a));
+      }, 1500);
     }
     if (this.authService.isLoggedIn() === true) {
       const user = this.authService.getLoggedInUser();
@@ -76,11 +94,21 @@ export class ProductService {
 
       delete data.$key;
 
-      this.favouriteProducts.push({
-        product: data,
-        productId: productKey,
-        userId: user.$key
-      });
+      const toastOption: ToastOptions = {
+        title: "Favourite Product",
+        msg: "Adding Product as favourite",
+        showClose: true,
+        timeout: 5000,
+        theme: "material"
+      };
+      this.toastyService.wait(toastOption);
+      setTimeout(() => {
+        this.favouriteProducts.push({
+          product: data,
+          productId: productKey,
+          userId: user.$key
+        });
+      }, 1500);
     }
   }
 

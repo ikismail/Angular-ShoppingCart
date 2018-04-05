@@ -9,11 +9,14 @@ import { ProductService } from "../../product/shared/product.service";
 })
 export class LocalFavouritePageComponent implements OnInit {
   favoruiteProducts: Product[];
+  showDataNotFound = true;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
     this.favoruiteProducts = this.productService.getLocalFavouriteProducts();
+
+    console.log("length", this.favoruiteProducts.length);
   }
   removeLocalFavourite(key: string) {
     this.productService.removeLocalFavourite(key);
