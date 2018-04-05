@@ -1,19 +1,18 @@
 /* tslint:disable:no-unused-variable */
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
+import { By } from "@angular/platform-browser";
+import { DebugElement } from "@angular/core";
 
-import { LocalFavouritePageComponent } from './local-favourite-page.component';
+import { LocalFavouritePageComponent } from "./local-favourite-page.component";
 
-describe('LocalFavouritePageComponent', () => {
+describe("LocalFavouritePageComponent", () => {
   let component: LocalFavouritePageComponent;
   let fixture: ComponentFixture<LocalFavouritePageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ LocalFavouritePageComponent ]
-    })
-    .compileComponents();
+      declarations: [LocalFavouritePageComponent]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,7 +21,7 @@ describe('LocalFavouritePageComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

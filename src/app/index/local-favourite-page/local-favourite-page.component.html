@@ -10,7 +10,7 @@
           <div class="card card-cascade wider">
 
             <!--Card image-->
-            <a [routerLink]="['/products/product', product.productId]">
+            <a [routerLink]="['/products/product', product.$key ]">
 
               <div class="view overlay hm-white-slight">
                 <img [src]="product.productImageUrl" class="img-fluid" alt="" width="360px" height="640px">
@@ -30,7 +30,7 @@
               </a>
               <h5 class="card-title">
                 <strong>
-                  <a [routerLink]="['/products/product', product.productId]">{{ product.productName }}</a>
+                  <a [routerLink]="['/products/product', product.$key]">{{ product.productName }}</a>
                 </strong>
               </h5>
 
@@ -42,7 +42,7 @@
               <div class="card-footer">
                 <span class="left">{{ product.productPrice }} $</span>
                 <span class="right">
-                  <a placement="top" mdbTooltip="Quick Look" container="body" [routerLink]="['/products/product', product.productId]">
+                  <a placement="top" mdbTooltip="Quick Look" container="body" [routerLink]="['/products/product', product.$key]">
                     <i class="fa fa-eye"></i>
                   </a>
                   <a placement="top" mdbTooltip="Add to Wishlist" container="body">

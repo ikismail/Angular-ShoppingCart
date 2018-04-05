@@ -11,13 +11,15 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class ProductDetailComponent implements OnInit, OnDestroy {
   private sub: any;
-  product: Product = new Product();
+  product: Product;
 
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
     private spinnerService: LoaderSpinnerService
-  ) {}
+  ) {
+    this.product = new Product();
+  }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {
@@ -32,6 +34,9 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
     x.snapshotChanges().subscribe(product => {
       this.spinnerService.hide();
       const y = product.payload.toJSON() as Product;
+
+      console.log("getProduct id: " + id, y);
+
       y["$key"] = id;
       this.product = y;
     });

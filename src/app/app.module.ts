@@ -23,7 +23,7 @@ import { AppComponent } from "./app.component";
     ProductModule,
     UserModule,
     LoaderSpinnerModule,
-    RouterModule.forRoot(AppRoutes, { enableTracing: true })
+    RouterModule.forRoot(AppRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent],

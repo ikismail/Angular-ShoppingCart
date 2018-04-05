@@ -1,6 +1,7 @@
 import { AuthService } from "./../shared/auth.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, EventEmitter, Output } from "@angular/core";
 import { Router } from "@angular/router";
+import { ProductService } from "../../product/shared/product.service";
 declare var $: any;
 
 @Component({
@@ -9,11 +10,25 @@ declare var $: any;
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
-  constructor(public authService: AuthService, private router: Router) {}
+  favProdsCount = 0;
+  cartProductCount = 0;
 
-  ngOnInit() {}
+  @Output() myEvent = new EventEmitter();
+  constructor(
+    public authService: AuthService,
+    private router: Router,
+    private productService: ProductService
+  ) {}
+
+  ngOnInit() {
+    this.calculateFavProdCounts();
+  }
   logout() {
     this.authService.logout();
     this.router.navigate(["/"]);
+  }
+
+  public calculateFavProdCounts() {
+    this.favProdsCount = this.productService.getLocalFavouriteProducts().length;
   }
 }

@@ -17,7 +17,7 @@ export const IndexRoutes: Routes = [
         component: LoginComponent
       },
       {
-        path: "favourite-products",
+        path: "favourites",
         component: LocalFavouritePageComponent
       }
     ]
