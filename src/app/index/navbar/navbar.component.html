@@ -20,10 +20,6 @@
         <a class="nav-link waves-light" mdbRippleRadius [routerLink]="[ '/products/all-products' ]">Our Products</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/index/favourite-products']">
-          My Favourite Products</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link waves-light" mdbRippleRadius>Pricing</a>
       </li>
 
@@ -31,6 +27,20 @@
     <!-- Links -->
 
     <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:;;" [routerLink]="['/index/favourites']">
+          <i class="fa fa-heart">
+            <span class="mt-2">{{favProdsCount}}</span>
+          </i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:;;">
+          <i class="fa fa-shopping-cart">
+            <span class="mt-2">{{cartProductCount}}</span>
+          </i>
+        </a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="javascript:;;">
           <i class="fa fa-envelope"></i> Contact
