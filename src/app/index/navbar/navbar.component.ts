@@ -21,14 +21,45 @@ export class NavbarComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.calculateFavProdCounts();
+    if (this.authService.isLoggedIn()) {
+      this.calculateFavProductCounts();
+      this.calculateCartProductCounts();
+    } else {
+      this.calculateLocalFavProdCounts();
+      this.calculateLocalCartProdCounts();
+    }
   }
   logout() {
     this.authService.logout();
     this.router.navigate(["/"]);
+    location.reload();
   }
 
-  public calculateFavProdCounts() {
+  public calculateLocalFavProdCounts() {
     this.favProdsCount = this.productService.getLocalFavouriteProducts().length;
+  }
+
+  public calculateFavProductCounts() {
+    const x = this.productService
+      .getUsersFavouriteProduct()
+      .snapshotChanges()
+      .subscribe(data => {
+        this.favProdsCount = data.length;
+      });
+  }
+
+  // Cart Functions
+
+  public calculateLocalCartProdCounts() {
+    this.cartProductCount = this.productService.getLocalCartProducts().length;
+  }
+
+  public calculateCartProductCounts() {
+    const x = this.productService
+      .getUsersCartProducts()
+      .snapshotChanges()
+      .subscribe(data => {
+        this.cartProductCount = data.length;
+      });
   }
 }

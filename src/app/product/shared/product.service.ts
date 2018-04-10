@@ -110,8 +110,6 @@ export class ProductService {
     }
   }
 
-
-
   getLocalFavouriteProducts(): Product[] {
     const products: Product[] =
       JSON.parse(localStorage.getItem("avf_item")) || [];
@@ -119,12 +117,9 @@ export class ProductService {
     return products;
   }
 
-
-
   removeFavourite(key: string) {
     this.favouriteProducts.remove(key);
   }
-
 
   removeLocalFavourite(key: string) {}
 
@@ -185,7 +180,6 @@ export class ProductService {
     }
   }
 
-
   removeCart(key: string) {
     this.cartProducts.remove(key);
   }
@@ -196,7 +190,6 @@ export class ProductService {
 
     return products;
   }
-
 }
 
 export class FavouriteProduct {

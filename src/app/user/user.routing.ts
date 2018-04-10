@@ -18,12 +18,11 @@ export const UserRoutes: Routes = [
         path: "locate-users",
         component: UserLocateComponent,
         outlet: "profileOutlet"
-      },
-      {
-        path: "favourite-products",
-        component: UserFavouriteProductsComponent,
-        outlet: "profileOutlet"
       }
     ]
+  },
+  {
+    path: "users/favourite-products",
+    component: UserFavouriteProductsComponent
   }
 ];
