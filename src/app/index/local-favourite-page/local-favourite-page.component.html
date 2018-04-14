@@ -45,10 +45,7 @@
                   <a placement="top" mdbTooltip="Quick Look" container="body" [routerLink]="['/products/product', product.$key]">
                     <i class="fa fa-eye"></i>
                   </a>
-                  <a placement="top" mdbTooltip="Add to Wishlist" container="body">
-                    <i class="fa fa-heart" style="color: red"></i>
-                  </a>
-                  <a placement="top" mdbTooltip="Remove Product" container="body" (click)="removeLocalFavourite(product.productId)">
+                  <a placement="top" mdbTooltip="Remove Product" container="body" (click)="removeLocalFavourite(product)">
                     <i class="fa fa-trash"></i>
                   </a>
                 </span>

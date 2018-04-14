@@ -10,24 +10,15 @@ declare var $: any;
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
-  favProdsCount = 0;
-  cartProductCount = 0;
 
-  @Output() myEvent = new EventEmitter();
   constructor(
     public authService: AuthService,
     private router: Router,
-    private productService: ProductService
+    public productService: ProductService
   ) {}
 
   ngOnInit() {
-    if (this.authService.isLoggedIn()) {
-      this.calculateFavProductCounts();
-      this.calculateCartProductCounts();
-    } else {
-      this.calculateLocalFavProdCounts();
-      this.calculateLocalCartProdCounts();
-    }
+   
   }
   logout() {
     this.authService.logout();
@@ -35,31 +26,7 @@ export class NavbarComponent implements OnInit {
     location.reload();
   }
 
-  public calculateLocalFavProdCounts() {
-    this.favProdsCount = this.productService.getLocalFavouriteProducts().length;
-  }
+  
 
-  public calculateFavProductCounts() {
-    const x = this.productService
-      .getUsersFavouriteProduct()
-      .snapshotChanges()
-      .subscribe(data => {
-        this.favProdsCount = data.length;
-      });
-  }
 
-  // Cart Functions
-
-  public calculateLocalCartProdCounts() {
-    this.cartProductCount = this.productService.getLocalCartProducts().length;
-  }
-
-  public calculateCartProductCounts() {
-    const x = this.productService
-      .getUsersCartProducts()
-      .snapshotChanges()
-      .subscribe(data => {
-        this.cartProductCount = data.length;
-      });
-  }
 }

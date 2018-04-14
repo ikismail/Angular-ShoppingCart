@@ -14,9 +14,19 @@ export class LocalFavouritePageComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.favoruiteProducts = this.productService.getLocalFavouriteProducts();
+    this.getFavouriteProduct();
   }
-  removeLocalFavourite(key: string) {
-    this.productService.removeLocalFavourite(key);
+  removeLocalFavourite(product: Product) {
+
+    console.log("removing product: ", product);
+    this.productService.removeLocalFavourite(product);
+
+    this.getFavouriteProduct();
+  }
+
+
+  getFavouriteProduct(){
+    this.favoruiteProducts = this.productService.getLocalFavouriteProducts();
+
   }
 }
