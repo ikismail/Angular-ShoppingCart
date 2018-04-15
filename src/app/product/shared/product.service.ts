@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, EventEmitter, Output } from "@angular/core";
 import {
   AngularFireDatabase,
   AngularFireList,
@@ -9,6 +9,7 @@ import { AuthService } from "../../index/shared/auth.service";
 import { UserService } from "../../user/shared/user.service";
 import { query } from "@angular/core/src/animation/dsl";
 import { ToastOptions, ToastyService, ToastyConfig } from "ng2-toasty";
+import { Observable } from "rxjs/Rx";
 
 @Injectable()
 export class ProductService {
@@ -18,6 +19,10 @@ export class ProductService {
   // favouriteProducts
   favouriteProducts: AngularFireList<FavouriteProduct>;
   cartProducts: AngularFireList<FavouriteProduct>;
+
+  // NavbarCounts
+  navbarCartCount: number = 0;
+  navbarFavProdCount: number = 0;
 
   constructor(
     private db: AngularFireDatabase,
@@ -29,6 +34,14 @@ export class ProductService {
     // Toaster Config
     this.toastyConfig.position = "top-right";
     this.toastyConfig.theme = "material";
+
+    if (this.authService.isLoggedIn()) {
+      this.calculateFavProductCounts();
+      this.calculateCartProductCounts();
+    } else {
+      this.calculateLocalFavProdCounts();
+      this.calculateLocalCartProdCounts();
+    }
   }
 
   getProducts() {
@@ -65,24 +78,32 @@ export class ProductService {
   }
 
   addFavouriteProduct(data: Product): void {
+    // Toast Product Already exists
+    const toastAlreadyExists: ToastOptions = {
+      title: "Product Already Added",
+      msg: "You have already added this product to favourite list",
+      showClose: true,
+      timeout: 5000,
+      theme: "material"
+    };
+
+    // Toaster Adding
+    const toastAdd: ToastOptions = {
+      title: "Adding Product to Local",
+      msg: "Adding Product as Favourite",
+      showClose: true,
+      timeout: 5000,
+      theme: "material"
+    };
+
     if (this.authService.isLoggedIn() === false) {
       let a: Product[];
-
       a = JSON.parse(localStorage.getItem("avf_item")) || [];
-
       a.push(data);
-
-      const toastOption: ToastOptions = {
-        title: "Adding Product to Local",
-        msg:
-          "Please add favourite products after signing in to update to server",
-        showClose: true,
-        timeout: 5000,
-        theme: "material"
-      };
-      this.toastyService.wait(toastOption);
+      this.toastyService.wait(toastAdd);
       setTimeout(() => {
         localStorage.setItem("avf_item", JSON.stringify(a));
+        this.calculateLocalFavProdCounts();
       }, 1500);
     }
     if (this.authService.isLoggedIn() === true) {
@@ -92,20 +113,15 @@ export class ProductService {
 
       delete data.$key;
 
-      const toastOption: ToastOptions = {
-        title: "Favourite Product",
-        msg: "Adding Product as favourite",
-        showClose: true,
-        timeout: 5000,
-        theme: "material"
-      };
-      this.toastyService.wait(toastOption);
+      this.toastyService.wait(toastAdd);
       setTimeout(() => {
         this.favouriteProducts.push({
           product: data,
           productId: productKey,
           userId: user.$key
         });
+
+        this.calculateFavProductCounts();
       }, 1500);
     }
   }
@@ -121,7 +137,37 @@ export class ProductService {
     this.favouriteProducts.remove(key);
   }
 
-  removeLocalFavourite(key: string) {}
+  removeLocalFavourite(product: Product) {
+    console.log("removing in service", product);
+
+    const products: Product[] = JSON.parse(localStorage.getItem("avf_item"));
+
+    for (var i = 0; i < products.length; i++) {
+      if (products[i].productId === product.productId) {
+        products.splice(i, 1);
+        break;
+      }
+    }
+    // ReAdding the products after remove
+    localStorage.setItem("avf_item", JSON.stringify(products));
+
+    this.calculateLocalFavProdCounts();
+  }
+
+  // FavouriteProductCounts
+  calculateLocalFavProdCounts() {
+    this.navbarFavProdCount = this.getLocalFavouriteProducts().length;
+  }
+
+  calculateFavProductCounts() {
+    console.log("localFav");
+    const x = this.getUsersFavouriteProduct()
+      .snapshotChanges()
+      .subscribe(data => {
+        console.log("localFav", data.length);
+        this.navbarFavProdCount = data.length;
+      });
+  }
 
   /*
    ----------  Cart Product Function  ----------
@@ -153,6 +199,7 @@ export class ProductService {
       this.toastyService.wait(toastOption);
       setTimeout(() => {
         localStorage.setItem("avct_item", JSON.stringify(a));
+        this.calculateLocalCartProdCounts();
       }, 1500);
     }
     if (this.authService.isLoggedIn() === true) {
@@ -176,6 +223,8 @@ export class ProductService {
           productId: productKey,
           userId: user.$key
         });
+
+        this.calculateCartProductCounts();
       }, 1500);
     }
   }
@@ -189,6 +238,19 @@ export class ProductService {
       JSON.parse(localStorage.getItem("avct_item")) || [];
 
     return products;
+  }
+
+  // Cart Functions
+  calculateLocalCartProdCounts() {
+    this.navbarCartCount = this.getLocalCartProducts().length;
+  }
+
+  calculateCartProductCounts() {
+    const x = this.getUsersCartProducts()
+      .snapshotChanges()
+      .subscribe(data => {
+        this.navbarCartCount = data.length;
+      });
   }
 }
 

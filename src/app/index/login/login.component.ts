@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
   addUser(userForm: NgForm) {
     userForm.value["isAdmin"] = false;
-    this.userService.createUser(userForm.value);
+    this.userService.createUser(userForm.value as User);
     const toastOption: ToastOptions = {
       title: "User Registeration",
       msg: "Registering",
