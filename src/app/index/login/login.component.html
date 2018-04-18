@@ -1,75 +1,57 @@
 <br>
-<section class="container">
-  <!-- Login form -->
-  <div class="col-sm-6">
-    <form style="width:22rem">
-      <p class="h5 text-center mb-4">Sign in</p>
-
-      <div class="md-form">
-        <i class="fa fa-envelope prefix grey-text"></i>
-        <input mdbActive type="email" id="loginEmailId" class="form-control" name="emailId" [(ngModel)]="emailId" mdbInputValidate [email]="true">
-        <label for="emailId">Your email</label>
+<div class="row ">
+  <div class="col-4 float-right">
+    <form>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" id="loginEmailId" class="form-control" name="emailId" [(ngModel)]="emailId" [email]="true">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
       </div>
-
-      <div class="md-form">
-        <i class="fa fa-lock prefix grey-text"></i>
-        <input type="password" id="password" name="password" [(ngModel)]="password" class="form-control" mdbActive>
-        <label for="defaultForm-pass">Your password</label>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" class="form-control">
       </div>
-
-      <div class="text-center">
-        <button class="btn btn-primary waves-light" [disabled]="!emailId || !password" (click)="login()" mdbRippleRadius>Login</button>
-      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!emailId || !password" (click)="login()">Login</button>
     </form>
   </div>
+</div>
+<section class="container">
   <br>
-  <p>New User ?
-    <a data-toggle="modal" data-target="#createUserForm" style="color:dodgerblue">Register here!</a>
+  <p>New User?
+    <a href="#" data-toggle="modal" data-target="#createUserForm" class="badge badge-primary">Register here!</a>
   </p>
   <!-- Login form -->
 
-  <!--Modal: Register Form-->
-  <div class="modal fade" id="createUserForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog cascading-modal" role="document">
+  <!-- Modal -->
+  <div class="modal fade" id="createUserForm" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
       <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
         <div class="modal-content">
-
-          <div class="modal-header light-blue darken-3 white-text">
-            <h4 class="title">
-              <i class="fa fa-user-plus"></i> Register</h4>
-            <button type="button" class="close waves-effect waves-light" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">User Registeration</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
             <div class="md-form form-sm">
-              <i class="fa fa-envelope prefix"></i>
-              <input mdbActive type="email" id="emailId" class="form-control" name="emailId" [(ngModel)]="createUser.emailId" mdbInputValidate
-                [email]="true">
               <label for="emailId">Your email</label>
+              <input type="email" id="emailId" class="form-control" name="emailId" [(ngModel)]="createUser.emailId" [email]="true">
             </div>
             <div class="md-form form-sm">
-              <i class="fa fa-lock prefix"></i>
-              <input mdbActive type="password" id="psd" class="form-control">
-              <label for="psd">Your password</label>
+              <label for="form34">Password</label>
+              <input type="password" id="form34" class="form-control" name="password" [(ngModel)]="createUser.password">
             </div>
-            <div class="md-form form-sm">
-              <i class="fa fa-lock prefix"></i>
-              <input mdbActive type="password" id="form34" class="form-control" name="password" [(ngModel)]="createUser.password" mdbInputValidate>
-              <label for="form34">Repeat password</label>
-            </div>
-            <div class="text-center mt-2">
-              <button class="btn btn-info waves-light" mdbRippleRadius>Sign up
-                <i class="fa fa-sign-in ml-1"></i>
-              </button>
-            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
           </div>
         </div>
       </form>
     </div>
   </div>
-</section>
-<br>
-<br>
-<br>
-<ng2-toasty></ng2-toasty>
+  <br>
+  <br>
+  <br>
+  <ng2-toasty></ng2-toasty>

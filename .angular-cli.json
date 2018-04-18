@@ -17,8 +17,6 @@
       "prefix": "app",
       "styles": [
         "../node_modules/font-awesome/scss/font-awesome.scss",
-        "../node_modules/angular-bootstrap-md/scss/bootstrap/bootstrap.scss",
-        "../node_modules/angular-bootstrap-md/scss/mdb-free.scss",
         "..//node_modules/owl.carousel/dist/assets/owl.carousel.min.css",
         "..//node_modules/owl.carousel/dist/assets/owl.theme.default.min.css",
         "..//node_modules/animate.css/animate.min.css",
@@ -30,7 +28,6 @@
       "scripts": [
         "../node_modules/jquery/dist/jquery.js",
         "../node_modules/tether/dist/js/tether.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "../node_modules/owl.carousel/dist/owl.carousel.min.js"
       ],
       "environmentSource": "environments/environment.ts",

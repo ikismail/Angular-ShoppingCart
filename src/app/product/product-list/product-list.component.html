@@ -1,16 +1,10 @@
 <br>
 <div class="container">
-  <div class="row" *ngIf="authService.isAdmin()">
-    <div class="col-sm">
-      <div class="float-right">
-        <button type="button" class="btn btn-primary waves-light" data-toggle="modal" data-target="#exampleModalLong">
-          Add Product
-        </button>
-      </div>
-    </div>
-  </div>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-2">
+      <button type="button" class="btn btn-primary waves-light" data-toggle="modal" data-target="#exampleModalLong" *ngIf="authService.isAdmin()">
+        Add Product
+      </button>
       <div class="form-group">
         <label for="brand_select">By Brands:</label>
         <select class="form-control" name="" id="brand_select" [(ngModel)]="selectedBrand">
@@ -23,7 +17,7 @@
         <li class="list-group-item">Morbi leo risus</li>
       </ul>
     </div>
-    <div class="col-md-9">
+    <div class="col-md-10">
 
       <div class="container">
         <div class="row">
@@ -38,7 +32,7 @@
                     <div class="view overlay hm-white-slight">
                       <img [src]="product.productImageUrl" class="img-fluid" alt="" width="360px" height="640px">
                       <a>
-                        <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+                        <div class="mask waves-effect waves-light"></div>
                       </a>
                     </div>
                   </a>
@@ -47,9 +41,9 @@
                   <div class="card-body text-center no-padding">
                     <!--Category & Title-->
                     <a class="text-muted">
-                      <h5>{{ product.productCategory }}</h5>
+                      <h5 style="font-size: 14px">{{ product.productCategory }}</h5>
                     </a>
-                    <h5 class="card-title">
+                    <h5 class="card-title" style="font-size: 15px">
                       <strong>
                         <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{ product.productName }}</a>
                       </strong>
@@ -61,16 +55,16 @@
                     <div class="card-footer">
                       <span class="left">{{ product.productPrice }} $</span>
                       <span class="right">
-                        <a placement="top" mdbTooltip="Quick Look" container="body" [routerLink]="['/products/product', product.$key]">
+                        <a [routerLink]="['/products/product', product.$key]">
                           <i class="fa fa-eye"></i>
                         </a>
-                        <a placement="top" mdbTooltip="Add to Wishlist" container="body" (click)="addFavourite(product)">
+                        <a href="javascript:;;" (click)="addFavourite(product)">
                           <i class="fa fa-heart"></i>
                         </a>
-                        <a placement="top" mdbTooltip="Add to Wishlist" container="body" (click)="addToCart(product)">
+                        <a href="javascript:;;" (click)="addToCart(product)">
                           <i class="fa fa-shopping-cart"></i>
                         </a>
-                        <a placement="top" mdbTooltip="Remove Product" container="body" *ngIf="authService.isAdmin()" (click)="removeProduct(product.$key)">
+                        <a href="javascript:;;" *ngIf="authService.isAdmin()" (click)="removeProduct(product.$key)">
                           <i class="fa fa-trash"></i>
                         </a>
                       </span>

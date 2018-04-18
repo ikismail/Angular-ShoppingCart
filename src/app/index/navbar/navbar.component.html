@@ -1,67 +1,53 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo scrolling-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand " href="#" [routerLink]="[ '/' ]">ikismail</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-  <!-- Navbar brand -->
-  <logo>
-    <a class="navbar-brand" href="#">ikismail</a>
-  </logo>
-
-  <!-- Collapsible content -->
-  <links>
-
-    <!-- Links -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-light" mdbRippleRadius [routerLink]="[ '/' ]">Home
+        <a class="nav-link" href="#" [routerLink]="[ '/' ]">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbRippleRadius [routerLink]="[ '/products/all-products' ]">Our Products</a>
+        <a class="nav-link" href="#" [routerLink]="[ '/products/all-products' ]">Our Products</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbRippleRadius>Pricing</a>
-      </li>
-
     </ul>
-    <!-- Links -->
+    <ul class="navbar-nav justify-content-end">
 
-    <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="javascript:;;" [routerLink]="['/index/favourites']">
+        <a href="#" class="nav-link" [routerLink]="['/index/favourites']">
           <i class="fa fa-heart">
             <span class="mt-2">{{favProdsCount}}</span>
           </i>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="javascript:;;">
+        <a href="#" class="nav-link">
           <i class="fa fa-shopping-cart">
             <span class="mt-2">{{cartProductCount}}</span>
           </i>
         </a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="javascript:;;">
-          <i class="fa fa-envelope"></i> Contact
-          <span class="sr-only">(current)</span>
+      <li class="nav-item dropdown" *ngIf="authService.isLoggedIn()">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          My Account
         </a>
-      </li>
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
-        <a class="nav-link" [routerLink]="['/users']">
-          <i class="fa fa-user"></i> My Account</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#" [routerLink]="['/users']">Profile</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" (click)="logout()">Log Out</a>
+        </div>
       </li>
       <li class="nav-item" *ngIf="!authService.isLoggedIn()">
-        <a class="nav-link" [routerLink]="[ '/index/login' ]">
-          <i class="fa fa-sign-in"></i> Signin / Signup</a>
-      </li>
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
-        <a class="nav-link" (click)="logout()">
-          <i class="fa fa-sign-in"></i>Logout</a>
+        <a href="" class="nav-link" [routerLink]="[ '/index/login' ]">Log In</a>
       </li>
     </ul>
-  </links>
-  <!-- Collapsible content -->
-
-</mdb-navbar>
-<!--/.Navbar-->
+  </div>
+</nav>
