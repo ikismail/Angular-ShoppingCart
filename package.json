@@ -11,7 +11,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "postinstall": "ng build --aot -prod",
-    "deploy": "git push origin master && git push heroku master"
+    "deploy": "git push && git push heroku"
   },
   "engines": {
     "node": "8.11.0",
