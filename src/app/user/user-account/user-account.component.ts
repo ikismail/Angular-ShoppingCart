@@ -1,4 +1,4 @@
-import { AuthServiceService } from "./../../index/shared/auth.service";
+import { AuthService } from "./../../index/shared/auth.service";
 import { User } from "./../shared/user";
 import { Component, OnInit } from "@angular/core";
 import { NgForm, FormBuilder, FormGroup, Validators } from "@angular/forms";
@@ -14,7 +14,7 @@ export class UserAccountComponent implements OnInit {
   enbUpdBut: Boolean = true;
 
   constructor(
-    private authService: AuthServiceService,
+    private authService: AuthService,
     private fb: FormBuilder
   ) {}
 

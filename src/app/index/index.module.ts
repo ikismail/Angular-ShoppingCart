@@ -29,7 +29,8 @@ import { PageNotFoundComponent } from "./page-not-found/page-not-found.component
 // Services and Gaurds
 import { AdminGaurd } from "./shared/admin-gaurd";
 import { AuthGuard } from "./shared/auth_gaurd";
-import { AuthServiceService } from "./shared/auth.service";
+import { AuthService } from "./shared/auth.service";
+import { LocalFavouritePageComponent } from "./local-favourite-page/local-favourite-page.component";
 
 @NgModule({
   imports: [
@@ -49,10 +50,11 @@ import { AuthServiceService } from "./shared/auth.service";
     LoginComponent,
     FooterComponent,
     NoAccessComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LocalFavouritePageComponent
   ],
   schemas: [NO_ERRORS_SCHEMA],
   exports: [NavbarComponent, FooterComponent],
-  providers: [AuthServiceService, AuthGuard, AdminGaurd]
+  providers: [AuthService, AuthGuard, AdminGaurd]
 })
 export class IndexModule {}

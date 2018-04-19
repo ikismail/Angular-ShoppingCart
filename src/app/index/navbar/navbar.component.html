@@ -27,6 +27,30 @@
     <!-- Links -->
 
     <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <div *ngIf="authService.isLoggedIn() ; else favCountNotLogged">
+          <a class="nav-link" href="javascript:;;" [routerLink]="['/users/favourite-products']">
+            <i class="fa fa-heart">
+              <span class="mt-2">{{favProdsCount}}</span>
+            </i>
+          </a>
+        </div>
+        <ng-template #favCountNotLogged>
+          <a class="nav-link" href="javascript:;;" [routerLink]="['/index/favourites']">
+            <i class="fa fa-heart">
+              <span class="mt-2">{{favProdsCount}}</span>
+            </i>
+          </a>
+        </ng-template>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="javascript:;;">
+          <i class="fa fa-shopping-cart">
+            <span class="mt-2">{{cartProductCount}}</span>
+          </i>
+        </a>
+      </li>
       <li class="nav-item active">
         <a class="nav-link" href="javascript:;;">
           <i class="fa fa-envelope"></i> Contact

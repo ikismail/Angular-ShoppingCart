@@ -11,7 +11,6 @@
   </div>
   <div class="row">
     <div class="col-md-3">
-
       <div class="form-group">
         <label for="brand_select">By Brands:</label>
         <select class="form-control" name="" id="brand_select" [(ngModel)]="selectedBrand">
@@ -32,13 +31,10 @@
           <div class="col-sm-4" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 6, currentPage: page }">
             <div class="item">
               <div class=" mb-r">
-
                 <!--Card-->
                 <div class="card card-cascade wider">
-
                   <!--Card image-->
                   <a [routerLink]="['/products/product', product.$key]">
-
                     <div class="view overlay hm-white-slight">
                       <img [src]="product.productImageUrl" class="img-fluid" alt="" width="360px" height="640px">
                       <a>
@@ -46,9 +42,7 @@
                       </a>
                     </div>
                   </a>
-
                   <!--/.Card image-->
-
                   <!--Card content-->
                   <div class="card-body text-center no-padding">
                     <!--Category & Title-->
@@ -60,11 +54,9 @@
                         <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{ product.productName }}</a>
                       </strong>
                     </h5>
-
                     <!--Description-->
                     <p class="card-text">{{ product.productDescription }}
                     </p>
-
                     <!--Card footer-->
                     <div class="card-footer">
                       <span class="left">{{ product.productPrice }} $</span>
@@ -72,10 +64,13 @@
                         <a placement="top" mdbTooltip="Quick Look" container="body" [routerLink]="['/products/product', product.$key]">
                           <i class="fa fa-eye"></i>
                         </a>
-                        <a placement="top" mdbTooltip="Add to Wishlist" container="body">
+                        <a placement="top" mdbTooltip="Add to Wishlist" container="body" (click)="addFavourite(product)">
                           <i class="fa fa-heart"></i>
                         </a>
-                        <a placement="top" mdbTooltip="Delete" container="body" *ngIf="authService.isAdmin()" (click)="removeProduct(product.$key)">
+                        <a placement="top" mdbTooltip="Add to Wishlist" container="body" (click)="addToCart(product)">
+                          <i class="fa fa-shopping-cart"></i>
+                        </a>
+                        <a placement="top" mdbTooltip="Remove Product" container="body" *ngIf="authService.isAdmin()" (click)="removeProduct(product.$key)">
                           <i class="fa fa-trash"></i>
                         </a>
                       </span>

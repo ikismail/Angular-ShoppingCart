@@ -1,4 +1,4 @@
-import { NgForm } from "@angular/forms";
+import { NgForm, EmailValidator } from "@angular/forms";
 import { UserService } from "./../../user/shared/user.service";
 import { Component, OnInit } from "@angular/core";
 import {
@@ -7,24 +7,25 @@ import {
   ToastData,
   ToastyConfig
 } from "ng2-toasty";
-import { AuthServiceService } from "../shared/auth.service";
+import { AuthService } from "../shared/auth.service";
 import { Router, ActivatedRoute } from "@angular/router";
 import { User } from "../../user/shared/user";
 declare var $: any;
 @Component({
   selector: "app-login",
   templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.scss"]
+  styleUrls: ["./login.component.scss"],
+  providers: [EmailValidator]
 })
 export class LoginComponent implements OnInit {
   emailId: string;
   password: string;
 
-  createUser: User = new User();
+  createUser;
 
   constructor(
     private userService: UserService,
-    private authService: AuthServiceService,
+    private authService: AuthService,
     private toastyService: ToastyService,
     private router: Router,
     private route: ActivatedRoute,
@@ -32,9 +33,11 @@ export class LoginComponent implements OnInit {
   ) {
     this.toastyConfig.position = "top-right";
     this.toastyConfig.theme = "material";
+
+    this.createUser = new User();
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   // signup() {
   //   this.authService.signup(this.emailId, this.password);

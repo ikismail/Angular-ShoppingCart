@@ -1,0 +1,65 @@
+<br>
+<div class="row">
+  <!-- List of Products -->
+  <div class="col-sm-4" *ngFor="let favourite of products">
+    <div class="item">
+      <div class=" mb-r">
+
+        <!--Card-->
+        <div class="card card-cascade wider">
+
+          <!--Card image-->
+          <a [routerLink]="['/products/product', favourite.productId]">
+
+            <div class="view overlay hm-white-slight">
+              <img [src]="favourite.product.productImageUrl" class="img-fluid" alt="" width="360px" height="640px">
+              <a>
+                <div class="mask waves-effect waves-light" mdbRippleRadius></div>
+              </a>
+            </div>
+          </a>
+
+          <!--/.Card image-->
+
+          <!--Card content-->
+          <div class="card-body text-center no-padding">
+            <!--Category & Title-->
+            <a class="text-muted">
+              <h5>{{ favourite.product.productCategory }}</h5>
+            </a>
+            <h5 class="card-title">
+              <strong>
+                <a [routerLink]="['/products/product', favourite.productId]" routerLinkActive="router-link-active">{{ favourite.product.productName }}</a>
+              </strong>
+            </h5>
+
+            <!--Description-->
+            <p class="card-text">{{ favourite.product.productDescription }}
+            </p>
+
+            <!--Card footer-->
+            <div class="card-footer">
+              <span class="left">{{ favourite.product.productPrice }} $</span>
+              <span class="right">
+                <a placement="top" mdbTooltip="Quick Look" container="body" [routerLink]="['/products/product', favourite.productId]">
+                  <i class="fa fa-eye"></i>
+                </a>
+                <a placement="top" mdbTooltip="Add to Wishlist" container="body">
+                  <i class="fa fa-heart" style="color: red"></i>
+                </a>
+                <a placement="top" mdbTooltip="Remove Product" container="body" *ngIf="authService.isLoggedIn()" (click)="removeFromFavourite(favourite.productId)">
+                  <i class="fa fa-trash"></i>
+                </a>
+              </span>
+            </div>
+
+          </div>
+          <!--/.Card content-->
+
+        </div>
+        <!--/.Card-->
+
+      </div>
+    </div>
+  </div>
+</div>

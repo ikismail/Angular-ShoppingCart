@@ -7,7 +7,7 @@ import { Buffer } from "buffer";
 import { User } from "../../user/shared/user";
 
 @Injectable()
-export class AuthServiceService {
+export class AuthService {
   user: Observable<firebase.User>;
   usersList: User[] = [];
 
