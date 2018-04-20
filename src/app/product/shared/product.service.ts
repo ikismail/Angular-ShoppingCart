@@ -9,7 +9,7 @@ import { AuthService } from "../../index/shared/auth.service";
 import { UserService } from "../../user/shared/user.service";
 import { query } from "@angular/core/src/animation/dsl";
 import { ToastOptions, ToastyService, ToastyConfig } from "ng2-toasty";
-import { Observable } from "rxjs/Rx";
+import { Observable } from "rxjs/Observable";
 
 @Injectable()
 export class ProductService {
@@ -21,8 +21,8 @@ export class ProductService {
   cartProducts: AngularFireList<FavouriteProduct>;
 
   // NavbarCounts
-  navbarCartCount: number = 0;
-  navbarFavProdCount: number = 0;
+  navbarCartCount = 0;
+  navbarFavProdCount = 0;
 
   constructor(
     private db: AngularFireDatabase,
@@ -142,7 +142,7 @@ export class ProductService {
 
     const products: Product[] = JSON.parse(localStorage.getItem("avf_item"));
 
-    for (var i = 0; i < products.length; i++) {
+    for (let i = 0; i < products.length; i++) {
       if (products[i].productId === product.productId) {
         products.splice(i, 1);
         break;
