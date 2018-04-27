@@ -11,6 +11,7 @@ import { CommonModule } from "@angular/common";
 
 // Third Party Dependencies
 import { AgmCoreModule } from "@agm/core";
+import { NgxPaginationModule } from "ngx-pagination";
 
 // Configuration and Services
 import { UserRoutes } from "./user.routing";
@@ -19,12 +20,12 @@ import { UserService } from "./shared/user.service";
 // Components
 import { UserComponent } from "./user.component";
 import { UserAccountComponent } from "./user-account/user-account.component";
-import { UserLocateComponent } from "./user-locate/user-locate.component";
 import { UserFavouriteProductsComponent } from "./user-favourite-products/user-favourite-products.component";
 
 @NgModule({
   imports: [
     CommonModule,
+    NgxPaginationModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forChild(UserRoutes),
@@ -35,7 +36,6 @@ import { UserFavouriteProductsComponent } from "./user-favourite-products/user-f
   declarations: [
     UserComponent,
     UserAccountComponent,
-    UserLocateComponent,
     UserFavouriteProductsComponent
   ],
   providers: [UserService, FormBuilder],

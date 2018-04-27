@@ -1,7 +1,6 @@
-<br>
 <div class="row">
   <!-- List of Products -->
-  <div class="col-sm-4" *ngFor="let favourite of products">
+  <div class="col-sm-4" *ngFor="let favourite of products | paginate: { itemsPerPage: 6, currentPage: page }">
     <div class="item">
       <div class=" mb-r">
 
@@ -40,14 +39,8 @@
             <!--Card footer-->
             <div class="card-footer">
               <span class="left">{{ favourite.product.productPrice }} $</span>
-              <span class="right">
-                <a placement="top" mdbTooltip="Quick Look" container="body" [routerLink]="['/products/product', favourite.productId]">
-                  <i class="fa fa-eye"></i>
-                </a>
-                <a placement="top" mdbTooltip="Add to Wishlist" container="body">
-                  <i class="fa fa-heart" style="color: red"></i>
-                </a>
-                <a placement="top" mdbTooltip="Remove Product" container="body" *ngIf="authService.isLoggedIn()" (click)="removeFromFavourite(favourite.productId)">
+              <span class="right" *ngIf="authService.isLoggedIn()">
+                <a placement="top" mdbTooltip="Remove Product" container="body" (click)="removeFromFavourite(favourite.$key)">
                   <i class="fa fa-trash"></i>
                 </a>
               </span>
@@ -62,4 +55,7 @@
       </div>
     </div>
   </div>
+</div>
+<div class="text-center">
+  <pagination-controls (pageChange)="page = $event"></pagination-controls>
 </div>
