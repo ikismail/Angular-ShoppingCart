@@ -12,14 +12,12 @@ import { AuthService } from "../../index/shared/auth.service";
   styleUrls: ["./user-favourite-products.component.scss"]
 })
 export class UserFavouriteProductsComponent implements OnInit {
-  products: FavouriteProduct[];
-
+  products: FavouriteProduct[] = [];
+  page = 1;
   constructor(
     private productService: ProductService,
     public authService: AuthService
-  ) {
-    this.products = new Array<FavouriteProduct>();
-  }
+  ) {}
 
   ngOnInit() {
     this.getFavouriteProducts();
