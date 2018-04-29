@@ -1,4 +1,4 @@
-# Angular2+ - ShoppingCart
+# Angular5 - ShoppingCart
 
  [![HitCount](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart)
 
@@ -7,11 +7,11 @@
 [![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular4-ShoppingCart.svg)](https://github.com/ikismail/Angular4-ShoppingCart/issues)
 [![](https://img.shields.io/github/release/ikismail/Angular4-ShoppingCart.svg?style=flat-square)](https://github.com/ikismail/Angular4-ShoppingCart/releases)
 
-Developing a **ShoppingCart (Ecommerce) Application using Angular2+**.
+Developing a **ShoppingCart (Ecommerce) Application using Angular5**.
 
 **Live Demo** : [angular4-shopping-cart](https://angular4-shopping-cart.herokuapp.com/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Functionalities
 
@@ -28,7 +28,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Tools and Technologies
 
-* Technology: HTML, MDBootstrap, CSS, Angular2+, Firebase, Charts, Progressive Web Application.
+* Technology: HTML, MDBootstrap, CSS, Angular-5, Firebase, Charts, Progressive Web Application.
 * Database : Angular Firebase.
 
 #### This Projects covers all fundamentals of Angular

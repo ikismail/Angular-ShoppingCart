@@ -7,7 +7,7 @@ import { RouterModule } from "@angular/router";
 
 // Third Party Dependencies
 import { NgxPaginationModule } from "ngx-pagination";
-import { OwlModule } from "ng2-owl-carousel";
+import { OwlModule } from "ngx-owl-carousel";
 import { ToastyModule } from "ng2-toasty";
 
 // configuration and services
