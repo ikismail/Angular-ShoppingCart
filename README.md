@@ -1,11 +1,18 @@
 # Angular5 - ShoppingCart
 
- [![HitCount](http://hits.dwyl.io/ikismail/Angular-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular-ShoppingCart)
+ [![HitCount](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart)
 
-[![Build Status](https://travis-ci.org/ikismail/Angular-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular-ShoppingCart)
+[![Build Status](https://travis-ci.org/ikismail/Angular5-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular5-ShoppingCart)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/issues)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bfc80f32f4e34a909804289263a747f5)](https://www.codacy.com/app/ikismail/Angular4-ShoppingCart?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ikismail/Angular4-ShoppingCart&amp;utm_campaign=Badge_Grade)
+
+[![dependency Status](https://david-dm.org/ikismail/Angular-ShoppingCart.svg)](https://david-dm.org/ikismail/Angular-ShoppingCart#info=dependencies)
+[![devDependency Status](https://david-dm.org/ikismail/Angular-ShoppingCart/dev-status.svg)](https://david-dm.org/ikismail/Angular-ShoppingCart#info=devDependencies)
+[![peerDependencies Status](https://david-dm.org/ikismail/Angular-ShoppingCart/peer-status.svg)](https://david-dm.org/ikismail/Angular-ShoppingCart?type=peer)
+
 [![](https://img.shields.io/github/release/ikismail/Angular-ShoppingCart.svg?style=flat-square)](https://github.com/ikismail/Angular-ShoppingCart/releases)
+[![npm](https://img.shields.io/badge/demo-online-brightgreen.svg)](http://angularexampleapp.com/)
 
 Developing a **ShoppingCart (Ecommerce) Application using Angular5**.
 
@@ -41,17 +48,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * Service Workers
 * Pipes.. etc.
 
-#### Screenshots:
 
-##### Home Page shot 1:
-
-![Alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/home.PNG "Home Page")
-
-##### Products Page:
-
-![Alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/products.PNG "Home Page")
-
-## Installation
+# Installation
 
 1.  Angular CLI
     * [Download Angular CLI](https://cli.angular.io/)
@@ -59,6 +57,31 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     * [Download Nodejs](https://nodejs.org/en/download/)
 3.  Package Manager - NPM / Yarn
 4.  Clone the repository and run `npm install` if you use **npm** as package manager or `yarn install` if you use **yarn** as package manager.
+5.  Angular + Firebase Tutorial - [Angular + Firebase + Typescript — Step by step tutorial](https://medium.com/factory-mind/angular-firebase-typescript-step-by-step-tutorial-2ef887fc7d71)
+
+6. Configure your firebase configuration `src/environments/firebaseConfig.ts`
+ ```
+    export const FireBaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        databaseURL: "YOUR_DATABASE_URL",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_STORAGE_BUCKET",
+        messagingSenderId: "YOUR_SENDER_ID"
+    }; 
+```
+
+7. Run the Server. 
+
+## Screenshots:
+
+### Home Page:
+
+![Alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/home.PNG "Home Page")
+
+### Products Page:
+
+![Alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/products.PNG "Home Page")
 
 ## Development server
 
