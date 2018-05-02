@@ -1,15 +1,15 @@
 # Angular5 - ShoppingCart
 
- [![HitCount](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart)
+ [![HitCount](http://hits.dwyl.io/ikismail/Angular-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular-ShoppingCart)
 
-[![Build Status](https://travis-ci.org/ikismail/Angular4-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular4-ShoppingCart)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular4-ShoppingCart.svg)](https://github.com/ikismail/Angular4-ShoppingCart/issues)
-[![](https://img.shields.io/github/release/ikismail/Angular4-ShoppingCart.svg?style=flat-square)](https://github.com/ikismail/Angular4-ShoppingCart/releases)
+[![Build Status](https://travis-ci.org/ikismail/Angular-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular-ShoppingCart)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/issues)
+[![](https://img.shields.io/github/release/ikismail/Angular-ShoppingCart.svg?style=flat-square)](https://github.com/ikismail/Angular-ShoppingCart/releases)
 
 Developing a **ShoppingCart (Ecommerce) Application using Angular5**.
 
-**Live Demo** : [angular4-shopping-cart](https://angular4-shopping-cart.herokuapp.com/)
+**Live Demo** : [angular5-shopping-cart](https://angular5-shop.herokuapp.com/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
@@ -45,11 +45,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ##### Home Page shot 1:
 
-![Alt text](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/screenshots/home.PNG "Home Page")
+![Alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/home.PNG "Home Page")
 
 ##### Products Page:
 
-![Alt text](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/screenshots/products.PNG "Home Page")
+![Alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/products.PNG "Home Page")
 
 ## Installation
 
@@ -94,4 +94,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## License
 
-* [MIT license](https://github.com/ikismail/Angular4-ShoppingCart/blob/master/LICENSE)
+* [MIT license](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)
