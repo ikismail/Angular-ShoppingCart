@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/ikismail/Angular5-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular5-ShoppingCart)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/issues)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bfc80f32f4e34a909804289263a747f5)](https://www.codacy.com/app/ikismail/Angular4-ShoppingCart?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ikismail/Angular4-ShoppingCart&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0e15a95393f94acb941e8e7cdaedc9e6)](https://www.codacy.com/app/ikismail/Angular5-ShoppingCart?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ikismail/Angular5-ShoppingCart&amp;utm_campaign=Badge_Grade)
 
 [![dependency Status](https://david-dm.org/ikismail/Angular-ShoppingCart.svg)](https://david-dm.org/ikismail/Angular-ShoppingCart#info=dependencies)
 [![devDependency Status](https://david-dm.org/ikismail/Angular-ShoppingCart/dev-status.svg)](https://david-dm.org/ikismail/Angular-ShoppingCart#info=devDependencies)
