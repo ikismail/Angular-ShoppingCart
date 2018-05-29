@@ -31,6 +31,7 @@ import { AdminGaurd } from "./shared/admin-gaurd";
 import { AuthGuard } from "./shared/auth_gaurd";
 import { AuthService } from "./shared/auth.service";
 import { LocalFavouritePageComponent } from "./local-favourite-page/local-favourite-page.component";
+import { LocalCartItemComponent } from "./local-cart-item/local-cart-item.component";
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ import { LocalFavouritePageComponent } from "./local-favourite-page/local-favour
     FooterComponent,
     NoAccessComponent,
     PageNotFoundComponent,
-    LocalFavouritePageComponent
+    LocalFavouritePageComponent,
+    LocalCartItemComponent
   ],
   schemas: [NO_ERRORS_SCHEMA],
   exports: [NavbarComponent, FooterComponent],

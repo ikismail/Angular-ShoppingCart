@@ -233,6 +233,23 @@ export class ProductService {
     this.cartProducts.remove(key);
   }
 
+  removeLocalCartProduct(product: Product) {
+    console.log("removing in service", product);
+
+    const products: Product[] = JSON.parse(localStorage.getItem("avct_item"));
+
+    for (let i = 0; i < products.length; i++) {
+      if (products[i].productId === product.productId) {
+        products.splice(i, 1);
+        break;
+      }
+    }
+    // ReAdding the products after remove
+    localStorage.setItem("avct_item", JSON.stringify(products));
+
+    this.calculateLocalCartProdCounts();
+  }
+
   getLocalCartProducts(): Product[] {
     const products: Product[] =
       JSON.parse(localStorage.getItem("avct_item")) || [];
@@ -249,6 +266,7 @@ export class ProductService {
     const x = this.getUsersCartProducts()
       .snapshotChanges()
       .subscribe(data => {
+        console.log("cart data", data);
         this.navbarCartCount = data.length;
       });
   }

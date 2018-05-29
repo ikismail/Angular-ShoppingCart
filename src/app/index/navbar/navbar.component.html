@@ -45,11 +45,20 @@
 
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="javascript:;;">
-          <i class="fa fa-shopping-cart">
-            <span class="mt-2">{{productService.navbarCartCount}}</span>
-          </i>
-        </a>
+        <div *ngIf="authService.isLoggedIn() ; else cartCountNotLogged">
+          <a class="nav-link" href="javascript:;;" [routerLink]="['/users', {outlets: {'profileOutlet': ['cart-items']}}]">
+            <i class="fa fa-shopping-cart">
+              <span class="mt-2">{{productService.navbarCartCount}}</span>
+            </i>
+          </a>
+        </div>
+        <ng-template #cartCountNotLogged>
+          <a class="nav-link" href="javascript:;;" [routerLink]="['/index/cartItems']">
+            <i class="fa fa-shopping-cart">
+              <span class="mt-2">{{productService.navbarCartCount}}</span>
+            </i>
+          </a>
+        </ng-template>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="javascript:;;">

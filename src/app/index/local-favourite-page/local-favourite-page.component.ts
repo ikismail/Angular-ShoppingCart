@@ -17,16 +17,13 @@ export class LocalFavouritePageComponent implements OnInit {
     this.getFavouriteProduct();
   }
   removeLocalFavourite(product: Product) {
-
     console.log("removing product: ", product);
     this.productService.removeLocalFavourite(product);
 
     this.getFavouriteProduct();
   }
 
-
-  getFavouriteProduct(){
+  getFavouriteProduct() {
     this.favoruiteProducts = this.productService.getLocalFavouriteProducts();
-
   }
 }
