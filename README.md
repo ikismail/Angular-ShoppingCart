@@ -16,7 +16,7 @@
 
 Developing a **ShoppingCart (Ecommerce) Application using Angular5**.
 
-**Live Demo** : [angular5-shopping-cart](https://angular5-shop.herokuapp.com/)
+**Live Demo** : [angular5-shopping-cart](https://angular-shoppingcart.firebaseapp.com/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
