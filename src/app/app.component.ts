@@ -1,5 +1,5 @@
-import { UserService } from "./user/shared/user.service";
 import { Component, OnInit } from "@angular/core";
+import { UserService } from "./shared/services/user.service";
 declare var $: any;
 
 @Component({

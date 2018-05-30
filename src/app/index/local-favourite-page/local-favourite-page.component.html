@@ -1,5 +1,5 @@
 <br>
-<div class="container" *ngIf="favoruiteProducts">
+<div class="container" *ngIf="favoruiteProducts.length > 0">
   <div class="row">
     <!-- List of Products -->
     <div class="col-sm-4" *ngFor="let product of favoruiteProducts">
@@ -64,24 +64,6 @@
 </div>
 
 <div class="container" *ngIf="favoruiteProducts.length === 0">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="error-template">
-        <h1>
-          Oops!</h1>
-        <h2>
-          No Favourite Products Found</h2>
-        <div class="error-details">
-          Please, choose your favourite products,
-        </div>
-        <div class="error-actions">
-          <a [routerLink]="[ '/' ]" class="btn btn-primary btn-lg">
-            <span class="glyphicon glyphicon-home"></span>
-            Take Me Home </a>
-          <a [routerLink]="[ '/products/all-products' ]" class="btn btn-default btn-lg">
-            <span class="glyphicon glyphicon-envelope"></span>Our Products </a>
-        </div>
-      </div>
-    </div>
-  </div>
+
+  <app-no-products-found [title]="messageTitle" [description]="messageDescription"></app-no-products-found>
 </div>

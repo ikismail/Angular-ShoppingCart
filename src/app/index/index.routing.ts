@@ -1,7 +1,6 @@
 import { LoginComponent } from "./login/login.component";
-import { Routes, RouterModule } from "@angular/router";
+import { Routes } from "@angular/router";
 import { IndexComponent } from "./index.component";
-import { FavouriteProduct } from "../product/shared/product.service";
 import { LocalFavouritePageComponent } from "./local-favourite-page/local-favourite-page.component";
 import { LocalCartItemComponent } from "./local-cart-item/local-cart-item.component";
 

@@ -1,5 +1,4 @@
 import { NgForm, EmailValidator } from "@angular/forms";
-import { UserService } from "./../../user/shared/user.service";
 import { Component, OnInit } from "@angular/core";
 import {
   ToastyService,
@@ -7,9 +6,10 @@ import {
   ToastData,
   ToastyConfig
 } from "ng2-toasty";
-import { AuthService } from "../shared/auth.service";
 import { Router, ActivatedRoute } from "@angular/router";
-import { User } from "../../user/shared/user";
+import { UserService } from "../../shared/services/user.service";
+import { AuthService } from "../../shared/services/auth.service";
+import { User } from "../../shared/models/user";
 declare var $: any;
 @Component({
   selector: "app-login",
@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     this.createUser = new User();
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   // signup() {
   //   this.authService.signup(this.emailId, this.password);

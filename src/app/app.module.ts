@@ -3,17 +3,16 @@ import { RouterModule } from "@angular/router";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 
-// Modules
-import { UserModule } from "./user/user.module";
-import { ProductModule } from "./product/product.module";
-import { IndexModule } from "./index/index.module";
-import { LoaderSpinnerModule } from "./modules/loader-spinner/loader-spinner";
-
 // Configurations
 import { AppRoutes } from "./app.routing";
 
 // Components
 import { AppComponent } from "./app.component";
+import { LoaderSpinnerModule } from "./shared/loader-spinner/loader-spinner";
+import { SharedModule } from "./shared/shared.module";
+import { IndexModule } from "./index/index.module";
+import { UserModule } from "./user/user.module";
+import { ProductModule } from "./product/product.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,7 +21,7 @@ import { AppComponent } from "./app.component";
     IndexModule,
     ProductModule,
     UserModule,
-    LoaderSpinnerModule,
+    SharedModule,
     RouterModule.forRoot(AppRoutes, { enableTracing: true })
   ],
   providers: [],

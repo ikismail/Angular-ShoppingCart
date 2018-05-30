@@ -1,10 +1,9 @@
-import { FilterByBrandPipe } from "./../shared/filterByBrand.pipe";
-import { AuthService } from "./../../index/shared/auth.service";
-import { Product } from "./../model/product";
-import { ProductService } from "./../shared/product.service";
 import { Component, OnInit } from "@angular/core";
-import { LoaderSpinnerService } from "../../modules/loader-spinner/loader-spinner";
 import { ToastyConfig, ToastOptions, ToastyService } from "ng2-toasty";
+import { Product } from "../../shared/models/product";
+import { AuthService } from "../../shared/services/auth.service";
+import { ProductService } from "../../shared/services/product.service";
+import { LoaderSpinnerService } from "../../shared/loader-spinner/loader-spinner";
 
 @Component({
   selector: "app-product-list",

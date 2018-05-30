@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Product } from "../../product/model/product";
-import { ProductService } from "../../product/shared/product.service";
+import { Product } from "../../shared/models/product";
+import { ProductService } from "../../shared/services/product.service";
 
 @Component({
   selector: "app-local-favourite-page",
@@ -10,6 +10,10 @@ import { ProductService } from "../../product/shared/product.service";
 export class LocalFavouritePageComponent implements OnInit {
   favoruiteProducts: Product[];
   showDataNotFound = true;
+
+  // Not Found Message
+  messageTitle = "No Favourite Products Found";
+  messageDescription = "Please, choose your favourite products";
 
   constructor(private productService: ProductService) {}
 

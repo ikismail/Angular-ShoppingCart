@@ -4,10 +4,10 @@ import {
   ToastOptions,
   ToastData
 } from "ng2-toasty";
-import { ProductService } from "./../shared/product.service";
-import { Product } from "./../model/product";
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { Product } from "../../shared/models/product";
+import { ProductService } from "../../shared/services/product.service";
 
 declare var $: any;
 declare var require: any;
@@ -29,7 +29,7 @@ export class AddProductComponent implements OnInit {
     this.toastyConfig.theme = "material";
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
   createProduct(productForm: NgForm) {
     const toastOptions: ToastOptions = {

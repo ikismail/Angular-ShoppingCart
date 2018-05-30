@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="error-template">
+      <h1>
+        Oops!</h1>
+      <h2>
+        {{title}}</h2>
+      <div class="error-details">
+        {{description}}
+      </div>
+      <div class="error-actions">
+        <a [routerLink]="[ '/' ]" class="btn btn-primary btn-lg">
+          <span class="glyphicon glyphicon-home"></span>
+          Take Me Home </a>
+        <a [routerLink]="[ '/products/all-products' ]" class="btn btn-default btn-lg">
+          <span class="glyphicon glyphicon-envelope"></span>Our Products </a>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,7 @@
-import { AuthService } from "./../shared/auth.service";
 import { Component, OnInit, EventEmitter, Output } from "@angular/core";
 import { Router } from "@angular/router";
-import { ProductService } from "../../product/shared/product.service";
+import { AuthService } from "../../shared/services/auth.service";
+import { ProductService } from "../../shared/services/product.service";
 declare var $: any;
 
 @Component({
@@ -10,23 +10,16 @@ declare var $: any;
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
-
   constructor(
     public authService: AuthService,
     private router: Router,
     public productService: ProductService
   ) {}
 
-  ngOnInit() {
-   
-  }
+  ngOnInit() {}
   logout() {
     this.authService.logout();
     this.router.navigate(["/"]);
     location.reload();
   }
-
-  
-
-
 }

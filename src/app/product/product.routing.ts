@@ -1,6 +1,5 @@
-import { AuthGuard } from "./../index/shared/auth_gaurd";
 import { ProductListComponent } from "./product-list/product-list.component";
-import { Routes, RouterModule } from "@angular/router";
+import { Routes } from "@angular/router";
 import { IndexComponent } from "../index/index.component";
 import { ProductDetailComponent } from "./product-detail/product-detail.component";
 

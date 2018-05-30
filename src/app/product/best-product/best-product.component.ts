@@ -1,6 +1,6 @@
-import { ProductService } from "./../shared/product.service";
-import { Product } from "./../model/product";
 import { Component, OnInit } from "@angular/core";
+import { Product } from "../../shared/models/product";
+import { ProductService } from "../../shared/services/product.service";
 declare var $: any;
 
 @Component({

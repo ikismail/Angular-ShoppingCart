@@ -1,7 +1,5 @@
 // Core Dependencies
-import { FormsModule, FormBuilder } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { HttpClientModule } from "@angular/common/http";
 import {
   NgModule,
   NO_ERRORS_SCHEMA,
@@ -9,36 +7,25 @@ import {
 } from "@angular/core";
 import { CommonModule } from "@angular/common";
 
-// Third Party Dependencies
-import { AgmCoreModule } from "@agm/core";
-import { NgxPaginationModule } from "ngx-pagination";
-
 // Configuration and Services
 import { UserRoutes } from "./user.routing";
-import { UserService } from "./shared/user.service";
 
 // Components
 import { UserComponent } from "./user.component";
 import { UserAccountComponent } from "./user-account/user-account.component";
 import { UserFavouriteProductsComponent } from "./user-favourite-products/user-favourite-products.component";
+import { UserCartItemsComponent } from "./user-cart-items/user-cart-items.component";
+import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    NgxPaginationModule,
-    FormsModule,
-    HttpClientModule,
-    RouterModule.forChild(UserRoutes),
-    AgmCoreModule.forRoot({
-      apiKey: "AIzaSyDMbxW3MlwUP2vrAZVJyu7pYqZa1LthvTE"
-    })
-  ],
+  imports: [CommonModule, SharedModule, RouterModule.forChild(UserRoutes)],
   declarations: [
     UserComponent,
     UserAccountComponent,
-    UserFavouriteProductsComponent
+    UserFavouriteProductsComponent,
+    UserCartItemsComponent
   ],
-  providers: [UserService, FormBuilder],
+  providers: [],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
 export class UserModule {}
