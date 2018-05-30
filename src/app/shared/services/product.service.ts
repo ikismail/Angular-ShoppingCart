@@ -144,7 +144,6 @@ export class ProductService {
 
   // Removing Favourite Product from localStorage
   removeLocalFavourite(product: Product) {
-    console.log("removing in service", product);
 
     const products: Product[] = JSON.parse(localStorage.getItem("avf_item"));
 
@@ -167,11 +166,9 @@ export class ProductService {
 
   // Calculating FavProductsCount and storing it in variable
   calculateFavProductCounts() {
-    console.log("localFav");
     const x = this.getUsersFavouriteProduct()
       .snapshotChanges()
       .subscribe(data => {
-        console.log("localFav", data.length);
         this.navbarFavProdCount = data.length;
       });
   }
@@ -245,7 +242,6 @@ export class ProductService {
 
   // Removing cart from local
   removeLocalCartProduct(product: Product) {
-    console.log("removing in service", product);
 
     const products: Product[] = JSON.parse(localStorage.getItem("avct_item"));
 
@@ -279,7 +275,6 @@ export class ProductService {
     const x = this.getUsersCartProducts()
       .snapshotChanges()
       .subscribe(data => {
-        console.log("cart data", data);
         this.navbarCartCount = data.length;
       });
   }

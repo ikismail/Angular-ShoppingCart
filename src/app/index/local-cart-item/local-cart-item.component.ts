@@ -21,7 +21,6 @@ export class LocalCartItemComponent implements OnInit {
   }
 
   removeLocalCartProduct(product: Product) {
-    console.log("removing product" + product.productName + "from cart");
     this.productService.removeLocalCartProduct(product);
 
     // Recalling

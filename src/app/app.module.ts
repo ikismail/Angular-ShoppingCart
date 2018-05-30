@@ -22,7 +22,7 @@ import { ProductModule } from "./product/product.module";
     ProductModule,
     UserModule,
     SharedModule,
-    RouterModule.forRoot(AppRoutes, { enableTracing: true })
+    RouterModule.forRoot(AppRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent],

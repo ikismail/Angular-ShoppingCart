@@ -17,7 +17,6 @@ export class UserAccountComponent implements OnInit {
 
   ngOnInit() {
     this.loggedUser = this.authService.getLoggedInUser();
-    console.log("logged User", this.loggedUser);
   }
 
   updateProfile(form: NgForm) {}

@@ -30,12 +30,10 @@ export class UserCartItemsComponent implements OnInit {
   getCartProducts() {
     const x = this.productService.getUsersCartProducts();
     x.snapshotChanges().subscribe(data => {
-      console.log("cart data", data);
       this.products = [];
       data.forEach(product => {
         const y = product.payload.toJSON() as FavouriteProduct;
         y["$key"] = product.key;
-        console.log("Cart Product", y);
         this.products.push(y);
       });
     });

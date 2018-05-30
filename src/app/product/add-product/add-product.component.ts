@@ -52,8 +52,6 @@ export class AddProductComponent implements OnInit {
 
     const date = productForm.value["productAdded"];
 
-    // console.log(moment.unix(date).format("MM/DD/YYYY hh:mm:ss"));
-
     this.productService.createProduct(productForm.value);
 
     this.product = new Product();

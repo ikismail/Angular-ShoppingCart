@@ -35,8 +35,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
       this.spinnerService.hide();
       const y = product.payload.toJSON() as Product;
 
-      console.log("getProduct id: " + id, y);
-
       y["$key"] = id;
       this.product = y;
     });
