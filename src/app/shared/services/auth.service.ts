@@ -16,20 +16,22 @@ export class AuthService {
   }
 
   login(email: string, password: string): boolean {
+    console.log("email", email);
+    console.log("password", password);
+
     let status = false;
-    this.usersList.forEach(user => {
-      if (email === user.emailId && password === user.password) {
-        const loggedInUser = user;
+    for (const el of this.usersList) {
+      console.log(el);
+      if (email === el.emailId && password === el.password) {
+        const loggedInUser = el;
         const objStr = JSON.stringify(loggedInUser);
         const token = new Buffer(objStr).toString("base64");
         localStorage.setItem("token", token);
         sessionStorage.setItem("token", token);
         status = true;
-        return status;
+        break;
       }
-
-      return status;
-    });
+    }
 
     return status;
   }

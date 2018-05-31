@@ -2,23 +2,25 @@
 <section class="container">
   <!-- Login form -->
   <div class="col-sm-6">
-    <form style="width:22rem">
+    <form style="width:22rem" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
       <p class="h5 text-center mb-4">Sign in</p>
 
       <div class="md-form">
         <i class="fa fa-envelope prefix grey-text"></i>
-        <input mdbActive type="email" id="loginEmailId" class="form-control" name="emailId" [(ngModel)]="emailId" mdbInputValidate [email]="true">
+        <input mdbActive type="email" id="loginEmailId" class="form-control" name="emailId" [(ngModel)]="loginUser.emailId" mdbInputValidate
+          [email]="true">
         <label for="emailId">Your email</label>
       </div>
 
       <div class="md-form">
         <i class="fa fa-lock prefix grey-text"></i>
-        <input type="password" id="password" name="login-password" [(ngModel)]="password" class="form-control" mdbActive>
+        <input type="password" id="loginPassword" name="loginPassword" [(ngModel)]="loginUser.loginPassword" class="form-control"
+          mdbActive>
         <label for="defaultForm-pass">Your password</label>
       </div>
 
       <div class="text-center">
-        <button class="btn btn-primary waves-light" [disabled]="!emailId || !password" (click)="login()" mdbRippleRadius>Login</button>
+        <button type="submit" class="btn btn-primary waves-light" id="loginButton" mdbRippleRadius>Login</button>
       </div>
     </form>
   </div>
@@ -59,7 +61,7 @@
               <label for="form34">Repeat password</label>
             </div>
             <div class="text-center mt-2">
-              <button class="btn btn-info waves-light" mdbRippleRadius>Sign up
+              <button class="btn btn-info waves-light" id="signUpButton" mdbRippleRadius>Sign up
                 <i class="fa fa-sign-in ml-1"></i>
               </button>
             </div>

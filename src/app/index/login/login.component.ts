@@ -18,9 +18,10 @@ declare var $: any;
   providers: [EmailValidator]
 })
 export class LoginComponent implements OnInit {
-  emailId: string;
-  password: string;
-
+  loginUser = {
+    emailId: "",
+    loginPassword: ""
+  };
   createUser;
 
   constructor(
@@ -60,8 +61,15 @@ export class LoginComponent implements OnInit {
     }, 1500);
   }
 
-  login() {
-    if (this.authService.login(this.emailId, this.password) === true) {
+  login(userForm: NgForm) {
+    console.log("loginForm", userForm);
+
+    if (
+      this.authService.login(
+        userForm.value["emailId"],
+        userForm.value["loginPassword"]
+      ) === true
+    ) {
       const toastOption: ToastOptions = {
         title: "Authentication Success",
         msg: "Logging in please wait",
@@ -83,7 +91,7 @@ export class LoginComponent implements OnInit {
         theme: "material"
       };
       this.toastyService.error(toastOption);
-      this.emailId = this.password = "";
+      this.loginUser.emailId = this.loginUser.loginPassword = "";
     }
   }
 }
