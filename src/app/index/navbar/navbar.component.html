@@ -31,14 +31,14 @@
         <div *ngIf="authService.isLoggedIn() ; else favCountNotLogged">
           <a class="nav-link" href="javascript:;;" [routerLink]="['/users', {outlets: {'profileOutlet': ['favourite-products']}}]">
             <i class="fa fa-heart">
-              <span class="mt-2">{{productService.navbarFavProdCount}}</span>
+              <span class="mt-2"> {{productService.navbarFavProdCount}}</span>
             </i>
           </a>
         </div>
         <ng-template #favCountNotLogged>
           <a class="nav-link" href="javascript:;;" [routerLink]="['/index/favourites']">
             <i class="fa fa-heart">
-              <span class="mt-2">{{productService.navbarFavProdCount}}</span>
+              <span class="mt-2"> {{productService.navbarFavProdCount}}</span>
             </i>
           </a>
         </ng-template>
@@ -48,14 +48,14 @@
         <div *ngIf="authService.isLoggedIn() ; else cartCountNotLogged">
           <a class="nav-link" href="javascript:;;" [routerLink]="['/users', {outlets: {'profileOutlet': ['cart-items']}}]">
             <i class="fa fa-shopping-cart">
-              <span class="mt-2">{{productService.navbarCartCount}}</span>
+              <span class="mt-2"> {{productService.navbarCartCount}}</span>
             </i>
           </a>
         </div>
         <ng-template #cartCountNotLogged>
           <a class="nav-link" href="javascript:;;" [routerLink]="['/index/cartItems']">
             <i class="fa fa-shopping-cart">
-              <span class="mt-2">{{productService.navbarCartCount}}</span>
+              <span class="mt-2"> {{productService.navbarCartCount}}</span>
             </i>
           </a>
         </ng-template>

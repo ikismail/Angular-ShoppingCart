@@ -27,11 +27,11 @@
               <a class="text-muted">
                 <h5>{{ favourite.product.productCategory }}</h5>
               </a>
-              <h5 class="card-title">
+              <p class="card-title">
                 <strong>
                   <a [routerLink]="['/products/product', favourite.productId]" routerLinkActive="router-link-active">{{ favourite.product.productName }}</a>
                 </strong>
-              </h5>
+              </p>
 
               <!--Description-->
               <p class="card-text">{{ favourite.product.productDescription }}

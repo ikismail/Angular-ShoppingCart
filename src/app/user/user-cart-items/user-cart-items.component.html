@@ -27,11 +27,11 @@
               <a class="text-muted">
                 <h5>{{ cartItem.product.productCategory }}</h5>
               </a>
-              <h5 class="card-title">
+              <p class="card-title">
                 <strong>
                   <a [routerLink]="['/products/product', cartItem.productId]" routerLinkActive="router-link-active">{{ cartItem.product.productName }}</a>
                 </strong>
-              </h5>
+              </p>
 
               <!--Description-->
               <p class="card-text">{{ cartItem.product.productDescription }}

@@ -28,7 +28,7 @@
       <div class="container">
         <div class="row">
           <!-- List of Products -->
-          <div class="col-sm-4" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 6, currentPage: page }">
+          <div class="col-sm-4 mb-2" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 6, currentPage: page }">
             <div class="item">
               <div class=" mb-r">
                 <!--Card-->
@@ -49,11 +49,11 @@
                     <a class="text-muted">
                       <h5>{{ product.productCategory }}</h5>
                     </a>
-                    <h5 class="card-title">
+                    <p class="card-title">
                       <strong>
                         <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{ product.productName }}</a>
                       </strong>
-                    </h5>
+                    </p>
                     <!--Description-->
                     <p class="card-text">{{ product.productDescription }}
                     </p>
@@ -87,7 +87,7 @@
           </div>
         </div>
         <!-- Pagination -->
-        <div class="text-center">
+        <div class="text-center mt-3">
           <pagination-controls (pageChange)="page = $event"></pagination-controls>
         </div>
       </div>
