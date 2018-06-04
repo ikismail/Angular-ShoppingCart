@@ -2,8 +2,10 @@
 
   <app-navbar></app-navbar>
 
-  <router-outlet></router-outlet>
+  <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+    <router-outlet #o="outlet"></router-outlet>
+  </main>
 
-  <app-footer></app-footer>
+  <!-- <app-footer></app-footer> -->
   <app-loader-spinner></app-loader-spinner>
 </div>
