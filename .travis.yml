@@ -16,18 +16,13 @@ addons:
     packages:
       - google-chrome-stable
 
-before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.3.2
-  - export PATH="$HOME/.yarn/bin:$PATH"
-
-
 cache:
   directories:
      - ./node_modules
-  yarn: true
+  npm: true
 
 install:
-  - yarn install
+  - npm install
 
 script:
   - ng build --prod
