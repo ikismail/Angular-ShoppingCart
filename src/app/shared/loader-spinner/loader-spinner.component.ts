@@ -5,7 +5,7 @@ import {
   Input,
   ViewEncapsulation
 } from "@angular/core";
-import { Subscription } from "rxjs/Subscription";
+import { Subscription } from "rxjs";
 import { LoaderSpinnerService } from "./loader-spinner.service";
 
 @Component({

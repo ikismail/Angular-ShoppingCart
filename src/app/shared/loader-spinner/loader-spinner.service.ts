@@ -1,6 +1,6 @@
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
-import { Observer } from "rxjs/Observer";
+import { Observer } from "rxjs";
 
 @Injectable()
 export class LoaderSpinnerService {

@@ -4,9 +4,8 @@ import {
   AngularFireList,
   AngularFireObject
 } from "angularfire2/database";
-import { query } from "@angular/core/src/animation/dsl";
 import { ToastOptions, ToastyService, ToastyConfig } from "ng2-toasty";
-import { Observable } from "rxjs/Observable";
+import { Observable } from "rxjs";
 import { Product } from "../models/product";
 import { AuthService } from "./auth.service";
 import { UserService } from "./user.service";
