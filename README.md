@@ -1,11 +1,11 @@
-# Angular5 - ShoppingCart
+# Angular6 - ShoppingCart
 
  [![HitCount](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular4-ShoppingCart)
 
-[![Build Status](https://travis-ci.org/ikismail/Angular5-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular5-ShoppingCart)
+[![Build Status](https://travis-ci.org/ikismail/Angular-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular-ShoppingCart)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/issues)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0e15a95393f94acb941e8e7cdaedc9e6)](https://www.codacy.com/app/ikismail/Angular5-ShoppingCart?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ikismail/Angular5-ShoppingCart&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0e15a95393f94acb941e8e7cdaedc9e6)](https://www.codacy.com/app/ikismail/Angular-ShoppingCart?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ikismail/Angular-ShoppingCart&amp;utm_campaign=Badge_Grade)
 
 [![dependency Status](https://david-dm.org/ikismail/Angular-ShoppingCart.svg)](https://david-dm.org/ikismail/Angular-ShoppingCart#info=dependencies)
 [![devDependency Status](https://david-dm.org/ikismail/Angular-ShoppingCart/dev-status.svg)](https://david-dm.org/ikismail/Angular-ShoppingCart#info=devDependencies)
@@ -14,9 +14,9 @@
 [![](https://img.shields.io/github/release/ikismail/Angular-ShoppingCart.svg?style=flat-square)](https://github.com/ikismail/Angular-ShoppingCart/releases)
 [![npm](https://img.shields.io/badge/demo-online-brightgreen.svg)](http://angularexampleapp.com/)
 
-Developing a **ShoppingCart (Ecommerce) Application using Angular5**.
+Developing a **ShoppingCart (Ecommerce) Application using Angular6**.
 
-**Live Demo** : [angular5-shopping-cart](https://angular-shoppingcart.firebaseapp.com/)
+**Live Demo** : [Angular6-shopping-cart](https://angular-shoppingcart.firebaseapp.com/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
