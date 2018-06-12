@@ -10,4 +10,5 @@ export class User {
   phoneNumber: string;
   createdOn: string;
   isAdmin: boolean;
+  avatar: string;
 }

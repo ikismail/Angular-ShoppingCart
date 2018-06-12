@@ -4,6 +4,7 @@ import { NoProductsFoundComponent } from "./components/no-products-found/no-prod
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from "angularfire2/database";
+import { AngularFireAuthModule } from "angularfire2/auth";
 import { FormsModule, FormBuilder } from "@angular/forms";
 import { ToastyModule } from "ng2-toasty";
 import { RouterModule, Router } from "@angular/router";
@@ -28,6 +29,7 @@ import { LoaderSpinnerService } from "./loader-spinner/loader-spinner";
     MDBBootstrapModule.forRoot(),
     AngularFireModule.initializeApp(FireBaseConfig),
     AngularFireDatabaseModule,
+    AngularFireAuthModule,
     FormsModule,
     HttpClientModule,
     RouterModule,
@@ -49,6 +51,7 @@ import { LoaderSpinnerService } from "./loader-spinner/loader-spinner";
     FormsModule,
     MDBBootstrapModule,
     AngularFireModule,
+    AngularFireAuthModule,
     AngularFireDatabaseModule,
     FormsModule,
     ToastyModule,

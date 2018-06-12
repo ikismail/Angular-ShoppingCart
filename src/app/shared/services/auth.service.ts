@@ -1,90 +1,87 @@
 import { Injectable } from "@angular/core";
 import * as firebase from "firebase/app";
 import { Observable } from "rxjs";
-import { log } from "util";
-import { Buffer } from "buffer";
 import { User } from "../models/user";
-import { UserService } from "./user.service";
+import { AngularFireAuth } from "angularfire2/auth";
+import { Router } from "@angular/router";
 
 @Injectable()
 export class AuthService {
   user: Observable<firebase.User>;
-  usersList: User[] = [];
+  userDetails: firebase.User = null;
 
-  constructor(private userService: UserService) {
-    this.getAllUsers();
+  constructor(private firebaseAuth: AngularFireAuth, private router: Router) {
+    this.user = firebaseAuth.authState;
+    this.user.subscribe(user => {
+      if (user) {
+        this.userDetails = user;
+        console.log(this.userDetails);
+      } else {
+        this.userDetails = null;
+      }
+    });
   }
 
-  login(email: string, password: string): boolean {
-    console.log("email", email);
-    console.log("password", password);
-
-    let status = false;
-    for (const el of this.usersList) {
-      console.log(el);
-      if (email === el.emailId && password === el.password) {
-        const loggedInUser = el;
-        const objStr = JSON.stringify(loggedInUser);
-        const token = new Buffer(objStr).toString("base64");
-        localStorage.setItem("token", token);
-        sessionStorage.setItem("token", token);
-        status = true;
-        break;
-      }
+  isLoggedIn() {
+    if (this.userDetails == null) {
+      return false;
+    } else {
+      return true;
     }
-
-    return status;
   }
 
   logout() {
-    localStorage.removeItem("token");
-    sessionStorage.removeItem("token");
+    this.firebaseAuth.auth.signOut().then(res => this.router.navigate(["/"]));
   }
 
-  isLoggedIn(): Boolean {
-    const token = sessionStorage.getItem("token");
-    if (token) {
-      return true;
-    }
-    return false;
-  }
-
-  isAdmin(): boolean {
-    const token = sessionStorage.getItem("token");
-
-    if (!token) {
-      return false;
-    }
-
-    const strObj = new Buffer(token || "", "base64").toString("utf8");
-    const loggedUser = JSON.parse(strObj);
-    if (loggedUser["isAdmin"] === true) {
-      return true;
-    }
-    return false;
+  createUserWithEmailAndPassword(emailID: string, password: string) {
+    return this.firebaseAuth.auth.createUserWithEmailAndPassword(
+      emailID,
+      password
+    );
   }
 
   getLoggedInUser(): User {
-    const token = sessionStorage.getItem("token");
+    const loggedUser: User = new User();
+    const user = this.firebaseAuth.auth.currentUser;
 
-    if (!token) {
-      return null;
+    if (user) {
+      this.userDetails = user;
+      if (user != null) {
+        loggedUser.$key = user.uid;
+        loggedUser.userName = user.displayName;
+        loggedUser.emailId = user.email;
+        loggedUser.phoneNumber = user.phoneNumber;
+        loggedUser.avatar = user.photoURL;
+        loggedUser.isAdmin = user.email === "admin@gmail.com" ? true : false;
+      }
+    } else {
+      this.userDetails = null;
     }
 
-    const strObj = new Buffer(token || "", "base64").toString("utf8");
-    const loggedUser: User = JSON.parse(strObj);
     return loggedUser;
   }
 
-  getAllUsers() {
-    const x = this.userService.getUsers();
-    x.snapshotChanges().subscribe(user => {
-      this.usersList = [];
-      user.forEach(element => {
-        const y = element.payload.toJSON();
-        y["$key"] = element.key;
-        this.usersList.push(y as User);
-      });
-    });
+  isAdmin(): boolean {
+    const user = this.getLoggedInUser();
+    if (user != null) {
+      if (user.isAdmin === true) {
+        return true;
+      }
+    }
+  }
+
+  signInRegular(email, password) {
+    const credential = firebase.auth.EmailAuthProvider.credential(
+      email,
+      password
+    );
+    return this.firebaseAuth.auth.signInWithEmailAndPassword(email, password);
+  }
+
+  signInWithGoogle() {
+    return this.firebaseAuth.auth.signInWithPopup(
+      new firebase.auth.GoogleAuthProvider()
+    );
   }
 }

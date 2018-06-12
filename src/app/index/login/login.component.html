@@ -1,26 +1,33 @@
 <br>
 <section class="container">
+
   <!-- Login form -->
   <div class="col-sm-6">
-    <form style="width:22rem" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <form style="width:22rem" #loginForm="ngForm" (ngSubmit)="signInWithEmail(loginForm)">
       <p class="h5 text-center mb-4">Sign in</p>
 
       <div class="md-form">
         <i class="fa fa-envelope prefix grey-text"></i>
-        <input mdbActive type="email" id="loginEmailId" class="form-control" name="emailId" [(ngModel)]="loginUser.emailId" mdbInputValidate
-          [email]="true">
+        <input mdbActive type="email" id="loginEmailId" class="form-control" name="emailId" [(ngModel)]="user.emailId" mdbInputValidate
+          [email]="true" autocomplete="email">
         <label for="emailId">Your email</label>
       </div>
 
       <div class="md-form">
         <i class="fa fa-lock prefix grey-text"></i>
-        <input type="password" id="loginPassword" name="loginPassword" [(ngModel)]="loginUser.loginPassword" class="form-control"
-          mdbActive>
+        <input type="password" id="loginPassword" name="loginPassword" [(ngModel)]="user.loginPassword" class="form-control" mdbActive
+          autocomplete="current-password">
         <label for="defaultForm-pass">Your password</label>
       </div>
 
       <div class="text-center">
         <button type="submit" class="btn btn-primary waves-light" id="loginButton" mdbRippleRadius>Login</button>
+
+        <button type="button" class="btn waves-light" (click)="signInWithGoogle()" style="background-color: #dd4b39">
+          <i class="fa fa-google" aria-hidden="true"></i>
+          Sign in with Google
+        </button>
+
       </div>
     </form>
   </div>
@@ -44,21 +51,20 @@
             </button>
           </div>
           <div class="modal-body">
+            <div class="alert alert-danger" role="alert" *ngIf="errorInUserCreate">
+              {{errorMessage.message}}
+            </div>
             <div class="md-form form-sm">
               <i class="fa fa-envelope prefix"></i>
               <input mdbActive type="email" id="emailId" class="form-control" name="emailId" [(ngModel)]="createUser.emailId" mdbInputValidate
-                [email]="true">
+                [email]="true" autocomplete="email">
               <label for="emailId">Your email</label>
             </div>
             <div class="md-form form-sm">
               <i class="fa fa-lock prefix"></i>
-              <input mdbActive type="password" id="psd" class="form-control">
-              <label for="psd">Your password</label>
-            </div>
-            <div class="md-form form-sm">
-              <i class="fa fa-lock prefix"></i>
-              <input mdbActive type="password" id="form34" class="form-control" name="password" [(ngModel)]="createUser.password" mdbInputValidate>
-              <label for="form34">Repeat password</label>
+              <input mdbActive type="password" id="password" class="form-control" name="password" [(ngModel)]="createUser.password" mdbInputValidate
+                autocomplete="new-password">
+              <label for="password">password</label>
             </div>
             <div class="text-center mt-2">
               <button class="btn btn-info waves-light" id="signUpButton" mdbRippleRadius>Sign up

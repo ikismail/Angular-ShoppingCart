@@ -11,13 +11,10 @@ import { AuthService } from "../../shared/services/auth.service";
 export class UserAccountComponent implements OnInit {
   loggedUser: User;
   // Enable Update Button
-  enbUpdBut: Boolean = true;
 
   constructor(private authService: AuthService, private fb: FormBuilder) {}
 
   ngOnInit() {
     this.loggedUser = this.authService.getLoggedInUser();
   }
-
-  updateProfile(form: NgForm) {}
 }
