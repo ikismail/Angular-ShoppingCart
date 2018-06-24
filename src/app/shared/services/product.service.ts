@@ -91,41 +91,21 @@ export class ProductService {
 
     // Toaster Adding
     const toastAdd: ToastOptions = {
-      title: "Adding Product to Local",
+      title: "Adding Product",
       msg: "Adding Product as Favourite",
       showClose: true,
       timeout: 5000,
       theme: "material"
     };
 
-    if (this.authService.isLoggedIn() === false) {
-      let a: Product[];
-      a = JSON.parse(localStorage.getItem("avf_item")) || [];
-      a.push(data);
-      this.toastyService.wait(toastAdd);
-      setTimeout(() => {
-        localStorage.setItem("avf_item", JSON.stringify(a));
-        this.calculateLocalFavProdCounts();
-      }, 1500);
-    }
-    if (this.authService.isLoggedIn() === true) {
-      const user = this.authService.getLoggedInUser();
-
-      const productKey = data.$key;
-
-      delete data.$key;
-
-      this.toastyService.wait(toastAdd);
-      setTimeout(() => {
-        this.favouriteProducts.push({
-          product: data,
-          productId: productKey,
-          userId: user.$key
-        });
-
-        this.calculateFavProductCounts();
-      }, 1500);
-    }
+    let a: Product[];
+    a = JSON.parse(localStorage.getItem("avf_item")) || [];
+    a.push(data);
+    this.toastyService.wait(toastAdd);
+    setTimeout(() => {
+      localStorage.setItem("avf_item", JSON.stringify(a));
+      this.calculateLocalFavProdCounts();
+    }, 1500);
   }
 
   // Fetching unsigned users favourite proucts
@@ -143,7 +123,6 @@ export class ProductService {
 
   // Removing Favourite Product from localStorage
   removeLocalFavourite(product: Product) {
-
     const products: Product[] = JSON.parse(localStorage.getItem("avf_item"));
 
     for (let i = 0; i < products.length; i++) {
@@ -187,51 +166,24 @@ export class ProductService {
 
   // Adding new Product to cart db if logged in else localStorage
   addToCart(data: Product): void {
-    if (this.authService.isLoggedIn() === false) {
-      let a: Product[];
+    let a: Product[];
 
-      a = JSON.parse(localStorage.getItem("avct_item")) || [];
+    a = JSON.parse(localStorage.getItem("avct_item")) || [];
 
-      a.push(data);
+    a.push(data);
 
-      const toastOption: ToastOptions = {
-        title: "Adding Product to Local Cart",
-        msg: "Please add product to cart after signing in to update to server",
-        showClose: true,
-        timeout: 5000,
-        theme: "material"
-      };
-      this.toastyService.wait(toastOption);
-      setTimeout(() => {
-        localStorage.setItem("avct_item", JSON.stringify(a));
-        this.calculateLocalCartProdCounts();
-      }, 1500);
-    }
-    if (this.authService.isLoggedIn() === true) {
-      const user = this.authService.getLoggedInUser();
-
-      const productKey = data.$key;
-
-      delete data.$key;
-
-      const toastOption: ToastOptions = {
-        title: "Added  to Cart",
-        msg: "Adding Product to Cart",
-        showClose: true,
-        timeout: 5000,
-        theme: "material"
-      };
-      this.toastyService.wait(toastOption);
-      setTimeout(() => {
-        this.cartProducts.push({
-          product: data,
-          productId: productKey,
-          userId: user.$key
-        });
-
-        this.calculateCartProductCounts();
-      }, 1500);
-    }
+    const toastOption: ToastOptions = {
+      title: "Adding Product to Cart",
+      msg: "Product Adding to the cart",
+      showClose: true,
+      timeout: 1000,
+      theme: "material"
+    };
+    this.toastyService.wait(toastOption);
+    setTimeout(() => {
+      localStorage.setItem("avct_item", JSON.stringify(a));
+      this.calculateLocalCartProdCounts();
+    }, 500);
   }
 
   // Removing Cart product from db
@@ -241,7 +193,6 @@ export class ProductService {
 
   // Removing cart from local
   removeLocalCartProduct(product: Product) {
-
     const products: Product[] = JSON.parse(localStorage.getItem("avct_item"));
 
     for (let i = 0; i < products.length; i++) {
