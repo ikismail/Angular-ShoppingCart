@@ -1,7 +1,8 @@
-<div *ngIf="products.length > 0">
+<br>
+<div class="container" *ngIf="favoruiteProducts.length > 0">
   <div class="row">
     <!-- List of Products -->
-    <div class="col-sm-4" *ngFor="let favourite of products | paginate: { itemsPerPage: 6, currentPage: page }">
+    <div class="col-sm-4" *ngFor="let product of favoruiteProducts">
       <div class="item">
         <div class=" mb-r">
 
@@ -9,10 +10,10 @@
           <div class="card card-cascade wider">
 
             <!--Card image-->
-            <a [routerLink]="['/products/product', favourite.productId]">
+            <a [routerLink]="['/products/product', product.$key ]">
 
               <div class="view overlay hm-white-slight">
-                <img [src]="favourite.product.productImageUrl" class="img-fluid" alt="" width="360px" height="640px">
+                <img [src]="product.productImageUrl" class="img-fluid" alt="" width="360px" height="640px">
                 <a>
                   <div class="mask waves-effect waves-light" mdbRippleRadius></div>
                 </a>
@@ -25,23 +26,26 @@
             <div class="card-body text-center no-padding">
               <!--Category & Title-->
               <a class="text-muted">
-                <h5>{{ favourite.product.productCategory }}</h5>
+                <h5>{{ product.productCategory }}</h5>
               </a>
-              <p class="card-title">
+              <h5 class="card-title">
                 <strong>
-                  <a [routerLink]="['/products/product', favourite.productId]" routerLinkActive="router-link-active">{{ favourite.product.productName }}</a>
+                  <a [routerLink]="['/products/product', product.$key]">{{ product.productName }}</a>
                 </strong>
-              </p>
+              </h5>
 
               <!--Description-->
-              <p class="card-text">{{ favourite.product.productDescription }}
+              <p class="card-text">{{ product.productDescription }}
               </p>
 
               <!--Card footer-->
               <div class="card-footer">
-                <span class="left">{{ favourite.product.productPrice }} $</span>
-                <span class="right" *ngIf="authService.isLoggedIn()">
-                  <a placement="top" mdbTooltip="Remove Product" container="body" (click)="removeFromFavourite(favourite.$key)">
+                <span class="left">{{ product.productPrice }} $</span>
+                <span class="right">
+                  <a placement="top" mdbTooltip="Quick Look" container="body" [routerLink]="['/products/product', product.$key]">
+                    <i class="fa fa-eye"></i>
+                  </a>
+                  <a placement="top" mdbTooltip="Remove Product" container="body" (click)="removeFavourite(product)">
                     <i class="fa fa-trash"></i>
                   </a>
                 </span>
@@ -57,10 +61,9 @@
       </div>
     </div>
   </div>
-  <div class="text-center">
-    <pagination-controls (pageChange)="page = $event"></pagination-controls>
-  </div>
 </div>
-<div *ngIf="products.length == 0">
+
+<div class="container" *ngIf="favoruiteProducts.length === 0">
+
   <app-no-products-found [title]="messageTitle" [description]="messageDescription"></app-no-products-found>
 </div>
