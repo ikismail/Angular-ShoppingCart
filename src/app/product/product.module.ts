@@ -13,6 +13,9 @@ import { ProductListComponent } from "./product-list/product-list.component";
 import { AddProductComponent } from "./add-product/add-product.component";
 import { ProductDetailComponent } from "./product-detail/product-detail.component";
 import { SharedModule } from "../shared/shared.module";
+import { FavouriteProductsComponent } from "./favourite-products/favourite-products.component";
+import { CartProductsComponent } from "./cart-products/cart-products.component";
+import { CartCalculatorComponent } from "./cart-calculator/cart-calculator.component";
 
 @NgModule({
   imports: [CommonModule, RouterModule.forChild(ProductRoutes), SharedModule],
@@ -21,7 +24,10 @@ import { SharedModule } from "../shared/shared.module";
     BestProductComponent,
     ProductListComponent,
     AddProductComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    FavouriteProductsComponent,
+    CartProductsComponent,
+    CartCalculatorComponent
   ],
   exports: [BestProductComponent]
 })
