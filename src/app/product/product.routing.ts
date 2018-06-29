@@ -1,3 +1,4 @@
+import { CheckoutComponent } from "./checkout/checkout.component";
 import { CartProductsComponent } from "./cart-products/cart-products.component";
 import { FavouriteProductsComponent } from "./favourite-products/favourite-products.component";
 import { ProductListComponent } from "./product-list/product-list.component";
@@ -24,6 +25,10 @@ export const ProductRoutes: Routes = [
       {
         path: "cart-items",
         component: CartProductsComponent
+      },
+      {
+        path: "checkouts",
+        loadChildren: "./checkout/checkout.module#CheckoutModule"
       },
       {
         path: "product/:id",

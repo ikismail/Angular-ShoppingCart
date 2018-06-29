@@ -7,6 +7,8 @@ import { RouterModule } from "@angular/router";
 import { ProductRoutes } from "./product.routing";
 
 // Components
+import { CheckoutModule } from "./checkout/checkout.module";
+
 import { ProductComponent } from "./product.component";
 import { BestProductComponent } from "./best-product/best-product.component";
 import { ProductListComponent } from "./product-list/product-list.component";
@@ -18,7 +20,12 @@ import { CartProductsComponent } from "./cart-products/cart-products.component";
 import { CartCalculatorComponent } from "./cart-calculator/cart-calculator.component";
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forChild(ProductRoutes), SharedModule],
+  imports: [
+    CommonModule,
+    RouterModule.forChild(ProductRoutes),
+    SharedModule,
+    CheckoutModule
+  ],
   declarations: [
     ProductComponent,
     BestProductComponent,
