@@ -1,0 +1,96 @@
+.board .nav-tabs {
+  position: relative;
+  margin: 40px auto;
+  margin-bottom: 0;
+  box-sizing: border-box;
+}
+.nav-tabs {
+  border-bottom: 1px solid #ddd;
+}
+
+.nav {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.liner {
+  height: 2px;
+  background: #ddd;
+  position: absolute;
+  width: 78%;
+  margin: 63px auto;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+.nav-tabs > li {
+  width: 25%;
+}
+.nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+}
+
+.nav > li {
+  position: relative;
+  display: block;
+}
+.nav-tabs > li a {
+  width: 70px;
+  height: 70px;
+  margin: 20px auto;
+  border-radius: 100%;
+  padding: 0;
+}
+.nav-tabs > li > a {
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+
+.nav > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+a {
+  color: #337ab7;
+  text-decoration: none;
+}
+a {
+  background-color: transparent;
+}
+#status-buttons a.active span.round-tabs.one {
+  background: #22c222;
+  color: #fff;
+}
+
+span.round-tabs.one {
+  color: #22c222;
+  border: 2px solid #22c222;
+}
+span.round-tabs.two {
+  color: #febe29;
+  border: 2px solid #febe29;
+}
+span.round-tabs.three {
+  color: #3e5e9a;
+  border: 2px solid #3e5e9a;
+}
+span.round-tabs.four {
+  color: #f1685e;
+  border: 2px solid #f1685e;
+}
+span.round-tabs {
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  display: inline-block;
+  border-radius: 100px;
+  background: #fff;
+  z-index: 2;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  font-size: 25px;
+}
