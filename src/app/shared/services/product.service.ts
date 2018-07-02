@@ -1,14 +1,12 @@
-import { Injectable, EventEmitter, Output } from "@angular/core";
+import { Injectable } from "@angular/core";
 import {
   AngularFireDatabase,
   AngularFireList,
   AngularFireObject
 } from "angularfire2/database";
 import { ToastOptions, ToastyService, ToastyConfig } from "ng2-toasty";
-import { Observable } from "rxjs";
 import { Product } from "../models/product";
 import { AuthService } from "./auth.service";
-import { UserService } from "./user.service";
 
 @Injectable()
 export class ProductService {
@@ -26,7 +24,6 @@ export class ProductService {
   constructor(
     private db: AngularFireDatabase,
     private authService: AuthService,
-    private userService: UserService,
     private toastyService: ToastyService,
     private toastyConfig: ToastyConfig
   ) {

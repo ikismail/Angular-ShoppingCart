@@ -12,7 +12,7 @@ export class UserAccountComponent implements OnInit {
   loggedUser: User;
   // Enable Update Button
 
-  constructor(private authService: AuthService, private fb: FormBuilder) {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     this.loggedUser = this.authService.getLoggedInUser();
