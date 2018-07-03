@@ -16,7 +16,7 @@ import { Product } from "../../shared/models/product";
 export class CartCalculatorComponent implements OnInit, OnChanges {
   @Input() products: Product[];
 
-  totalValue: number = 0;
+  totalValue = 0;
   constructor() {}
 
   ngOnChanges(changes: SimpleChanges) {

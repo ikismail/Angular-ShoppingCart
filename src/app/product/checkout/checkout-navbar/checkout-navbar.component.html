@@ -6,7 +6,8 @@
 
     <!-- circular user icon -->
     <li>
-      <a routerLink="/personal" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="Product Summary">
+      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['/']}}]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
+        data-toggle="tab" title="Product Summary">
         <span class="round-tabs one">
           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         </span>
@@ -15,7 +16,8 @@
 
     <!-- circular tasks icon -->
     <li>
-      <a routerLink="/work" routerLinkActive="active" data-toggle="tab" title="Shipping Details">
+      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['shipping-details']}}]" routerLinkActive="active" data-toggle="tab"
+        title="Shipping Details">
         <span class="round-tabs two">
           <i class="fa fa-truck" aria-hidden="true"></i>
         </span>
@@ -24,7 +26,8 @@
 
     <!-- circular home icon -->
     <li>
-      <a routerLink="/address" routerLinkActive="active" data-toggle="tab" title="Confirmation">
+      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['billing-details']}}]" routerLinkActive="active" data-toggle="tab"
+        title="Confirmation">
         <span class="round-tabs three">
           <i class="fa fa-check-circle" aria-hidden="true"></i>
         </span>
@@ -33,7 +36,7 @@
 
     <!-- circular ok icon -->
     <li>
-      <a routerLink="/result" routerLinkActive="active" data-toggle="tab" title="Payment">
+      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['result']}}]" routerLinkActive="active" data-toggle="tab" title="Payment">
         <span class="round-tabs four">
           <i class="fa fa-credit-card" aria-hidden="true"></i>
         </span>
