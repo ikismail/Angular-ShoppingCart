@@ -56,6 +56,7 @@ export class LoginComponent implements OnInit {
         this.toastyService.wait(toastOption);
         setTimeout((router: Router) => {
           $("#createUserForm").modal("hide");
+          this.router.navigate(["/"]);
         }, 1500);
       })
       .catch(err => {

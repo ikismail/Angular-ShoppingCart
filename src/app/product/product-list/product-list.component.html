@@ -61,13 +61,10 @@
                     <div class="card-footer">
                       <span class="left">{{ product.productPrice }} $</span>
                       <span class="right">
-                        <a placement="top" mdbTooltip="Quick Look" container="body" [routerLink]="['/products/product', product.$key]">
-                          <i class="fa fa-eye"></i>
-                        </a>
                         <a placement="top" mdbTooltip="Add to Wishlist" container="body" (click)="addFavourite(product)">
                           <i class="fa fa-heart"></i>
                         </a>
-                        <a placement="top" mdbTooltip="Add to Wishlist" container="body" (click)="addToCart(product)">
+                        <a placement="top" mdbTooltip="Add to Cart" container="body" (click)="addToCart(product)">
                           <i class="fa fa-shopping-cart"></i>
                         </a>
                         <a placement="top" mdbTooltip="Remove Product" container="body" *ngIf="authService.isAdmin()" (click)="removeProduct(product.$key)">

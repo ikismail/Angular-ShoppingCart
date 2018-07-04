@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ToastyConfig, ToastOptions, ToastyService } from "ng2-toasty";
 import { Product } from "../../shared/models/product";
 import { AuthService } from "../../shared/services/auth.service";
 import { ProductService } from "../../shared/services/product.service";
@@ -21,9 +20,7 @@ export class ProductListComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private productService: ProductService,
-    private spinnerService: LoaderSpinnerService,
-    private toastyConfig: ToastyConfig,
-    private toastyService: ToastyService
+    private spinnerService: LoaderSpinnerService
   ) {}
 
   ngOnInit() {
