@@ -2,12 +2,12 @@ import { Component, OnInit } from "@angular/core";
 import { Product } from "../../shared/models/product";
 import { ProductService } from "../../shared/services/product.service";
 @Component({
-  selector: "app-local-cart-item",
-  templateUrl: "./local-cart-item.component.html",
-  styleUrls: ["./local-cart-item.component.scss"]
+  selector: "app-cart-products",
+  templateUrl: "./cart-products.component.html",
+  styleUrls: ["./cart-products.component.scss"]
 })
-export class LocalCartItemComponent implements OnInit {
-  localCartProducts: Product[];
+export class CartProductsComponent implements OnInit {
+  cartProducts: Product[];
   showDataNotFound = true;
 
   // Not Found Message
@@ -17,17 +17,17 @@ export class LocalCartItemComponent implements OnInit {
   constructor(private productService: ProductService) {}
 
   ngOnInit() {
-    this.getLocalCartProduct();
+    this.getCartProduct();
   }
 
-  removeLocalCartProduct(product: Product) {
+  removeCartProduct(product: Product) {
     this.productService.removeLocalCartProduct(product);
 
     // Recalling
-    this.getLocalCartProduct();
+    this.getCartProduct();
   }
 
-  getLocalCartProduct() {
-    this.localCartProducts = this.productService.getLocalCartProducts();
+  getCartProduct() {
+    this.cartProducts = this.productService.getLocalCartProducts();
   }
 }

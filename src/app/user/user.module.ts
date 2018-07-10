@@ -13,18 +13,11 @@ import { UserRoutes } from "./user.routing";
 // Components
 import { UserComponent } from "./user.component";
 import { UserAccountComponent } from "./user-account/user-account.component";
-import { UserFavouriteProductsComponent } from "./user-favourite-products/user-favourite-products.component";
-import { UserCartItemsComponent } from "./user-cart-items/user-cart-items.component";
 import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
   imports: [CommonModule, SharedModule, RouterModule.forChild(UserRoutes)],
-  declarations: [
-    UserComponent,
-    UserAccountComponent,
-    UserFavouriteProductsComponent,
-    UserCartItemsComponent
-  ],
+  declarations: [UserComponent, UserAccountComponent],
   providers: [],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })

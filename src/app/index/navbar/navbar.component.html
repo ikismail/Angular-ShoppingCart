@@ -1,64 +1,53 @@
 <!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo scrolling-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark indigo">
 
   <!-- Navbar brand -->
-  <logo>
-    <a class="navbar-brand" href="#">ikismail</a>
-  </logo>
+  <a class="navbar-brand" href="#">ikismail</a>
+
+  <!-- Collapse button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
   <!-- Collapsible content -->
-  <links>
+  <div class="collapse navbar-collapse" id="basicExampleNav">
 
     <!-- Links -->
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link waves-light" mdbRippleRadius [routerLink]="[ '/' ]">Home
+        <a class="nav-link" href="javascript:;;" [routerLink]="[ '/' ]">Home
           <span class="sr-only">(current)</span>
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link waves-light" mdbRippleRadius [routerLink]="[ '/products/all-products' ]">Our Products</a>
+        <a class="nav-link" href="jaascript:;;" [routerLink]="[ '/products/all-products' ]">Our Products</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link waves-light" mdbRippleRadius>Pricing</a>
-      </li>
-
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Pricing</a>
+      </li> -->
     </ul>
     <!-- Links -->
 
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <div *ngIf="authService.isLoggedIn() ; else favCountNotLogged">
-          <a class="nav-link" href="javascript:;;" [routerLink]="['/users', {outlets: {'profileOutlet': ['favourite-products']}}]">
+        <div>
+          <a class="nav-link" href="javascript:;;" [routerLink]="['/products/favourite-products']">
             <i class="fa fa-heart">
               <span class="mt-2"> {{productService.navbarFavProdCount}}</span>
             </i>
           </a>
         </div>
-        <ng-template #favCountNotLogged>
-          <a class="nav-link" href="javascript:;;" [routerLink]="['/index/favourites']">
-            <i class="fa fa-heart">
-              <span class="mt-2"> {{productService.navbarFavProdCount}}</span>
-            </i>
-          </a>
-        </ng-template>
 
       </li>
       <li class="nav-item">
-        <div *ngIf="authService.isLoggedIn() ; else cartCountNotLogged">
-          <a class="nav-link" href="javascript:;;" [routerLink]="['/users', {outlets: {'profileOutlet': ['cart-items']}}]">
+        <div>
+          <a class="nav-link" href="javascript:;;" [routerLink]="['/products/cart-items']">
             <i class="fa fa-shopping-cart">
               <span class="mt-2"> {{productService.navbarCartCount}}</span>
             </i>
           </a>
         </div>
-        <ng-template #cartCountNotLogged>
-          <a class="nav-link" href="javascript:;;" [routerLink]="['/index/cartItems']">
-            <i class="fa fa-shopping-cart">
-              <span class="mt-2"> {{productService.navbarCartCount}}</span>
-            </i>
-          </a>
-        </ng-template>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="javascript:;;">
@@ -79,8 +68,8 @@
           <i class="fa fa-sign-in"></i>Logout</a>
       </li>
     </ul>
-  </links>
+  </div>
   <!-- Collapsible content -->
 
-</mdb-navbar>
+</nav>
 <!--/.Navbar-->

@@ -6,16 +6,12 @@ import { CommonModule } from "@angular/common";
 import { IndexRoutes } from "./index.routing";
 
 import { ProductModule } from "./../product/product.module";
-import { UserModule } from "../user/user.module";
 
 // Components
 import { IndexComponent } from "./index.component";
 import { LoginComponent } from "./login/login.component";
 import { FooterComponent } from "./footer/footer.component";
 import { NavbarComponent } from "./navbar/navbar.component";
-
-import { LocalFavouritePageComponent } from "./local-favourite-page/local-favourite-page.component";
-import { LocalCartItemComponent } from "./local-cart-item/local-cart-item.component";
 import { SharedModule } from "../shared/shared.module";
 
 @NgModule({
@@ -29,9 +25,7 @@ import { SharedModule } from "../shared/shared.module";
     IndexComponent,
     NavbarComponent,
     LoginComponent,
-    FooterComponent,
-    LocalFavouritePageComponent,
-    LocalCartItemComponent
+    FooterComponent
   ],
   schemas: [NO_ERRORS_SCHEMA],
   exports: [NavbarComponent, FooterComponent],
