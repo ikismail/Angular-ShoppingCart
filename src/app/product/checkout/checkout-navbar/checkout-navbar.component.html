@@ -5,9 +5,9 @@
     <div class="liner"></div>
 
     <!-- circular user icon -->
-    <li>
-      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['/']}}]" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
-        data-toggle="tab" title="Product Summary">
+    <li id="productsTab">
+      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['/']}}]" routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }" data-toggle="tab" title="Product Summary">
         <span class="round-tabs one">
           <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         </span>
@@ -15,9 +15,9 @@
     </li>
 
     <!-- circular tasks icon -->
-    <li>
-      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['shipping-details']}}]" routerLinkActive="active" data-toggle="tab"
-        title="Shipping Details">
+    <li id="shippingTab">
+      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['shipping-details']}}]" routerLinkActive="active"
+        data-toggle="tab" title="Shipping Details">
         <span class="round-tabs two">
           <i class="fa fa-truck" aria-hidden="true"></i>
         </span>
@@ -25,9 +25,9 @@
     </li>
 
     <!-- circular home icon -->
-    <li>
-      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['billing-details']}}]" routerLinkActive="active" data-toggle="tab"
-        title="Confirmation">
+    <li id="billingTab">
+      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['billing-details']}}]" routerLinkActive="active"
+        data-toggle="tab" title="Confirmation">
         <span class="round-tabs three">
           <i class="fa fa-check-circle" aria-hidden="true"></i>
         </span>
@@ -35,8 +35,9 @@
     </li>
 
     <!-- circular ok icon -->
-    <li>
-      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['result']}}]" routerLinkActive="active" data-toggle="tab" title="Payment">
+    <li id="result">
+      <a [routerLink]="['/checkouts', {outlets: {'checkOutlet': ['result']}}]" routerLinkActive="active" data-toggle="tab"
+        title="Payment">
         <span class="round-tabs four">
           <i class="fa fa-credit-card" aria-hidden="true"></i>
         </span>

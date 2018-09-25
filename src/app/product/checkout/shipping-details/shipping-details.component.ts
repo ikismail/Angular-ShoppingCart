@@ -1,8 +1,11 @@
+import { Product } from "./../../../shared/models/product";
+import { ShippingService } from "./../../../shared/services/shipping.service";
 import { UserDetail, User } from "./../../../shared/models/user";
 import { AuthService } from "./../../../shared/services/auth.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "../../../../../node_modules/@angular/forms";
-import * as firebase from "firebase/app";
+import { Router } from "@angular/router";
+import { ProductService } from "../../../shared/services/product.service";
 @Component({
   selector: "app-shipping-details",
   templateUrl: "./shipping-details.component.html",
@@ -13,8 +16,19 @@ export class ShippingDetailsComponent implements OnInit {
 
   userDetail: UserDetail;
 
-  constructor(private authService: AuthService) {
+  products: Product[];
+
+  constructor(
+    authService: AuthService,
+    private shippingService: ShippingService,
+    productService: ProductService,
+    private router: Router
+  ) {
+    /* Hiding products Element */
+    document.getElementById("productsTab").style.display = "none";
+
     this.userDetail = new UserDetail();
+    this.products = productService.getLocalCartProducts();
     this.userDetails = authService.getLoggedInUser();
   }
 
@@ -24,8 +38,25 @@ export class ShippingDetailsComponent implements OnInit {
     const data = form.value;
 
     data["emailId"] = this.userDetails.emailId;
-    data["userName"] = this.userDetails.userName;
+    const products = [];
 
-    console.log("Data: ", data);
+    let totalPrice = 0;
+
+    this.products.forEach(product => {
+      delete product["$key"];
+      totalPrice += product.productPrice;
+      products.push(product);
+    });
+
+    data["products"] = products;
+
+    data["totalPrice"] = totalPrice;
+
+    this.shippingService.createshippings(data);
+
+    this.router.navigate([
+      "checkouts",
+      { outlets: { checkOutlet: ["billing-details"] } }
+    ]);
   }
 }

@@ -1,7 +1,5 @@
-import { UserComponent } from "./user/user.component";
-import { Routes, RouterModule } from "@angular/router";
+import { Routes } from "@angular/router";
 import { IndexComponent } from "./index/index.component";
-import { UserAccountComponent } from "./user/user-account/user-account.component";
 import { NoAccessComponent } from "./shared/components/no-access/no-access.component";
 import { PageNotFoundComponent } from "./shared/components/page-not-found/page-not-found.component";
 

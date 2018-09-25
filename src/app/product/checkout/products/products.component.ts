@@ -1,5 +1,5 @@
 import { ProductService } from "./../../../shared/services/product.service";
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { Product } from "../../../shared/models/product";
 
 @Component({
@@ -11,7 +11,7 @@ export class ProductsComponent implements OnInit {
   checkoutProducts: Product[];
 
   totalPrice = 0;
-  constructor(private productService: ProductService) {
+  constructor(productService: ProductService) {
     const products = productService.getLocalCartProducts();
 
     this.checkoutProducts = products;
