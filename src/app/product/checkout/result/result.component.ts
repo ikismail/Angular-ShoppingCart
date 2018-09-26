@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 
 @Component({
   selector: "app-result",
@@ -6,7 +6,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./result.component.scss"]
 })
 export class ResultComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    /* Hiding Billing Tab Element */
+    document.getElementById("billingTab").style.display = "none";
+  }
 
   ngOnInit() {}
 }
