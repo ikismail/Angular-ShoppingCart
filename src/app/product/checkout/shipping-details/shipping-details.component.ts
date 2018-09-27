@@ -26,6 +26,9 @@ export class ShippingDetailsComponent implements OnInit {
   ) {
     /* Hiding products Element */
     document.getElementById("productsTab").style.display = "none";
+    document.getElementById("shippingTab").style.display = "block";
+    document.getElementById("productsTab").style.display = "none";
+    document.getElementById("resultTab").style.display = "none";
 
     this.userDetail = new UserDetail();
     this.products = productService.getLocalCartProducts();
@@ -51,6 +54,8 @@ export class ShippingDetailsComponent implements OnInit {
     data["products"] = products;
 
     data["totalPrice"] = totalPrice;
+
+    data["shippingDate"] = Date.now();
 
     this.shippingService.createshippings(data);
 

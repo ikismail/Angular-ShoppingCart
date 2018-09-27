@@ -6,7 +6,7 @@
 
 Developing a **ShoppingCart (Ecommerce) Application using Angular6**.
 
-**Live Demo** : [Angular6-shopping-cart](https://angular-shoppingcart.firebaseapp.com/)
+**Live Demo** : [Angular-shopping-cart](https://angular-shoppingcart.firebaseapp.com/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
 
@@ -15,42 +15,61 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1.  User Registration
 2.  CRUD Operations like
 
-* User can add product to his cart.
-* Admin can add product to the product list
-* Admin can edit/delete the product.
+- User can add product to his cart.
+- Admin can add product to the product list
+- Admin can edit/delete the product.
 
 3.  Security
 
-* Implmented Authentication and Authorization
+- Implmented Authentication and Authorization
 
 ## Tools and Technologies
 
-* Technology: HTML, MDBootstrap, CSS, Angular-5, Firebase, Charts, Progressive Web Application.
-* Database : Angular Firebase.
+- Technology: HTML, MDBootstrap, CSS, Angular-5, Firebase, Charts, Progressive Web Application, jsPDF (to download Receipt as PDF).
+- Database : Angular Firebase.
 
 #### This Projects covers all fundamentals of Angular
 
-* Template and DataBinding
-* Form Validation
-* Multiple Modules
-* HttpClient
-* Routing & Navigation
-* Service Workers
-* Pipes.. etc.
-
+- Multiple Modules
+- Components, Template and DataBinding
+- Form Validation
+- HttpClient
+- Animations
+- Dependency Injection
+- Routing & Navigation
+- Service Workers
+- Pipes
+- Gaurds etc..
 
 # Installation
 
 1.  Angular CLI
-    * [Download Angular CLI](https://cli.angular.io/)
+    - [Download Angular CLI](https://cli.angular.io/)
 2.  NodeJs
-    * [Download Nodejs](https://nodejs.org/en/download/)
+    - [Download Nodejs](https://nodejs.org/en/download/)
 3.  Package Manager - NPM / Yarn
 4.  Clone the repository and run `npm install` if you use **npm** as package manager or `yarn install` if you use **yarn** as package manager.
 5.  Angular + Firebase Tutorial - [Angular + Firebase + Typescript — Step by step tutorial](https://medium.com/factory-mind/angular-firebase-typescript-step-by-step-tutorial-2ef887fc7d71)
+6.  Activate Firebase Authentication Providers
 
-6. Configure your firebase configuration `src/environments/firebaseConfig.ts`
- ```
+    `Authentication -> Sign-in-method -> Enable Email/Password & Google provider`
+
+7.  Update the Firebase Database Rules
+
+    `Database -> Rules`
+
+    ```
+    {
+    "rules": {
+        ".read":true,
+        ".write": true
+    }
+    }
+    ```
+
+8.  Configure your firebase configuration `src/environments/firebaseConfig.ts`
+
+    ```
     export const FireBaseConfig = {
         apiKey: "YOUR_API_KEY",
         authDomain: "YOUR_AUTH_DOMAIN",
@@ -58,10 +77,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
         projectId: "YOUR_PROJECT_ID",
         storageBucket: "YOUR_STORAGE_BUCKET",
         messagingSenderId: "YOUR_SENDER_ID"
-    }; 
-```
+    };
+    ```
 
-7. Run the Server. 
+9.  Run the Server.
 
 ## Screenshots:
 
@@ -99,12 +118,12 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Contribution:
 
-* Contibutors are most welcome.
+- Contibutors are most welcome.
 
 ## Somethings wrong!!
 
-* If you find that something's wrong with this package, you can let me know by raising an issue on the GitHub issue tracker
+- If you find that something's wrong with this package, you can let me know by raising an issue on the GitHub issue tracker
 
 ## License
 
-* [MIT license](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)
+- [MIT license](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)

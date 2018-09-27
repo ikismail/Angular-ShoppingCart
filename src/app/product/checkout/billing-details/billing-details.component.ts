@@ -24,7 +24,10 @@ export class BillingDetailsComponent implements OnInit {
     private router: Router
   ) {
     /* Hiding Shipping Tab Element */
+    document.getElementById("productsTab").style.display = "none";
     document.getElementById("shippingTab").style.display = "none";
+    document.getElementById("billingTab").style.display = "block";
+    document.getElementById("resultTab").style.display = "none";
 
     this.userDetail = new UserDetail();
     this.products = productService.getLocalCartProducts();
@@ -49,6 +52,9 @@ export class BillingDetailsComponent implements OnInit {
     data["products"] = products;
 
     data["totalPrice"] = totalPrice;
+
+    data["billingDate"] = Date.now();
+
     console.log("Products", products);
 
     this.billingService.createBillings(data);

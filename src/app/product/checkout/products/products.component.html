@@ -8,12 +8,12 @@
                 <h6 class=" my-0 ">{{product.productName}}</h6>
                 <p>Product Seller : {{product.productSeller}}</p>
             </div>
-            <span class="text-muted ">${{product.productPrice}}</span>
+            <span class="text-muted ">₹ {{product.productPrice}}</span>
         </li>
         <hr>
         <li class="list-group-item d-flex justify-content-between ">
-            <span>Total (USD)</span>
-            <strong>${{totalPrice}}</strong>
+            <span>Total (INR)</span>
+            <strong>₹ {{totalPrice}}</strong>
         </li>
 
     </ul>
