@@ -41,6 +41,7 @@ export class ShippingDetailsComponent implements OnInit {
     const data = form.value;
 
     data["emailId"] = this.userDetails.emailId;
+    data["userId"] = this.userDetails.$key;
     const products = [];
 
     let totalPrice = 0;

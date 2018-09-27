@@ -1,3 +1,4 @@
+import { ToastyService, ToastOptions, ToastyConfig } from "ng2-toasty";
 import { Component, OnInit } from "@angular/core";
 import { Product } from "../../shared/models/product";
 import { ProductService } from "../../shared/services/product.service";
@@ -11,7 +12,14 @@ declare var $: any;
 export class BestProductComponent implements OnInit {
   bestProducts: Product[] = [];
   options: any;
-  constructor(private productService: ProductService) {}
+  constructor(
+    private productService: ProductService,
+    private toastyService: ToastyService,
+    private toastyConfig: ToastyConfig
+  ) {
+    this.toastyConfig.position = "top-right";
+    this.toastyConfig.theme = "material";
+  }
 
   ngOnInit() {
     this.options = {
@@ -32,18 +40,30 @@ export class BestProductComponent implements OnInit {
 
   getAllProducts() {
     const x = this.productService.getProducts();
-    x.snapshotChanges().subscribe(product => {
-      this.bestProducts = [];
-      for (let i = 0; i < 5; i++) {
-        const y = product[i].payload.toJSON();
-        y["$key"] = product[i].key;
-        this.bestProducts.push(y as Product);
+    x.snapshotChanges().subscribe(
+      product => {
+        this.bestProducts = [];
+        for (let i = 0; i < 5; i++) {
+          const y = product[i].payload.toJSON();
+          y["$key"] = product[i].key;
+          this.bestProducts.push(y as Product);
+        }
+        // product.forEach(element => {
+        //   const y = element.payload.toJSON();
+        //   y["$key"] = element.key;
+        //   this.bestProducts.push(y as Product);
+        // });
+      },
+      error => {
+        const toastOption: ToastOptions = {
+          title: "Error while fetching Products",
+          msg: error,
+          showClose: true,
+          timeout: 5000,
+          theme: "material"
+        };
+        this.toastyService.error(toastOption);
       }
-      // product.forEach(element => {
-      //   const y = element.payload.toJSON();
-      //   y["$key"] = element.key;
-      //   this.bestProducts.push(y as Product);
-      // });
-    });
+    );
   }
 }

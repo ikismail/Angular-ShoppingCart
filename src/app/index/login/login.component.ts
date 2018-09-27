@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
         userForm.value["password"]
       )
       .then(res => {
-        console.log("created User", res);
         const toastOption: ToastOptions = {
           title: "User Registeration",
           msg: "Registering",
@@ -62,6 +61,14 @@ export class LoginComponent implements OnInit {
       .catch(err => {
         this.errorInUserCreate = true;
         this.errorMessage = err;
+        const toastOption: ToastOptions = {
+          title: "Error while Creating User",
+          msg: err,
+          showClose: true,
+          timeout: 5000,
+          theme: "material"
+        };
+        this.toastyService.error(toastOption);
       });
   }
 
@@ -69,8 +76,6 @@ export class LoginComponent implements OnInit {
     this.authService
       .signInRegular(userForm.value["emailId"], userForm.value["loginPassword"])
       .then(res => {
-        console.log("Logged In: ", res);
-
         const toastOption: ToastOptions = {
           title: "Authentication Success",
           msg: "Logging in please wait",
@@ -104,8 +109,20 @@ export class LoginComponent implements OnInit {
     this.authService
       .signInWithGoogle()
       .then(res => {
-        this.router.navigate(["index"]);
+        const returnUrl = this.route.snapshot.queryParamMap.get("returnUrl");
+        location.reload();
+        this.router.navigate(["/"]);
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err);
+        const toastOption: ToastOptions = {
+          title: "Error Occured",
+          msg: "Please try again later",
+          showClose: true,
+          timeout: 5000,
+          theme: "material"
+        };
+        this.toastyService.error(toastOption);
+      });
   }
 }

@@ -40,7 +40,7 @@ export class BillingDetailsComponent implements OnInit {
     const data = form.value;
 
     data["emailId"] = this.userDetails.emailId;
-
+    data["userId"] = this.userDetails.$key;
     let totalPrice = 0;
     const products = [];
     this.products.forEach(product => {
@@ -54,8 +54,6 @@ export class BillingDetailsComponent implements OnInit {
     data["totalPrice"] = totalPrice;
 
     data["billingDate"] = Date.now();
-
-    console.log("Products", products);
 
     this.billingService.createBillings(data);
 

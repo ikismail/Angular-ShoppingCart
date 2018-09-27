@@ -1,7 +1,7 @@
 import { Observable } from "rxjs";
 import { Injectable } from "@angular/core";
 import { Observer } from "rxjs";
-
+import "rxjs/add/operator/share";
 @Injectable()
 export class LoaderSpinnerService {
   /**

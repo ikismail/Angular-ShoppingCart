@@ -31,13 +31,8 @@ export class ProductService {
     this.toastyConfig.position = "top-right";
     this.toastyConfig.theme = "material";
 
-    if (this.authService.isLoggedIn()) {
-      this.calculateFavProductCounts();
-      this.calculateCartProductCounts();
-    } else {
-      this.calculateLocalFavProdCounts();
-      this.calculateLocalCartProdCounts();
-    }
+    this.calculateLocalFavProdCounts();
+    this.calculateLocalCartProdCounts();
   }
 
   getProducts() {
@@ -139,27 +134,9 @@ export class ProductService {
     this.navbarFavProdCount = this.getLocalFavouriteProducts().length;
   }
 
-  // Calculating FavProductsCount and storing it in variable
-  calculateFavProductCounts() {
-    const x = this.getUsersFavouriteProduct()
-      .snapshotChanges()
-      .subscribe(data => {
-        this.navbarFavProdCount = data.length;
-      });
-  }
-
   /*
    ----------  Cart Product Function  ----------
   */
-
-  // Fetching Cart Products based on userId
-  getUsersCartProducts() {
-    const user = this.authService.getLoggedInUser();
-    this.cartProducts = this.db.list("cartProducts", ref =>
-      ref.orderByChild("userId").equalTo(user.$key)
-    );
-    return this.cartProducts;
-  }
 
   // Adding new Product to cart db if logged in else localStorage
   addToCart(data: Product): void {
@@ -181,11 +158,6 @@ export class ProductService {
       localStorage.setItem("avct_item", JSON.stringify(a));
       this.calculateLocalCartProdCounts();
     }, 500);
-  }
-
-  // Removing Cart product from db
-  removeCart(key: string) {
-    this.cartProducts.remove(key);
   }
 
   // Removing cart from local
@@ -215,15 +187,6 @@ export class ProductService {
   // returning LocalCarts Product Count
   calculateLocalCartProdCounts() {
     this.navbarCartCount = this.getLocalCartProducts().length;
-  }
-
-  // Calculating Cart products count and assigning to variable
-  calculateCartProductCounts() {
-    const x = this.getUsersCartProducts()
-      .snapshotChanges()
-      .subscribe(data => {
-        this.navbarCartCount = data.length;
-      });
   }
 }
 

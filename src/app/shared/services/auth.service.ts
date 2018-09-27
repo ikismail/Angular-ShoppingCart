@@ -15,7 +15,6 @@ export class AuthService {
     this.user.subscribe(user => {
       if (user) {
         this.userDetails = user;
-        console.log("Logged USer", this.userDetails);
       } else {
         this.userDetails = null;
       }

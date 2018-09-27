@@ -5,11 +5,13 @@ import { BillingDetailsComponent } from "./billing-details/billing-details.compo
 import { ProductsComponent } from "./products/products.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { AuthGuard } from "../../shared/services/auth_gaurd";
 
 export const checkoutRoutes: Routes = [
   {
     path: "checkouts",
     component: CheckoutComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: "",
@@ -26,7 +28,11 @@ export const checkoutRoutes: Routes = [
         component: BillingDetailsComponent,
         outlet: "checkOutlet"
       },
-      { path: "result", component: ResultComponent, outlet: "checkOutlet" }
+      {
+        path: "result",
+        component: ResultComponent,
+        outlet: "checkOutlet"
+      }
     ]
   }
 ];
