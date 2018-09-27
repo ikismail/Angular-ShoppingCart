@@ -14,7 +14,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { AgmCoreModule } from "@agm/core";
 import { NoAccessComponent } from "./components/no-access/no-access.component";
 import { PageNotFoundComponent } from "./components/page-not-found/page-not-found.component";
-import { FireBaseConfig } from "../../environments/firebaseConfig";
+import { FireBaseConfig } from "../../environments/firebaseConfigDummy";
 import { FilterByBrandPipe } from "./pipes/filterByBrand.pipe";
 import { ProductService } from "./services/product.service";
 import { AdminGaurd } from "./services/admin-gaurd";
