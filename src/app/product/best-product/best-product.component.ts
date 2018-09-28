@@ -1,3 +1,4 @@
+import { TranslateService } from "./../../shared/services/translate.service";
 import { ToastyService, ToastOptions, ToastyConfig } from "ng2-toasty";
 import { Component, OnInit } from "@angular/core";
 import { Product } from "../../shared/models/product";
@@ -15,7 +16,8 @@ export class BestProductComponent implements OnInit {
   constructor(
     private productService: ProductService,
     private toastyService: ToastyService,
-    private toastyConfig: ToastyConfig
+    private toastyConfig: ToastyConfig,
+    public translate: TranslateService
   ) {
     this.toastyConfig.position = "top-right";
     this.toastyConfig.theme = "material";

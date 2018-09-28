@@ -4,11 +4,12 @@
   <div class="row">
     <div class="col-md-6">
       <blockquote class="blockquote float-left bq-primary">
-        <h3 class="bq-title">Our Best Products</h3>
+        <h3 class="bq-title">{{translate.data["BESTPRODUCTS"] | translate}}</h3>
       </blockquote>
     </div>
     <div class="col-md-6">
-      <a class="btn btn-default float-right" [routerLink]="[ '/products/all-products' ]">View All</a>
+      <a class="btn btn-default float-right" [routerLink]="[ '/products/all-products' ]">{{translate.data["VIEWALL"] |
+        translate}}</a>
     </div>
   </div>
   <owl-carousel [options]="options" [items]="bestProducts" [carouselClasses]="['owl-theme', 'row', 'sliding']">
