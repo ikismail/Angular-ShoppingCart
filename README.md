@@ -1,4 +1,4 @@
-# Angular6 - ShoppingCart
+# Angular6 - ShoppingCart + MDBootstrap + Firebase + i18n
 
 [![HitCount](http://hits.dwyl.io/ikismail/Angular-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular-ShoppingCart)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)
@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Functionalities
 
-1.  User Registration
+1.  User Registration using Firebase Authentication (using Email/Password | Google Authentication )
 2.  CRUD Operations like
 
 - User can add product to his cart.
@@ -25,7 +25,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Tools and Technologies
 
-- Technology: HTML, MDBootstrap, CSS, Angular-5, Firebase, Charts, Progressive Web Application, jsPDF (to download Receipt as PDF).
+- Technology: HTML, MDBootstrap, CSS, Angular-6, Firebase, i18n, Charts, Progressive Web Application, jsPDF (to download Receipt as PDF).
 - Database : Angular Firebase.
 
 #### This Projects covers all fundamentals of Angular
