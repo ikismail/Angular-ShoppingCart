@@ -1,6 +1,6 @@
+import { Product } from "./../../shared/models/product";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Product } from "../../shared/models/product";
 import { ProductService } from "../../shared/services/product.service";
 import { LoaderSpinnerService } from "../../shared/loader-spinner/loader-spinner";
 import { ToastyService, ToastOptions, ToastyConfig } from "ng2-toasty";
@@ -54,6 +54,10 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
         this.toastyService.error(toastOption);
       }
     );
+  }
+
+  addToCart(product: Product) {
+    this.productService.addToCart(product);
   }
 
   ngOnDestroy() {
