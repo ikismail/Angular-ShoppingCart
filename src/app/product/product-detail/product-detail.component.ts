@@ -2,7 +2,6 @@ import { Product } from "./../../shared/models/product";
 import { Component, OnInit, OnDestroy } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { ProductService } from "../../shared/services/product.service";
-import { LoaderSpinnerService } from "../../shared/loader-spinner/loader-spinner";
 import { ToastyService, ToastOptions, ToastyConfig } from "ng2-toasty";
 @Component({
   selector: "app-product-detail",
@@ -16,7 +15,6 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private productService: ProductService,
-    private spinnerService: LoaderSpinnerService,
     private toastyService: ToastyService,
     private toastyConfig: ToastyConfig
   ) {
@@ -33,11 +31,11 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
   getProductDetail(id: string) {
-    this.spinnerService.show();
+    // this.spinnerService.show();
     const x = this.productService.getProductById(id);
     x.snapshotChanges().subscribe(
       product => {
-        this.spinnerService.hide();
+        // this.spinnerService.hide();
         const y = product.payload.toJSON() as Product;
 
         y["$key"] = id;

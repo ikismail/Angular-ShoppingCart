@@ -1,4 +1,10 @@
-import { Component, OnInit, EventEmitter, Output } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  EventEmitter,
+  Output,
+  VERSION
+} from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../../shared/services/auth.service";
 import { ProductService } from "../../shared/services/product.service";
@@ -11,6 +17,8 @@ declare var $: any;
   styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
+  angularVersion = VERSION;
+
   constructor(
     public authService: AuthService,
     private router: Router,

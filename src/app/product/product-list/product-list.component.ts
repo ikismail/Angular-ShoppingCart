@@ -2,7 +2,6 @@ import { Component, OnInit } from "@angular/core";
 import { Product } from "../../shared/models/product";
 import { AuthService } from "../../shared/services/auth.service";
 import { ProductService } from "../../shared/services/product.service";
-import { LoaderSpinnerService } from "../../shared/loader-spinner/loader-spinner";
 import { ToastyService, ToastOptions, ToastyConfig } from "ng2-toasty";
 @Component({
   selector: "app-product-list",
@@ -29,7 +28,6 @@ export class ProductListComponent implements OnInit {
   constructor(
     public authService: AuthService,
     private productService: ProductService,
-    private spinnerService: LoaderSpinnerService,
     private toastyService: ToastyService,
     private toastyConfig: ToastyConfig
   ) {
@@ -42,11 +40,11 @@ export class ProductListComponent implements OnInit {
   }
 
   getAllProducts() {
-    this.spinnerService.show();
+    // this.spinnerService.show();
     const x = this.productService.getProducts();
     x.snapshotChanges().subscribe(
       product => {
-        this.spinnerService.hide();
+        // this.spinnerService.hide();
         this.productList = [];
         product.forEach(element => {
           const y = element.payload.toJSON();
