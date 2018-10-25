@@ -1,4 +1,4 @@
-# Angular6 - ShoppingCart + MDBootstrap + Firebase + i18n
+# Angular7 - ShoppingCart + MDBootstrap + Firebase + i18n
 
 [![HitCount](http://hits.dwyl.io/ikismail/Angular-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular-ShoppingCart)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)
@@ -6,11 +6,11 @@
 [![Build Status](https://travis-ci.org/ikismail/Angular-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular-ShoppingCart)
 
 
-Developing a **ShoppingCart (Ecommerce) Application using Angular6**.
+Developing a **ShoppingCart (Ecommerce) Application using Angular7**.
 
 **Live Demo** : [Angular-shopping-cart](https://angular-shoppingcart.firebaseapp.com/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.7.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
 
 ## Functionalities
 
@@ -27,7 +27,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Tools and Technologies
 
-- Technology: HTML, MDBootstrap, CSS, Angular-6, Firebase, i18n, Charts, Progressive Web Application, jsPDF (to download Receipt as PDF).
+- Technology: HTML, MDBootstrap, CSS, Angular-7, Firebase, i18n, Charts, Progressive Web Application, jsPDF (to download Receipt as PDF).
 - Database : Angular Firebase.
 
 #### This Projects covers all fundamentals of Angular
