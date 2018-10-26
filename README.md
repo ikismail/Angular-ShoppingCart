@@ -3,7 +3,7 @@
 [![HitCount](http://hits.dwyl.io/ikismail/Angular-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular-ShoppingCart)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)
 [![npm](https://img.shields.io/badge/demo-online-brightgreen.svg)](https://angular-shoppingcart.firebaseapp.com/)
-[![Build Status](https://travis-ci.org/ikismail/Angular-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular-ShoppingCart)
+<!-- [![Build Status](https://travis-ci.org/ikismail/Angular-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular-ShoppingCart) -->
 
 
 Developing a **ShoppingCart (Ecommerce) Application using Angular7**.
