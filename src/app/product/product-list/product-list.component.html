@@ -26,7 +26,8 @@
     <div class="col-md-9">
 
       <div class="container">
-        <div class="row">
+        <app-card-loader [loop]="3" [height]="800" *ngIf="loading"></app-card-loader>
+        <div class="row" *ngIf="!loading">
           <!-- List of Products -->
           <div class="col-sm-4 mb-2" *ngFor="let product of productList | filterByBrand: selectedBrand | paginate: { itemsPerPage: 6, currentPage: page }">
             <div class="item">
@@ -51,7 +52,8 @@
                     </a>
                     <p class="card-title">
                       <strong>
-                        <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{ product.productName }}</a>
+                        <a [routerLink]="['/products/product', product.$key]" routerLinkActive="router-link-active">{{
+                          product.productName }}</a>
                       </strong>
                     </p>
                     <!--Description-->
@@ -67,7 +69,8 @@
                         <a placement="top" mdbTooltip="Add to Cart" container="body" (click)="addToCart(product)">
                           <i class="fa fa-shopping-cart"></i>
                         </a>
-                        <a placement="top" mdbTooltip="Remove Product" container="body" *ngIf="authService.isAdmin()" (click)="removeProduct(product.$key)">
+                        <a placement="top" mdbTooltip="Remove Product" container="body" *ngIf="authService.isAdmin()"
+                          (click)="removeProduct(product.$key)">
                           <i class="fa fa-trash"></i>
                         </a>
                       </span>

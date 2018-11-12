@@ -22,6 +22,8 @@ import { AuthGuard } from "./services/auth_gaurd";
 import { AuthService } from "./services/auth.service";
 import { UserService } from "./services/user.service";
 import { TranslatePipe } from "./pipes/translate.pipe";
+import { NgxContentLoadingModule } from "ngx-content-loading";
+import { CardLoaderComponent } from "./components/card-loader/card-loader.component";
 
 @NgModule({
   imports: [
@@ -38,14 +40,16 @@ import { TranslatePipe } from "./pipes/translate.pipe";
     NgxPaginationModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyDMbxW3MlwUP2vrAZVJyu7pYqZa1LthvTE"
-    })
+    }),
+    NgxContentLoadingModule
   ],
   declarations: [
     NoProductsFoundComponent,
     FilterByBrandPipe,
     NoAccessComponent,
     PageNotFoundComponent,
-    TranslatePipe
+    TranslatePipe,
+    CardLoaderComponent
   ],
   exports: [
     NoProductsFoundComponent,
@@ -63,7 +67,9 @@ import { TranslatePipe } from "./pipes/translate.pipe";
     AgmCoreModule,
     NoAccessComponent,
     PageNotFoundComponent,
-    TranslatePipe
+    TranslatePipe,
+    NgxContentLoadingModule,
+    CardLoaderComponent
   ],
   providers: [
     AuthService,

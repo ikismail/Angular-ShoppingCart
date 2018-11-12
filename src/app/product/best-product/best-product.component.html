@@ -12,7 +12,12 @@
         translate}}</a>
     </div>
   </div>
-  <owl-carousel [options]="options" [items]="bestProducts" [carouselClasses]="['owl-theme', 'row', 'sliding']">
+
+  <div *ngIf="loading">
+    <app-card-loader [loop]="4" [height]="500"></app-card-loader>
+  </div>
+
+  <owl-carousel *ngIf="!loading" [options]="options" [items]="bestProducts" [carouselClasses]="['owl-theme', 'row', 'sliding']">
     <!--First column-->
     <div class="item" style="padding:20px" *ngFor="let product of bestProducts;let i = index">
       <div class=" mb-r">

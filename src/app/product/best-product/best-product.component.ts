@@ -13,6 +13,7 @@ declare var $: any;
 export class BestProductComponent implements OnInit {
   bestProducts: Product[] = [];
   options: any;
+  loading = false;
   constructor(
     private productService: ProductService,
     private toastyService: ToastyService,
@@ -41,9 +42,11 @@ export class BestProductComponent implements OnInit {
   }
 
   getAllProducts() {
+    this.loading = true;
     const x = this.productService.getProducts();
     x.snapshotChanges().subscribe(
       product => {
+        this.loading = false;
         this.bestProducts = [];
         for (let i = 0; i < 5; i++) {
           const y = product[i].payload.toJSON();

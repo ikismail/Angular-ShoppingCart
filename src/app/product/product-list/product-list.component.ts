@@ -10,7 +10,7 @@ import { ToastyService, ToastOptions, ToastyConfig } from "ng2-toasty";
 })
 export class ProductListComponent implements OnInit {
   productList: Product[];
-
+  loading = false;
   brands = [
     "All",
     "Google",
@@ -41,9 +41,11 @@ export class ProductListComponent implements OnInit {
 
   getAllProducts() {
     // this.spinnerService.show();
+    this.loading = true;
     const x = this.productService.getProducts();
     x.snapshotChanges().subscribe(
       product => {
+        this.loading = false;
         // this.spinnerService.hide();
         this.productList = [];
         product.forEach(element => {
