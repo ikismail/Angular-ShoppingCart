@@ -6,18 +6,15 @@
     <form style="width:22rem" #loginForm="ngForm" (ngSubmit)="signInWithEmail(loginForm)">
       <p class="h5 text-center mb-4">Sign in</p>
 
-      <div class="md-form">
-        <i class="fa fa-envelope prefix grey-text"></i>
-        <input mdbActive type="email" id="loginEmailId" class="form-control" name="emailId" [(ngModel)]="user.emailId" mdbInputValidate
-          [email]="true" autocomplete="email">
-        <label for="emailId">Your email</label>
+      <div class="form-group">
+        <label for="loginEmailId">Email address</label>
+        <input type="email" class="form-control" id="loginEmailId" aria-describedby="emailHelp" placeholder="Enter email"
+          name="emailId" [(ngModel)]="user.emailId" mdbInputValidate [email]="true">
       </div>
-
-      <div class="md-form">
-        <i class="fa fa-lock prefix grey-text"></i>
-        <input type="password" id="loginPassword" name="loginPassword" [(ngModel)]="user.loginPassword" class="form-control" mdbActive
-          autocomplete="current-password">
-        <label for="defaultForm-pass">Your password</label>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="loginPassword" name="loginPassword" [(ngModel)]="user.loginPassword"
+          autocomplete="current-password" placeholder="Password">
       </div>
 
       <div class="text-center">
@@ -54,17 +51,15 @@
             <div class="alert alert-danger" role="alert" *ngIf="errorInUserCreate">
               {{errorMessage.message}}
             </div>
-            <div class="md-form form-sm">
-              <i class="fa fa-envelope prefix"></i>
-              <input mdbActive type="email" id="emailId" class="form-control" name="emailId" [(ngModel)]="createUser.emailId" mdbInputValidate
-                [email]="true" autocomplete="email">
+            <div class="form-group form-sm">
               <label for="emailId">Your email</label>
+              <input mdbActive type="email" id="emailId" class="form-control" name="emailId" [(ngModel)]="createUser.emailId" placeholder="Enter email"
+                mdbInputValidate [email]="true" autocomplete="email">
             </div>
-            <div class="md-form form-sm">
-              <i class="fa fa-lock prefix"></i>
-              <input mdbActive type="password" id="password" class="form-control" name="password" [(ngModel)]="createUser.password" mdbInputValidate
-                autocomplete="new-password">
+            <div class="form-group form-sm">
               <label for="password">password</label>
+              <input mdbActive type="password" id="password" class="form-control" name="password" [(ngModel)]="createUser.password" placeholder="Password"
+                mdbInputValidate autocomplete="new-password">
             </div>
             <div class="text-center mt-2">
               <button class="btn btn-info waves-light" id="signUpButton" mdbRippleRadius>Sign up
