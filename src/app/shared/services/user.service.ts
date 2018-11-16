@@ -23,10 +23,17 @@ export class UserService {
     return this.users;
   }
 
-  createUser(data: User) {
+  createUser(data: any) {
     data.location = this.location;
     data.createdOn = moment(new Date()).format("X");
+    data.isAdmin = false;
     this.users.push(data);
+  }
+
+  isAdmin(emailId: string) {
+    return this.db.list("clients", ref =>
+      ref.orderByChild("email").equalTo(emailId)
+    );
   }
 
   updateUser(user: User) {

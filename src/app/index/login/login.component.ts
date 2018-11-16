@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
+    private userService: UserService,
     private toastyService: ToastyService,
     private router: Router,
     private route: ActivatedRoute,
@@ -45,6 +46,17 @@ export class LoginComponent implements OnInit {
         userForm.value["password"]
       )
       .then(res => {
+        const user = {
+          email: res.user.email,
+          famil_name: res.user.displayName,
+          uid: res.user.uid,
+          verified_email: res.user.emailVerified,
+          phoneNumber: res.user.phoneNumber,
+          picture: res.user.photoURL
+        };
+
+        this.userService.createUser(user);
+
         const toastOption: ToastOptions = {
           title: "User Registeration",
           msg: "Registering",
@@ -84,6 +96,7 @@ export class LoginComponent implements OnInit {
           theme: "material"
         };
         this.toastyService.wait(toastOption);
+
         const returnUrl = this.route.snapshot.queryParamMap.get("returnUrl");
 
         setTimeout((router: Router) => {
@@ -93,7 +106,6 @@ export class LoginComponent implements OnInit {
         this.router.navigate(["/"]);
       })
       .catch(err => {
-        console.log("logging Error: ", err);
         const toastOption: ToastOptions = {
           title: "Authentication Failed",
           msg: "Invalid Credentials, Please Check your credentials",
@@ -109,12 +121,14 @@ export class LoginComponent implements OnInit {
     this.authService
       .signInWithGoogle()
       .then(res => {
+        if (res.additionalUserInfo.isNewUser) {
+          this.userService.createUser(res.additionalUserInfo.profile);
+        }
         const returnUrl = this.route.snapshot.queryParamMap.get("returnUrl");
         location.reload();
         this.router.navigate(["/"]);
       })
       .catch(err => {
-        console.log(err);
         const toastOption: ToastOptions = {
           title: "Error Occured",
           msg: "Please try again later",

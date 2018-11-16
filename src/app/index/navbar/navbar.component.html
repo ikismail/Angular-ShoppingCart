@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark indigo">
 
   <!-- Navbar brand -->
-  <a class="navbar-brand" href="#">ikismail</a>
+  <a class="navbar-brand" href="javascript:;;">ikismail</a>
 
   <!-- Collapse button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
@@ -49,12 +49,6 @@
             </i>
           </a>
         </div>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="javascript:;;">
-          <i class="fa fa-envelope mr-2"></i> {{this.translate.data["CONTACT"] | translate}}
-          <span class="sr-only">(current)</span>
-        </a>
       </li>
       <li class="nav-item" *ngIf="authService.isLoggedIn()">
         <a class="nav-link" [routerLink]="['/users']">

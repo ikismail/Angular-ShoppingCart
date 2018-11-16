@@ -4,13 +4,21 @@ import { Observable } from "rxjs";
 import { User } from "../models/user";
 import { AngularFireAuth } from "angularfire2/auth";
 import { Router } from "@angular/router";
+import { UserService } from "./user.service";
 
 @Injectable()
 export class AuthService {
   user: Observable<firebase.User>;
   userDetails: firebase.User = null;
+  dbUser;
+  loggedUser;
+  constructor(
+    private firebaseAuth: AngularFireAuth,
+    private router: Router,
+    private userService: UserService
+  ) {
+    this.loggedUser = new User();
 
-  constructor(private firebaseAuth: AngularFireAuth, private router: Router) {
     this.user = firebaseAuth.authState;
     this.user.subscribe(user => {
       if (user) {
@@ -21,15 +29,14 @@ export class AuthService {
     });
   }
 
-  isLoggedIn() {
-    if (this.userDetails === null) {
-      return false;
-    } else {
+  isLoggedIn(): boolean {
+    if (this.userDetails !== null) {
       return true;
     }
   }
 
   logout() {
+    this.loggedUser = null;
     this.firebaseAuth.auth.signOut().then(res => this.router.navigate(["/"]));
   }
 
@@ -41,24 +48,30 @@ export class AuthService {
   }
 
   getLoggedInUser(): User {
-    const loggedUser: User = new User();
     const user = this.firebaseAuth.auth.currentUser;
-
     if (user) {
-      this.userDetails = user;
-      if (user != null) {
-        loggedUser.$key = user.uid;
-        loggedUser.userName = user.displayName;
-        loggedUser.emailId = user.email;
-        loggedUser.phoneNumber = user.phoneNumber;
-        loggedUser.avatar = user.photoURL;
-        loggedUser.isAdmin = user.email === "admin@gmail.com" ? true : false;
-      }
+      this.userService
+        .isAdmin(user.email)
+        .snapshotChanges()
+        .subscribe(data => {
+          data.forEach(el => {
+            const y = el.payload.toJSON();
+            this.dbUser = y;
+          });
+          this.userDetails = user;
+          if (user != null) {
+            this.loggedUser.$key = user.uid;
+            this.loggedUser.userName = user.displayName;
+            this.loggedUser.emailId = user.email;
+            this.loggedUser.phoneNumber = user.phoneNumber;
+            this.loggedUser.avatar = user.photoURL;
+            this.loggedUser.isAdmin = this.dbUser["isAdmin"] || false;
+          }
+        });
     } else {
       this.userDetails = null;
     }
-
-    return loggedUser;
+    return this.loggedUser;
   }
 
   isAdmin(): boolean {

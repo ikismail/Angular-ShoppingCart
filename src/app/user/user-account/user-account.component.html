@@ -1,7 +1,8 @@
 <form>
   <div class="row">
 
-    <img [src]="loggedUser.avatar" [alt]="loggedUser.userName" style="width: 35%; height: 35%;">
+    <img [src]="loggedUser.avatar" *ngIf="loggedUser.avatar" [alt]="loggedUser.userName" style="width: 35%; height: 35%;">
+    <img src="../../../assets/img/malecostume-512.png" *ngIf="!loggedUser.avatar" [alt]="loggedUser.userName" style="width: 35%; height: 35%;">
     <div class="col-md-8 mt-3">
       <label for="userName">User Name</label>
       <p style="font-size: 15px;">{{loggedUser.userName}}</p>

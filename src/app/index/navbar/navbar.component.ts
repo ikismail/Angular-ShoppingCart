@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
     public productService: ProductService,
     public translate: TranslateService
   ) {
-    console.log(translate.data);
+    // console.log(translate.data);
   }
 
   ngOnInit() {}
@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
   }
 
   setLang(lang: string) {
-    console.log("Language", lang);
+    // console.log("Language", lang);
     this.translate.use(lang).then(() => {});
   }
 }
