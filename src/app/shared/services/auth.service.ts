@@ -10,19 +10,27 @@ import { UserService } from "./user.service";
 export class AuthService {
   user: Observable<firebase.User>;
   userDetails: firebase.User = null;
-  dbUser;
   loggedUser;
+  dbUser;
   constructor(
     private firebaseAuth: AngularFireAuth,
     private router: Router,
     private userService: UserService
   ) {
-    this.loggedUser = new User();
-
     this.user = firebaseAuth.authState;
+    this.dbUser = new User();
     this.user.subscribe(user => {
       if (user) {
         this.userDetails = user;
+        userService
+          .isAdmin(this.userDetails.email)
+          .snapshotChanges()
+          .subscribe(data => {
+            data.forEach(el => {
+              const y = el.payload.toJSON();
+              this.dbUser = y;
+            });
+          });
       } else {
         this.userDetails = null;
       }
@@ -48,30 +56,24 @@ export class AuthService {
   }
 
   getLoggedInUser(): User {
+    const loggedUser: User = new User();
     const user = this.firebaseAuth.auth.currentUser;
+
     if (user) {
-      this.userService
-        .isAdmin(user.email)
-        .snapshotChanges()
-        .subscribe(data => {
-          data.forEach(el => {
-            const y = el.payload.toJSON();
-            this.dbUser = y;
-          });
-          this.userDetails = user;
-          if (user != null) {
-            this.loggedUser.$key = user.uid;
-            this.loggedUser.userName = user.displayName;
-            this.loggedUser.emailId = user.email;
-            this.loggedUser.phoneNumber = user.phoneNumber;
-            this.loggedUser.avatar = user.photoURL;
-            this.loggedUser.isAdmin = this.dbUser["isAdmin"] || false;
-          }
-        });
+      this.userDetails = user;
+      if (user != null) {
+        loggedUser.$key = user.uid;
+        loggedUser.userName = user.displayName;
+        loggedUser.emailId = user.email;
+        loggedUser.phoneNumber = user.phoneNumber;
+        loggedUser.avatar = user.photoURL;
+        loggedUser.isAdmin = this.dbUser["isAdmin"];
+      }
     } else {
       this.userDetails = null;
     }
-    return this.loggedUser;
+
+    return loggedUser;
   }
 
   isAdmin(): boolean {
