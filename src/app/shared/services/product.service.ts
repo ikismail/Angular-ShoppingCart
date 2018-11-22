@@ -1,197 +1,160 @@
-import { Injectable } from "@angular/core";
-import {
-  AngularFireDatabase,
-  AngularFireList,
-  AngularFireObject
-} from "angularfire2/database";
-import { ToastOptions, ToastyService, ToastyConfig } from "ng2-toasty";
-import { Product } from "../models/product";
-import { AuthService } from "./auth.service";
+import { Injectable } from '@angular/core';
+import { AngularFireDatabase, AngularFireList, AngularFireObject } from 'angularfire2/database';
+import { Product } from '../models/product';
+import { AuthService } from './auth.service';
+import { ToastrService } from './toastr.service';
 
 @Injectable()
 export class ProductService {
-  products: AngularFireList<Product>;
-  product: AngularFireObject<Product>;
+	products: AngularFireList<Product>;
+	product: AngularFireObject<Product>;
 
-  // favouriteProducts
-  favouriteProducts: AngularFireList<FavouriteProduct>;
-  cartProducts: AngularFireList<FavouriteProduct>;
+	// favouriteProducts
+	favouriteProducts: AngularFireList<FavouriteProduct>;
+	cartProducts: AngularFireList<FavouriteProduct>;
 
-  // NavbarCounts
-  navbarCartCount = 0;
-  navbarFavProdCount = 0;
+	// NavbarCounts
+	navbarCartCount = 0;
+	navbarFavProdCount = 0;
 
-  constructor(
-    private db: AngularFireDatabase,
-    private authService: AuthService,
-    private toastyService: ToastyService,
-    private toastyConfig: ToastyConfig
-  ) {
-    // Toaster Config
-    this.toastyConfig.position = "top-right";
-    this.toastyConfig.theme = "material";
+	constructor(
+		private db: AngularFireDatabase,
+		private authService: AuthService,
+		private toastrService: ToastrService
+	) {
+		this.calculateLocalFavProdCounts();
+		this.calculateLocalCartProdCounts();
+	}
 
-    this.calculateLocalFavProdCounts();
-    this.calculateLocalCartProdCounts();
-  }
+	getProducts() {
+		this.products = this.db.list('products');
+		return this.products;
+	}
 
-  getProducts() {
-    this.products = this.db.list("products");
-    return this.products;
-  }
+	createProduct(data: Product) {
+		this.products.push(data);
+	}
 
-  createProduct(data: Product) {
-    this.products.push(data);
-  }
+	getProductById(key: string) {
+		this.product = this.db.object('products/' + key);
+		return this.product;
+	}
 
-  getProductById(key: string) {
-    this.product = this.db.object("products/" + key);
-    return this.product;
-  }
+	updateProduct(data: Product) {
+		this.products.update(data.$key, data);
+	}
 
-  updateProduct(data: Product) {
-    this.products.update(data.$key, data);
-  }
+	deleteProduct(key: string) {
+		this.products.remove(key);
+	}
 
-  deleteProduct(key: string) {
-    this.products.remove(key);
-  }
-
-  /*
+	/*
    ----------  Favourite Product Function  ----------
   */
 
-  // Get Favourite Product based on userId
-  getUsersFavouriteProduct() {
-    const user = this.authService.getLoggedInUser();
-    this.favouriteProducts = this.db.list("favouriteProducts", ref =>
-      ref.orderByChild("userId").equalTo(user.$key)
-    );
-    return this.favouriteProducts;
-  }
+	// Get Favourite Product based on userId
+	getUsersFavouriteProduct() {
+		const user = this.authService.getLoggedInUser();
+		this.favouriteProducts = this.db.list('favouriteProducts', (ref) =>
+			ref.orderByChild('userId').equalTo(user.$key)
+		);
+		return this.favouriteProducts;
+	}
 
-  // Adding New product to favourite if logged else to localStorage
-  addFavouriteProduct(data: Product): void {
-    // Toast Product Already exists
-    const toastAlreadyExists: ToastOptions = {
-      title: "Product Already Added",
-      msg: "You have already added this product to favourite list",
-      showClose: true,
-      timeout: 5000,
-      theme: "material"
-    };
+	// Adding New product to favourite if logged else to localStorage
+	addFavouriteProduct(data: Product): void {
+		let a: Product[];
+		a = JSON.parse(localStorage.getItem('avf_item')) || [];
+		a.push(data);
+		this.toastrService.wait('Adding Product', 'Adding Product as Favourite');
+		setTimeout(() => {
+			localStorage.setItem('avf_item', JSON.stringify(a));
+			this.calculateLocalFavProdCounts();
+		}, 1500);
+	}
 
-    // Toaster Adding
-    const toastAdd: ToastOptions = {
-      title: "Adding Product",
-      msg: "Adding Product as Favourite",
-      showClose: true,
-      timeout: 5000,
-      theme: "material"
-    };
+	// Fetching unsigned users favourite proucts
+	getLocalFavouriteProducts(): Product[] {
+		const products: Product[] = JSON.parse(localStorage.getItem('avf_item')) || [];
 
-    let a: Product[];
-    a = JSON.parse(localStorage.getItem("avf_item")) || [];
-    a.push(data);
-    this.toastyService.wait(toastAdd);
-    setTimeout(() => {
-      localStorage.setItem("avf_item", JSON.stringify(a));
-      this.calculateLocalFavProdCounts();
-    }, 1500);
-  }
+		return products;
+	}
 
-  // Fetching unsigned users favourite proucts
-  getLocalFavouriteProducts(): Product[] {
-    const products: Product[] =
-      JSON.parse(localStorage.getItem("avf_item")) || [];
+	// Removing Favourite Product from Database
+	removeFavourite(key: string) {
+		this.favouriteProducts.remove(key);
+	}
 
-    return products;
-  }
+	// Removing Favourite Product from localStorage
+	removeLocalFavourite(product: Product) {
+		const products: Product[] = JSON.parse(localStorage.getItem('avf_item'));
 
-  // Removing Favourite Product from Database
-  removeFavourite(key: string) {
-    this.favouriteProducts.remove(key);
-  }
+		for (let i = 0; i < products.length; i++) {
+			if (products[i].productId === product.productId) {
+				products.splice(i, 1);
+				break;
+			}
+		}
+		// ReAdding the products after remove
+		localStorage.setItem('avf_item', JSON.stringify(products));
 
-  // Removing Favourite Product from localStorage
-  removeLocalFavourite(product: Product) {
-    const products: Product[] = JSON.parse(localStorage.getItem("avf_item"));
+		this.calculateLocalFavProdCounts();
+	}
 
-    for (let i = 0; i < products.length; i++) {
-      if (products[i].productId === product.productId) {
-        products.splice(i, 1);
-        break;
-      }
-    }
-    // ReAdding the products after remove
-    localStorage.setItem("avf_item", JSON.stringify(products));
+	// Returning Local Products Count
+	calculateLocalFavProdCounts() {
+		this.navbarFavProdCount = this.getLocalFavouriteProducts().length;
+	}
 
-    this.calculateLocalFavProdCounts();
-  }
-
-  // Returning Local Products Count
-  calculateLocalFavProdCounts() {
-    this.navbarFavProdCount = this.getLocalFavouriteProducts().length;
-  }
-
-  /*
+	/*
    ----------  Cart Product Function  ----------
   */
 
-  // Adding new Product to cart db if logged in else localStorage
-  addToCart(data: Product): void {
-    let a: Product[];
+	// Adding new Product to cart db if logged in else localStorage
+	addToCart(data: Product): void {
+		let a: Product[];
 
-    a = JSON.parse(localStorage.getItem("avct_item")) || [];
+		a = JSON.parse(localStorage.getItem('avct_item')) || [];
 
-    a.push(data);
+		a.push(data);
+		this.toastrService.wait('Adding Product to Cart', 'Product Adding to the cart');
+		setTimeout(() => {
+			localStorage.setItem('avct_item', JSON.stringify(a));
+			this.calculateLocalCartProdCounts();
+		}, 500);
+	}
 
-    const toastOption: ToastOptions = {
-      title: "Adding Product to Cart",
-      msg: "Product Adding to the cart",
-      showClose: true,
-      timeout: 1000,
-      theme: "material"
-    };
-    this.toastyService.wait(toastOption);
-    setTimeout(() => {
-      localStorage.setItem("avct_item", JSON.stringify(a));
-      this.calculateLocalCartProdCounts();
-    }, 500);
-  }
+	// Removing cart from local
+	removeLocalCartProduct(product: Product) {
+		const products: Product[] = JSON.parse(localStorage.getItem('avct_item'));
 
-  // Removing cart from local
-  removeLocalCartProduct(product: Product) {
-    const products: Product[] = JSON.parse(localStorage.getItem("avct_item"));
+		for (let i = 0; i < products.length; i++) {
+			if (products[i].productId === product.productId) {
+				products.splice(i, 1);
+				break;
+			}
+		}
+		// ReAdding the products after remove
+		localStorage.setItem('avct_item', JSON.stringify(products));
 
-    for (let i = 0; i < products.length; i++) {
-      if (products[i].productId === product.productId) {
-        products.splice(i, 1);
-        break;
-      }
-    }
-    // ReAdding the products after remove
-    localStorage.setItem("avct_item", JSON.stringify(products));
+		this.calculateLocalCartProdCounts();
+	}
 
-    this.calculateLocalCartProdCounts();
-  }
+	// Fetching Locat CartsProducts
+	getLocalCartProducts(): Product[] {
+		const products: Product[] = JSON.parse(localStorage.getItem('avct_item')) || [];
 
-  // Fetching Locat CartsProducts
-  getLocalCartProducts(): Product[] {
-    const products: Product[] =
-      JSON.parse(localStorage.getItem("avct_item")) || [];
+		return products;
+	}
 
-    return products;
-  }
-
-  // returning LocalCarts Product Count
-  calculateLocalCartProdCounts() {
-    this.navbarCartCount = this.getLocalCartProducts().length;
-  }
+	// returning LocalCarts Product Count
+	calculateLocalCartProdCounts() {
+		this.navbarCartCount = this.getLocalCartProducts().length;
+	}
 }
 
 export class FavouriteProduct {
-  product: Product;
-  productId: string;
-  userId: string;
+	product: Product;
+	productId: string;
+	userId: string;
 }
