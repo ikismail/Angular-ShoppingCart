@@ -1,0 +1,81 @@
+.example-container {
+  max-width: 100%;
+  margin: 0 25px 25px 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.content {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, .87);
+  margin: 12px;
+  padding: 10px;
+}
+
+.example-list {
+  padding: 6px;
+  width: 300px;
+  background: #f4f5f7;
+  margin: 5px;
+  border-radius: 4px;
+  height: 450px;
+  overflow: auto;
+}
+
+.example-box {
+  box-shadow: 0px 1px 2px 0px rgba(9, 30, 66, 0.25);
+  padding: 5px;
+  margin: 0 0 6px 0;
+
+  .d-flex {
+    .edit-icon {
+      display: none;
+    }
+  }
+}
+
+.example-box:hover {
+  background-color: #f0f2f4;
+
+  .d-flex {
+    .edit-icon {
+      display: block;
+      position: absolute;
+      right: 10px;
+    }
+  }
+}
+
+.card-body {
+  padding: 0.8rem
+}
+
+.cdk-drag {
+  cursor: pointer;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}

@@ -26,13 +26,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Admin can add product to the product list
 - Admin can edit/delete the product.
 
-3.  Security
+3. Drag and Drop `Angular 7 Drag & Drop`
+- Implemented [Angular Drag and Drop CDK](https://material.angular.io/cdk/drag-drop/overview)
+
+1.  Security
 
 - Implmented Authentication and Authorization
 
 ## Tools and Technologies
 
-- Technology: HTML, MDBootstrap, CSS, Angular-7, Firebase, i18n, Charts, Progressive Web Application, jsPDF (to download Receipt as PDF).
+- Technology: HTML, MDBootstrap, CSS, Angular-7, Firebase, i18n, Drag & Drop, Progressive Web Application, jsPDF (to download Receipt as PDF).
 - Database : Angular Firebase.
 
 #### This Projects covers all fundamentals of Angular
@@ -113,6 +116,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Products Page:
 
 ![Alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/products.PNG "Home Page")
+
+### Work Board Page:
+
+![Alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/drag&drop.PNG "Home Page")
 
 ## Development server
 

@@ -4,7 +4,7 @@ import { IndexComponent } from "./index.component";
 
 export const IndexRoutes: Routes = [
   {
-    path: "index",
+    path: "",
     children: [
       {
         path: "",

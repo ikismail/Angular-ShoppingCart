@@ -6,10 +6,9 @@ import { PageNotFoundComponent } from './shared/components/page-not-found/page-n
 export const AppRoutes: Routes = [
 	{
 		path: '',
-		component: IndexComponent,
 		children: [
 			{
-				path: 'index',
+				path: '',
 				loadChildren: './index/index.module#IndexModule'
 			},
 			{
@@ -22,7 +21,7 @@ export const AppRoutes: Routes = [
 			},
 			{
 				path: 'task-board',
-				loadChildren: './layouts/user/user.module#UserModule'
+				loadChildren: './layouts/task-board/task-board.module#TaskBoardModule'
 			}
 		]
 	},

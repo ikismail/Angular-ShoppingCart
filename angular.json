@@ -39,6 +39,7 @@
               "node_modules/chart.js/dist/Chart.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "node_modules/owl.carousel/dist/owl.carousel.min.js",
+              "node_modules/moment/min/moment.min.js",
               "node_modules/toastr/build/toastr.min.js"
             ]
           },
