@@ -68,6 +68,6 @@ import { CardLoaderComponent } from './components/card-loader/card-loader.compon
 		NgxContentLoadingModule,
 		CardLoaderComponent
 	],
-	providers: [ AuthService, AuthGuard, AdminGaurd, ProductService, UserService, FormBuilder ]
+	providers: [AuthService, AuthGuard, AdminGaurd, ProductService, UserService, FormBuilder]
 })
-export class SharedModule {}
+export class SharedModule { }
