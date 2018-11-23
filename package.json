@@ -47,7 +47,7 @@
     "ngx-pagination": "^3.2.1",
     "node-sass": "^4.10.0",
     "owl.carousel": "^2.3.4",
-    "primeng": "^6.1.6",
+    "primeng": "^6.1.7",
     "rxjs": "^6.0.0",
     "shortid": "^2.2.14",
     "tether": "^1.4.5",
