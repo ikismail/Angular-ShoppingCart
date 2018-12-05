@@ -27,7 +27,7 @@
     "@angular/platform-browser": "^7.1.0",
     "@angular/platform-browser-dynamic": "^7.1.0",
     "@angular/router": "^7.1.0",
-    "angular-bootstrap-md": "^6.3.0",
+    "angular-bootstrap-md": "^7.0.0",
     "angular2-toaster": "^7.0.0",
     "angularfire2": "5.1.1",
     "animate.css": "^3.7.0",
