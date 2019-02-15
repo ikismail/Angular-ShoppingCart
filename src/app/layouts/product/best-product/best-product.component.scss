@@ -1,3 +1,19 @@
+@import "../../../../assets/theme/colors";
+@import "../../../../assets/theme/functions";
+
+.bq-title{
+  color: var(--productTitle) !important;
+}
+
+.bq-primary {
+    border-left: 3px solid var(--productTitle) !important;
+}
+
+.btn-default {
+  background-color: var(--navBackground) !important;
+}
+
+
 .section .section-heading {
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -57,6 +73,12 @@
 .card.card-cascade .card-body {
   padding-top: 1.8rem;
 }
+
+
+.card .card-body .card-title a{
+  color: var(--navBackground) !important;
+}
+
 .btn .fa,
 .card .card-body {
   position: relative;
@@ -107,4 +129,8 @@
   margin-left: 1rem;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+}
+
+.card .card-footer .right a .fa-heart {
+  color: var(--navBackground) !important;
 }

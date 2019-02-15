@@ -1,4 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import "./assets/theme/colors";
+@import "./assets/theme/functions";
+
+
 router-outlet ~ * {
   position: absolute;
   width: 100%;

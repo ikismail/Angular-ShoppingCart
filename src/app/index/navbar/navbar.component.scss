@@ -1,6 +1,51 @@
+
+@import "../../../assets/theme/colors";
+@import "../../../assets/theme/functions";
+
+
 .navbar {
   top: 0;
+  background: var(--navBackground)
 }
+
+
+.color-container {
+    position: relative;
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    margin: auto;
+    border-radius: 50%;
+    overflow: hidden;
+
+    .colorDiv {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      border-radius: 50%;
+    }
+
+    .color-purple{
+      background: #9c27b0
+
+    }
+    .color-red{
+      background: #e91e63
+
+    }
+    .color-blue{
+      background: #3f51b5
+
+    }
+    .color-violet{
+      background: #673ab7
+
+    }
+  }
+
 
 /deep/ .dropdown-menu {
   margin-left: -6rem;

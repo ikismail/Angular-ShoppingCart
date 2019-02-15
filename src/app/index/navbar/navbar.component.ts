@@ -1,14 +1,13 @@
 import {
   Component,
   OnInit,
-  EventEmitter,
-  Output,
   VERSION
 } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../../shared/services/auth.service";
 import { ProductService } from "../../shared/services/product.service";
 import { TranslateService } from "../../shared/services/translate.service";
+import { ThemeService } from "src/app/shared/services/theme.service";
 declare var $: any;
 
 @Component({
@@ -23,12 +22,13 @@ export class NavbarComponent implements OnInit {
     public authService: AuthService,
     private router: Router,
     public productService: ProductService,
-    public translate: TranslateService
+    public translate: TranslateService,
+    private themeService: ThemeService
   ) {
     // console.log(translate.data);
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
   logout() {
     this.authService.logout();
     this.router.navigate(["/"]);
@@ -36,6 +36,10 @@ export class NavbarComponent implements OnInit {
 
   setLang(lang: string) {
     // console.log("Language", lang);
-    this.translate.use(lang).then(() => {});
+    this.translate.use(lang).then(() => { });
+  }
+
+  updateTheme(theme: string) {
+    this.themeService.updateThemeUrl(theme);
   }
 }

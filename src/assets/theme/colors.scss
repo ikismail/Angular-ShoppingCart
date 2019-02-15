@@ -1,0 +1,27 @@
+.purple-theme {
+    --navBackground: #9c27b0;
+    --productTitle: #9c27b0;
+}
+
+.blue-theme {
+
+    --navBackground: #3f51b5;
+    --productTitle: #3f51b5;
+}
+
+.red-theme {
+    --navBackground: #e91e63;
+    --productTitle: #e91e63;
+}
+
+.violet-theme {
+    --navBackground: #673ab7;
+    --productTitle: #673ab7;
+}
+
+
+
+$variables: (
+    --navBackground: var(--navBackground),
+    --productTitle: var(--productTitle)
+);

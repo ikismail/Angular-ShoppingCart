@@ -1,3 +1,7 @@
+@import "../../../../assets/theme/colors";
+@import "../../../../assets/theme/functions";
+
+
 .section .section-heading {
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -61,6 +65,12 @@
 .card .card-body {
   position: relative;
 }
+
+.card .card-body .card-title a{
+  color: var(--navBackground) !important;
+}
+
+
 .card .rating {
   color: #ffa000;
 }
@@ -112,5 +122,5 @@
 }
 
 .card .card-footer .right a .fa-heart {
-  color: #3f51b5;
+  color: var(--navBackground) !important;
 }
