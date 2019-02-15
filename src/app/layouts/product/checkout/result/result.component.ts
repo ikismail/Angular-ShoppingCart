@@ -7,7 +7,7 @@ declare var $: any;
 @Component({
 	selector: 'app-result',
 	templateUrl: './result.component.html',
-	styleUrls: [ './result.component.scss' ]
+	styleUrls: ['./result.component.scss']
 })
 export class ResultComponent implements OnInit {
 	products: Product[];
@@ -31,11 +31,11 @@ export class ResultComponent implements OnInit {
 		this.date = Date.now();
 	}
 
-	ngOnInit() {}
+	ngOnInit() { }
 
 	downloadReceipt() {
 		const data = document.getElementById('receipt');
-		console.log(data);
+		// console.log(data);
 
 		html2canvas(data).then((canvas) => {
 			// Few necessary setting options

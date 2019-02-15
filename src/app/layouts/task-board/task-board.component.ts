@@ -2,9 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import {
   CdkDragDrop,
   moveItemInArray,
-  transferArrayItem,
-  CdkDrag,
-  CdkDropList
+  transferArrayItem
 } from "@angular/cdk/drag-drop";
 import { TaskService } from "src/app/shared/services/task.service";
 import * as _ from "lodash";
@@ -46,10 +44,6 @@ export class TaskBoardComponent implements OnInit {
         this.completed = _.sortBy(this.completed, ["columnIndex"]);
       });
     });
-  }
-  isDroppable(drag?: CdkDrag, drop?: CdkDropList) {
-    console.log("Drag", drag.data["boardId"]);
-    console.log("Drop Container", drop.connectedTo);
   }
 
   drop(event: CdkDragDrop<string[]>) {

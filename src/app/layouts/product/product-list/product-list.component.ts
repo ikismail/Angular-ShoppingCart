@@ -6,12 +6,12 @@ import { ToastrService } from 'src/app/shared/services/toastr.service';
 @Component({
 	selector: 'app-product-list',
 	templateUrl: './product-list.component.html',
-	styleUrls: [ './product-list.component.scss' ]
+	styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
 	productList: Product[];
 	loading = false;
-	brands = [ 'All', 'Google', 'Apple', 'Samsung', 'OnePlus', 'Lenovo', 'Nokia', 'Motorolla' ];
+	brands = ['All', 'Google', 'Apple', 'Realme', 'Nokia', 'Motorolla'];
 
 	selectedBrand: 'All';
 
@@ -20,7 +20,7 @@ export class ProductListComponent implements OnInit {
 		public authService: AuthService,
 		private productService: ProductService,
 		private toastrService: ToastrService
-	) {}
+	) { }
 
 	ngOnInit() {
 		this.getAllProducts();

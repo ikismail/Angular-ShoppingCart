@@ -9,6 +9,8 @@ import { AppRoutes } from './app.routing';
 import { TranslateService } from './shared/services/translate.service';
 import { ProductModule } from './layouts/product/product.module';
 import { UserModule } from './layouts/user/user.module';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 /* to load and set en.json as the default application language */
 export function setupTranslateFactory(service: TranslateService): Function {
@@ -24,7 +26,8 @@ export function setupTranslateFactory(service: TranslateService): Function {
 		ProductModule,
 		UserModule,
 		SharedModule,
-		RouterModule.forRoot(AppRoutes)
+		RouterModule.forRoot(AppRoutes),
+		ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 	],
 	providers: [
 		TranslateService,
