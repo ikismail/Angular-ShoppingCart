@@ -17,6 +17,7 @@ Developing a **ShoppingCart (Ecommerce) Application using Angular7**.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
 
+
 ## Functionalities
 
 1.  User Registration using Firebase Authentication (using Email/Password | Google Authentication )
@@ -121,6 +122,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/drag&drop.PNG "Home Page")
 
+## How can I support the developer ?
+
+* Star my Github repo ⭐
+* Create pull requests, submit bugs, suggest new features or documentation updates 🛠
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -145,9 +151,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Contribution:
-
-- Contibutors are most welcome.
 
 ## Somethings wrong!!
 
