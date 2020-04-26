@@ -6,6 +6,7 @@ import { Component, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ProductService } from "../../../../shared/services/product.service";
+import { map } from "rxjs/operators";
 @Component({
   selector: "app-shipping-details",
   templateUrl: "./shipping-details.component.html",
@@ -32,7 +33,11 @@ export class ShippingDetailsComponent implements OnInit {
 
     this.userDetail = new UserDetail();
     this.products = productService.getLocalCartProducts();
-    this.userDetails = authService.loggedUser;
+    authService.user$.pipe(
+      map((user) => {
+        this.userDetails = user;
+      })
+    );
   }
 
   ngOnInit() {}

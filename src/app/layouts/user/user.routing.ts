@@ -5,7 +5,7 @@ import { AuthGuard } from "src/app/shared/services/auth_gaurd";
 
 export const UserRoutes: Routes = [
   {
-    path: "users",
+    path: "",
     component: UserComponent,
     canActivate: [AuthGuard],
     children: [

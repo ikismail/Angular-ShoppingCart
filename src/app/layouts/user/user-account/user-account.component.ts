@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, AfterViewInit } from "@angular/core";
 import { User } from "src/app/shared/models/user";
 import { AuthService } from "src/app/shared/services/auth.service";
 
@@ -7,13 +7,10 @@ import { AuthService } from "src/app/shared/services/auth.service";
   templateUrl: "./user-account.component.html",
   styleUrls: ["./user-account.component.scss"],
 })
-export class UserAccountComponent implements OnInit {
-  loggedUser: User;
+export class UserAccountComponent implements AfterViewInit {
   // Enable Update Button
 
-  constructor(private authService: AuthService) {}
+  constructor(public authService: AuthService) {}
 
-  ngOnInit() {
-    this.loggedUser = this.authService.loggedUser;
-  }
+  ngAfterViewInit(): void {}
 }

@@ -75,7 +75,7 @@
           </a>
         </div>
       </li>
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
+      <li class="nav-item" *ngIf="authService.isLoggedIn$ | async">
         <a class="nav-link" [routerLink]="['/users']">
           <i class="fa fa-user mr-1"></i
           >{{ this.translate.data["MYACCOUNT"] | translate }}</a
@@ -209,13 +209,13 @@
           >
         </div>
       </li>
-      <li class="nav-item" *ngIf="!authService.isLoggedIn()">
+      <li class="nav-item" *ngIf="authService.isLoggedOut$ | async">
         <a class="nav-link" [routerLink]="['/login']">
           <i class="fa fa-sign-in mr-1"></i>
           {{ this.translate.data["SIGNIN"] | translate }}</a
         >
       </li>
-      <li class="nav-item" *ngIf="authService.isLoggedIn()">
+      <li class="nav-item" *ngIf="authService.isLoggedIn$ | async">
         <a class="nav-link" (click)="logout()">
           <i class="fa fa-sign-in mr-1"></i
           >{{ this.translate.data["LOGOUT"] | translate }}</a

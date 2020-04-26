@@ -27,7 +27,8 @@ export const ProductRoutes: Routes = [
       },
       {
         path: "checkouts",
-        loadChildren: "./checkout/checkout.module#CheckoutModule",
+        loadChildren: () =>
+          import("./checkout/checkout.module").then((m) => m.CheckoutModule),
       },
       {
         path: "product/:id",

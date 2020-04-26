@@ -3,10 +3,10 @@ import { Routes, RouterModule } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: "tasks",
+    path: "",
     children: [
       {
-        path: "",
+        path: "tasks",
         component: TaskBoardComponent,
       },
     ],

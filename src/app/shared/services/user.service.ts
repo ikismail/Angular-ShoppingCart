@@ -23,6 +23,8 @@ export class UserService {
     return this.users;
   }
 
+  getUserById(id: string) {}
+
   createUser(data: any) {
     data.location = this.location;
     data.createdOn = moment(new Date()).format("X");

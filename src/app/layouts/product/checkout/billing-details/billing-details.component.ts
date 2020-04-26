@@ -6,6 +6,7 @@ import { User, UserDetail } from "../../../../shared/models/user";
 import { AuthService } from "../../../../shared/services/auth.service";
 import { Router } from "@angular/router";
 import { NgForm } from "@angular/forms";
+import { map } from "rxjs/operators";
 
 @Component({
   selector: "app-billing-details",
@@ -31,7 +32,11 @@ export class BillingDetailsComponent implements OnInit {
 
     this.userDetail = new UserDetail();
     this.products = productService.getLocalCartProducts();
-    this.userDetails = authService.loggedUser;
+    authService.user$.pipe(
+      map((user) => {
+        this.userDetails = user;
+      })
+    );
   }
 
   ngOnInit() {}

@@ -1,6 +1,6 @@
 <br />
 <div class="container">
-  <div class="row" *ngIf="authService.isAdmin()">
+  <div class="row" *ngIf="authService.isAdmin$ | async">
     <div class="col-sm">
       <div class="float-right">
         <button
@@ -116,7 +116,7 @@
                           placement="top"
                           mdbTooltip="Remove Product"
                           container="body"
-                          *ngIf="authService.isAdmin()"
+                          *ngIf="authService.isAdmin$ | async"
                           (click)="removeProduct(product.$key)"
                         >
                           <i class="fa fa-trash"></i>

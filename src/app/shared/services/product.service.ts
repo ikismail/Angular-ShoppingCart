@@ -57,8 +57,8 @@ export class ProductService {
   */
 
   // Get Favourite Product based on userId
-  getUsersFavouriteProduct() {
-    const user = this.authService.loggedUser;
+  async getUsersFavouriteProduct() {
+    const user = await this.authService.user$.toPromise();
     this.favouriteProducts = this.db.list("favouriteProducts", (ref) =>
       ref.orderByChild("userId").equalTo(user.$key)
     );

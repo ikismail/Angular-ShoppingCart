@@ -9,19 +9,27 @@ const routes: Routes = [
     children: [
       {
         path: "",
-        loadChildren: "./index/index.module#IndexModule",
+        loadChildren: () =>
+          import("./index/index.module").then((m) => m.IndexModule),
       },
       {
         path: "products",
-        loadChildren: "./layouts/product/product.module#ProductModule",
+        loadChildren: () =>
+          import("./layouts/product/product.module").then(
+            (m) => m.ProductModule
+          ),
       },
       {
         path: "users",
-        loadChildren: "./layouts/user/user.module#UserModule",
+        loadChildren: () =>
+          import("./layouts/user/user.module").then((m) => m.UserModule),
       },
       {
         path: "task-board",
-        loadChildren: "./layouts/task-board/task-board.module#TaskBoardModule",
+        loadChildren: () =>
+          import("./layouts/task-board/task-board.module").then(
+            (m) => m.TaskBoardModule
+          ),
       },
     ],
   },
