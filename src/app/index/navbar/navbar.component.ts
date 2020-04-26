@@ -1,8 +1,4 @@
-import {
-  Component,
-  OnInit,
-  VERSION
-} from "@angular/core";
+import { Component, OnInit, VERSION } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../../shared/services/auth.service";
 import { ProductService } from "../../shared/services/product.service";
@@ -13,7 +9,7 @@ declare var $: any;
 @Component({
   selector: "app-navbar",
   templateUrl: "./navbar.component.html",
-  styleUrls: ["./navbar.component.scss"]
+  styleUrls: ["./navbar.component.scss"],
 })
 export class NavbarComponent implements OnInit {
   angularVersion = VERSION;
@@ -28,7 +24,7 @@ export class NavbarComponent implements OnInit {
     // console.log(translate.data);
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
   logout() {
     this.authService.logout();
     this.router.navigate(["/"]);
@@ -36,7 +32,7 @@ export class NavbarComponent implements OnInit {
 
   setLang(lang: string) {
     // console.log("Language", lang);
-    this.translate.use(lang).then(() => { });
+    this.translate.use(lang).then(() => {});
   }
 
   updateTheme(theme: string) {

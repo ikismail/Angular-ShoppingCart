@@ -1,5 +1,5 @@
-<br>
-<br>
+<br />
+<br />
 
 <div class="container">
   <div class="row">
@@ -9,10 +9,22 @@
           <a [routerLink]="['/users']">Your Profile</a>
         </li>
         <li class="list-group-item hoverable">
-          <a [routerLink]="['/users', {outlets: {'profileOutlet': ['favourite-products']}}]">Your Wishlist</a>
+          <a
+            [routerLink]="[
+              '/users',
+              { outlets: { profileOutlet: ['favourite-products'] } }
+            ]"
+            >Your Wishlist</a
+          >
         </li>
         <li class="list-group-item hoverable">
-          <a [routerLink]="['/users', {outlets: {'profileOutlet': ['cart-items']}}]">Your Cart</a>
+          <a
+            [routerLink]="[
+              '/users',
+              { outlets: { profileOutlet: ['cart-items'] } }
+            ]"
+            >Your Cart</a
+          >
         </li>
       </ul>
     </div>

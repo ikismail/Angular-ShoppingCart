@@ -8,12 +8,12 @@ export const IndexRoutes: Routes = [
     children: [
       {
         path: "",
-        component: IndexComponent
+        component: IndexComponent,
       },
       {
         path: "login",
-        component: LoginComponent
-      }
-    ]
-  }
+        component: LoginComponent,
+      },
+    ],
+  },
 ];

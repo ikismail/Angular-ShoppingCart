@@ -1,4 +1,4 @@
-# Angular7 - ShoppingCart + MDBootstrap + Firebase + i18n
+# Angular-9 - ShoppingCart + MDBootstrap + Firebase + i18n
 
 [![HitCount](http://hits.dwyl.io/ikismail/Angular-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular-ShoppingCart)
 [![GitHub forks](https://img.shields.io/github/forks/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/network)
@@ -11,12 +11,11 @@
 
 <!-- [![Build Status](https://travis-ci.org/ikismail/Angular-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular-ShoppingCart) -->
 
-Developing a **ShoppingCart (Ecommerce) Application using Angular7**.
+Developing a **ShoppingCart (Ecommerce) Application using Angular-9**.
 
 **Live Demo** : [Angular-shopping-cart](https://angular-shoppingcart.firebaseapp.com/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.1.
-
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
 ## Functionalities
 
@@ -27,7 +26,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Admin can add product to the product list
 - Admin can edit/delete the product.
 
-3. Drag and Drop `Angular 7 Drag & Drop`
+3. Drag and Drop `Angular Drag & Drop`
+
 - Implemented [Angular Drag and Drop CDK](https://material.angular.io/cdk/drag-drop/overview)
 
 1.  Security
@@ -36,7 +36,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Tools and Technologies
 
-- Technology: HTML, MDBootstrap, CSS, Angular-7, Firebase, i18n, Drag & Drop, Progressive Web Application, jsPDF (to download Receipt as PDF).
+- Technology: HTML, MDBootstrap, CSS, Angular-9, Firebase, i18n, Drag & Drop, Progressive Web Application, jsPDF (to download Receipt as PDF).
 - Database : Angular Firebase.
 
 #### This Projects covers all fundamentals of Angular
@@ -124,8 +124,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## How can I support the developer ?
 
-* Star my Github repo ⭐
-* Create pull requests, submit bugs, suggest new features or documentation updates 🛠
+- Star my Github repo ⭐
+- Create pull requests, submit bugs, suggest new features or documentation updates 🛠
 
 ## Development server
 
@@ -150,7 +150,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
-
 
 ## Somethings wrong!!
 

@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import * as firebase from "firebase/app";
 import { Observable } from "rxjs";
 import { User } from "../models/user";
-import { AngularFireAuth } from "angularfire2/auth";
+import { AngularFireAuth } from "@angular/fire/auth";
 import { Router } from "@angular/router";
 import { UserService } from "./user.service";
 
@@ -10,7 +10,7 @@ import { UserService } from "./user.service";
 export class AuthService {
   user: Observable<firebase.User>;
   userDetails: firebase.User = null;
-  loggedUser;
+  loggedUser: User;
   dbUser;
   constructor(
     private firebaseAuth: AngularFireAuth,
@@ -19,14 +19,14 @@ export class AuthService {
   ) {
     this.user = firebaseAuth.authState;
     this.dbUser = new User();
-    this.user.subscribe(user => {
+    this.user.subscribe((user) => {
       if (user) {
         this.userDetails = user;
         userService
           .isAdmin(this.userDetails.email)
           .snapshotChanges()
-          .subscribe(data => {
-            data.forEach(el => {
+          .subscribe((data) => {
+            data.forEach((el) => {
               const y = el.payload.toJSON();
               this.dbUser = y;
             });
@@ -45,42 +45,39 @@ export class AuthService {
 
   logout() {
     this.loggedUser = null;
-    this.firebaseAuth.auth.signOut().then(res => this.router.navigate(["/"]));
+    this.firebaseAuth.signOut().then((res) => this.router.navigate(["/"]));
   }
 
   createUserWithEmailAndPassword(emailID: string, password: string) {
-    return this.firebaseAuth.auth.createUserWithEmailAndPassword(
-      emailID,
-      password
-    );
+    return this.firebaseAuth.createUserWithEmailAndPassword(emailID, password);
   }
 
-  getLoggedInUser(): User {
-    const loggedUser: User = new User();
-    const user = this.firebaseAuth.auth.currentUser;
-
-    if (user) {
-      this.userDetails = user;
-      if (user != null) {
-        loggedUser.$key = user.uid;
-        loggedUser.userName = user.displayName;
-        loggedUser.emailId = user.email;
-        loggedUser.phoneNumber = user.phoneNumber;
-        loggedUser.avatar = user.photoURL;
-        loggedUser.isAdmin = this.dbUser["isAdmin"];
+  getLoggedInUser(): void {
+    const loggedUser = new User();
+    this.firebaseAuth.currentUser.then((user) => {
+      console.log("Current User", user);
+      if (user) {
+        this.userDetails = user;
+        if (user != null) {
+          loggedUser.$key = user.uid;
+          loggedUser.userName = user.displayName;
+          loggedUser.emailId = user.email;
+          loggedUser.phoneNumber = user.phoneNumber;
+          loggedUser.avatar = user.photoURL;
+          loggedUser.isAdmin = this.dbUser.isAdmin;
+        }
+      } else {
+        this.userDetails = null;
       }
-    } else {
-      this.userDetails = null;
-    }
-
-    return loggedUser;
+      this.loggedUser = loggedUser;
+    });
   }
 
   isAdmin(): boolean {
-    const user = this.getLoggedInUser();
+    this.getLoggedInUser();
     // console.log("loggedUSer", user)
-    if (user != null) {
-      if (user.isAdmin === true) {
+    if (this.loggedUser != null) {
+      if (this.loggedUser.isAdmin === true) {
         return true;
       }
     }
@@ -91,11 +88,11 @@ export class AuthService {
       email,
       password
     );
-    return this.firebaseAuth.auth.signInWithEmailAndPassword(email, password);
+    return this.firebaseAuth.signInWithEmailAndPassword(email, password);
   }
 
   signInWithGoogle() {
-    return this.firebaseAuth.auth.signInWithPopup(
+    return this.firebaseAuth.signInWithPopup(
       new firebase.auth.GoogleAuthProvider()
     );
   }

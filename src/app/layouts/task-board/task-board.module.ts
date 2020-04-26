@@ -5,8 +5,7 @@ import { SharedModule } from "src/app/shared/shared.module";
 import { TaskRoutes } from "./task.routing";
 
 @NgModule({
-  imports: [
-    CommonModule, SharedModule, TaskRoutes],
-  declarations: [TaskBoardComponent]
+  imports: [CommonModule, SharedModule, TaskRoutes],
+  declarations: [TaskBoardComponent],
 })
-export class TaskBoardModule { }
+export class TaskBoardModule {}

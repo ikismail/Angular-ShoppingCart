@@ -1,7 +1,6 @@
 @import "../../../../assets/theme/colors";
 @import "../../../../assets/theme/functions";
 
-
 .section .section-heading {
   margin-top: 2rem;
   margin-bottom: 4rem;
@@ -66,10 +65,9 @@
   position: relative;
 }
 
-.card .card-body .card-title a{
+.card .card-body .card-title a {
   color: var(--navBackground) !important;
 }
-
 
 .card .rating {
   color: #ffa000;

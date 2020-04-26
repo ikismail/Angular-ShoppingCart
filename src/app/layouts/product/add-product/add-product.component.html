@@ -1,28 +1,60 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+<div
+  class="modal fade"
+  id="exampleModalLong"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLongTitle"
+  aria-hidden="true"
+>
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle">Add Product</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <form class="needs-validation" #addProductForm="ngForm" (ngSubmit)="createProduct(addProductForm)">
+        <form
+          class="needs-validation"
+          #addProductForm="ngForm"
+          (ngSubmit)="createProduct(addProductForm)"
+        >
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="productName">Product Name</label>
-              <input type="text" class="form-control" id="productName" name="productName" [(ngModel)]="product.productName" placeholder="Product Name"
-                value="" required>
+              <input
+                type="text"
+                class="form-control"
+                id="productName"
+                name="productName"
+                [(ngModel)]="product.productName"
+                placeholder="Product Name"
+                value=""
+                required
+              />
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="productCategory">Product Category</label>
-              <input type="text" class="form-control" id="productCategory" name="productCategory" [(ngModel)]="product.productCategory"
-                placeholder="Product Category" value="" required>
+              <input
+                type="text"
+                class="form-control"
+                id="productCategory"
+                name="productCategory"
+                [(ngModel)]="product.productCategory"
+                placeholder="Product Category"
+                value=""
+                required
+              />
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -30,26 +62,49 @@
           </div>
 
           <div class="mb-3">
-            <label for="productDescription">Product Description
+            <label for="productDescription"
+              >Product Description
               <span class="text-muted">(Optional)</span>
             </label>
-            <textarea type="text" class="form-control" id="productDescription" placeholder="Product Description" name="productDescription"
-              [(ngModel)]="product.productDescription"></textarea>
+            <textarea
+              type="text"
+              class="form-control"
+              id="productDescription"
+              placeholder="Product Description"
+              name="productDescription"
+              [(ngModel)]="product.productDescription"
+            ></textarea>
           </div>
 
           <div class="row">
             <div class="col-md-6 mb-3">
               <label for="productPrice">Product Price</label>
-              <input type="number" name="productPrice" class="form-control" [(ngModel)]="product.productPrice" placeholder="Product Price"
-                id="productPrice" value="" required>
+              <input
+                type="number"
+                name="productPrice"
+                class="form-control"
+                [(ngModel)]="product.productPrice"
+                placeholder="Product Price"
+                id="productPrice"
+                value=""
+                required
+              />
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>
             </div>
             <div class="col-md-6 mb-3">
               <label for="productQuatity">Product Quantity</label>
-              <input type="text" class="form-control" id="productQuatity" name="productQuatity" [(ngModel)]="product.productQuatity" placeholder="Product Quantity"
-                value="" required>
+              <input
+                type="text"
+                class="form-control"
+                id="productQuatity"
+                name="productQuatity"
+                [(ngModel)]="product.productQuatity"
+                placeholder="Product Quantity"
+                value=""
+                required
+              />
               <div class="invalid-feedback">
                 Valid last name is required.
               </div>
@@ -58,18 +113,34 @@
 
           <div class="mb-3">
             <label for="productSeller">Product Seller</label>
-            <input type="text" class="form-control" id="productSeller" [(ngModel)]="product.productSeller" name="productSeller" placeholder="Product Seller"
-              required>
+            <input
+              type="text"
+              class="form-control"
+              id="productSeller"
+              [(ngModel)]="product.productSeller"
+              name="productSeller"
+              placeholder="Product Seller"
+              required
+            />
           </div>
           <div class="mb-3">
             <label for="productImageUrl">Product Image</label>
-            <input type="text" class="form-control" id="productImageUrl" [(ngModel)]="product.productImageUrl" name="productImageUrl"
-              placeholder="Image Url" required>
+            <input
+              type="text"
+              class="form-control"
+              id="productImageUrl"
+              [(ngModel)]="product.productImageUrl"
+              name="productImageUrl"
+              placeholder="Image Url"
+              required
+            />
           </div>
 
-          <hr class="mb-4">
+          <hr class="mb-4" />
 
-          <button class="btn btn-primary btn-lg btn-block" type="submit">Add Product</button>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">
+            Add Product
+          </button>
         </form>
       </div>
     </div>

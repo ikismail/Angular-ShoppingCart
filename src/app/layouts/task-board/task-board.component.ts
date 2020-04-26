@@ -2,29 +2,29 @@ import { Component, OnInit } from "@angular/core";
 import {
   CdkDragDrop,
   moveItemInArray,
-  transferArrayItem
+  transferArrayItem,
 } from "@angular/cdk/drag-drop";
 import { TaskService } from "src/app/shared/services/task.service";
 import * as _ from "lodash";
 @Component({
   selector: "app-task-board",
   templateUrl: "./task-board.component.html",
-  styleUrls: ["./task-board.component.scss"]
+  styleUrls: ["./task-board.component.scss"],
 })
 export class TaskBoardComponent implements OnInit {
   todo = new Array<any>();
   inProgress = new Array<any>();
   completed = new Array<any>();
-  constructor(private taskService: TaskService) { }
+  constructor(private taskService: TaskService) {}
 
   ngOnInit() {
     this.getAllTasks();
   }
 
   getAllTasks() {
-    this.taskService.getTasks().then(data => {
+    this.taskService.getTasks().then((data) => {
       const tasks: [] = data as [];
-      tasks.forEach(task => {
+      tasks.forEach((task) => {
         const boardId: string = task["boardId"];
         // Pushing Task to board based on boardId
         switch (boardId) {
@@ -49,12 +49,18 @@ export class TaskBoardComponent implements OnInit {
   drop(event: CdkDragDrop<string[]>) {
     console.log(event.container.data);
     if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
+      moveItemInArray(
         event.container.data,
         event.previousIndex,
-        event.currentIndex);
+        event.currentIndex
+      );
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex
+      );
     }
   }
   onSelect(event) {

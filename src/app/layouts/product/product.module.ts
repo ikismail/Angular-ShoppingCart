@@ -20,17 +20,22 @@ import { CartProductsComponent } from "./cart-products/cart-products.component";
 import { CartCalculatorComponent } from "./cart-calculator/cart-calculator.component";
 
 @NgModule({
-	imports: [CommonModule, RouterModule.forChild(ProductRoutes), SharedModule, CheckoutModule],
-	declarations: [
-		ProductComponent,
-		BestProductComponent,
-		ProductListComponent,
-		AddProductComponent,
-		ProductDetailComponent,
-		FavouriteProductsComponent,
-		CartProductsComponent,
-		CartCalculatorComponent
-	],
-	exports: [BestProductComponent]
+  imports: [
+    CommonModule,
+    RouterModule.forChild(ProductRoutes),
+    SharedModule,
+    CheckoutModule,
+  ],
+  declarations: [
+    ProductComponent,
+    BestProductComponent,
+    ProductListComponent,
+    AddProductComponent,
+    ProductDetailComponent,
+    FavouriteProductsComponent,
+    CartProductsComponent,
+    CartCalculatorComponent,
+  ],
+  exports: [BestProductComponent],
 })
-export class ProductModule { }
+export class ProductModule {}
