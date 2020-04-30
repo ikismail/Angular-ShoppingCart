@@ -10,24 +10,24 @@ const routes: Routes = [
       {
         path: "",
         loadChildren: () =>
-          import("./index/index.module").then((m) => m.IndexModule),
+          import("./views/base/index/index.module").then((m) => m.IndexModule),
       },
       {
         path: "products",
         loadChildren: () =>
-          import("./layouts/product/product.module").then(
+          import("./views/pages/product/product.module").then(
             (m) => m.ProductModule
           ),
       },
       {
         path: "users",
         loadChildren: () =>
-          import("./layouts/user/user.module").then((m) => m.UserModule),
+          import("./views/pages/user/user.module").then((m) => m.UserModule),
       },
       {
         path: "task-board",
         loadChildren: () =>
-          import("./layouts/task-board/task-board.module").then(
+          import("./views/pages/task-board/task-board.module").then(
             (m) => m.TaskBoardModule
           ),
       },
