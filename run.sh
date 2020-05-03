@@ -4,5 +4,5 @@ set -x
 # Production build
 ng build --prod
 # Serve
-cd dist/angularShop
-http-server
+cd dist
+http-server -p 8080 -c-1 dist
