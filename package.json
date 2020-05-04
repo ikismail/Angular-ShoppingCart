@@ -1,12 +1,13 @@
 {
   "name": "shopping-cart",
-  "version": "0.0.0",
+  "version": "2.1.0",
   "private": true,
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "prod": "npm version patch && ng build --prod && cd dist && http-server",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:stats": "ng build --stats-json",
