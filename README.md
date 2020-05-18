@@ -107,6 +107,12 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 10. Run the Server.
 
+
+## How can I support the developer ?
+
+- Star my Github repo ⭐
+- Create pull requests, submit bugs, suggest new features or documentation updates 🛠
+
 ## Screenshots:
 
 ### Home Page:
@@ -120,11 +126,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### Work Board Page:
 
 ![Alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/drag&drop.PNG "Home Page")
-
-## How can I support the developer ?
-
-- Star my Github repo ⭐
-- Create pull requests, submit bugs, suggest new features or documentation updates 🛠
 
 ## Development server
 
