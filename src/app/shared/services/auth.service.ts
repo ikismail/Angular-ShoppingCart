@@ -1,89 +1,77 @@
 import { Injectable } from "@angular/core";
 import * as firebase from "firebase/app";
-import { Observable } from "rxjs";
+import { Observable, Subject, BehaviorSubject } from "rxjs";
 import { User } from "../models/user";
-import { AngularFireAuth } from "angularfire2/auth";
+import { AngularFireAuth } from "@angular/fire/auth";
 import { Router } from "@angular/router";
 import { UserService } from "./user.service";
+import { filter, map, tap, shareReplay } from "rxjs/operators";
+
+export const ANONYMOUS_USER: User = new User();
 
 @Injectable()
 export class AuthService {
   user: Observable<firebase.User>;
-  userDetails: firebase.User = null;
-  loggedUser;
-  dbUser;
+
+  private subject = new BehaviorSubject<User>(undefined);
+
+  user$: Observable<User> = this.subject
+    .asObservable()
+    .pipe(filter((user) => !!user));
+
+  isLoggedIn$: Observable<boolean> = this.user$.pipe(
+    map((user) => !!user.$key)
+  );
+
+  isLoggedOut$: Observable<boolean> = this.isLoggedIn$.pipe(
+    map((isLoggedIn) => !isLoggedIn)
+  );
+
+  isAdmin$: Observable<boolean> = this.user$.pipe(
+    map((user) => !!user.isAdmin)
+  );
+
   constructor(
     private firebaseAuth: AngularFireAuth,
     private router: Router,
     private userService: UserService
   ) {
     this.user = firebaseAuth.authState;
-    this.dbUser = new User();
-    this.user.subscribe(user => {
+
+    this.user.subscribe((user) => {
       if (user) {
-        this.userDetails = user;
-        userService
-          .isAdmin(this.userDetails.email)
+        this.userService
+          .isAdmin(user.email)
           .snapshotChanges()
-          .subscribe(data => {
-            data.forEach(el => {
-              const y = el.payload.toJSON();
-              this.dbUser = y;
+          .subscribe((data) => {
+            data.forEach((el) => {
+              const y: any = el.payload.toJSON();
+              console.log("constructor isAdmin", y);
+              this.subject.next({
+                $key: y.uid,
+                userName: user.displayName || "Anonymous User",
+                emailId: y.email,
+                phoneNumber: user.phoneNumber,
+                avatar: user.photoURL,
+                isAdmin: y.isAdmin,
+              });
             });
           });
       } else {
-        this.userDetails = null;
+        this.subject.next(ANONYMOUS_USER);
       }
     });
   }
 
-  isLoggedIn(): boolean {
-    if (this.userDetails !== null) {
-      return true;
-    }
-  }
-
   logout() {
-    this.loggedUser = null;
-    this.firebaseAuth.auth.signOut().then(res => this.router.navigate(["/"]));
+    this.firebaseAuth.signOut().then((res) => {
+      this.subject.next(ANONYMOUS_USER);
+      this.router.navigate(["/"]);
+    });
   }
 
   createUserWithEmailAndPassword(emailID: string, password: string) {
-    return this.firebaseAuth.auth.createUserWithEmailAndPassword(
-      emailID,
-      password
-    );
-  }
-
-  getLoggedInUser(): User {
-    const loggedUser: User = new User();
-    const user = this.firebaseAuth.auth.currentUser;
-
-    if (user) {
-      this.userDetails = user;
-      if (user != null) {
-        loggedUser.$key = user.uid;
-        loggedUser.userName = user.displayName;
-        loggedUser.emailId = user.email;
-        loggedUser.phoneNumber = user.phoneNumber;
-        loggedUser.avatar = user.photoURL;
-        loggedUser.isAdmin = this.dbUser["isAdmin"];
-      }
-    } else {
-      this.userDetails = null;
-    }
-
-    return loggedUser;
-  }
-
-  isAdmin(): boolean {
-    const user = this.getLoggedInUser();
-    // console.log("loggedUSer", user)
-    if (user != null) {
-      if (user.isAdmin === true) {
-        return true;
-      }
-    }
+    return this.firebaseAuth.createUserWithEmailAndPassword(emailID, password);
   }
 
   signInRegular(email, password) {
@@ -91,11 +79,11 @@ export class AuthService {
       email,
       password
     );
-    return this.firebaseAuth.auth.signInWithEmailAndPassword(email, password);
+    return this.firebaseAuth.signInWithEmailAndPassword(email, password);
   }
 
   signInWithGoogle() {
-    return this.firebaseAuth.auth.signInWithPopup(
+    return this.firebaseAuth.signInWithPopup(
       new firebase.auth.GoogleAuthProvider()
     );
   }

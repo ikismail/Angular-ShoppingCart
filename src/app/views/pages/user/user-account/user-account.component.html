@@ -1,0 +1,27 @@
+<form>
+  <div class="row" *ngIf="this.authService.user$ | async as user">
+    <ng-container *ngIf="user && user?.avatar; else elseTemplate">
+      <img
+        [src]="user?.avatar"
+        [alt]="user.userName"
+        style="width: 35%; height: 35%;"
+      />
+    </ng-container>
+    <ng-template #elseTemplate>
+      <img
+        src="../../../assets/img/malecostume-512.png"
+        [alt]="user.userName"
+        style="width: 35%; height: 35%;"
+      />
+    </ng-template>
+
+    <div class="col-md-8 mt-3">
+      <label for="userName">User Name</label>
+      <p style="font-size: 15px;">{{ user.userName }}</p>
+    </div>
+    <div class="col-md-8 mb-3">
+      <label for="emailId">Email Id</label>
+      <p style="font-size: 15px;">{{ user.emailId }}</p>
+    </div>
+  </div>
+</form>

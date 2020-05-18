@@ -1,13 +1,13 @@
 import {
   AngularFireList,
   AngularFireObject,
-  AngularFireDatabase
-} from "angularfire2/database";
+  AngularFireDatabase,
+} from "@angular/fire/database";
 import { Billing } from "./../models/billing";
 import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: "root"
+  providedIn: "root",
 })
 export class BillingService {
   billings: AngularFireList<Billing>;

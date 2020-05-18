@@ -3,7 +3,7 @@ import {
   animate,
   transition,
   style,
-  query
+  query,
 } from "@angular/animations";
 
 export const fadeAnimation = trigger("fadeAnimation", [
@@ -25,6 +25,6 @@ export const fadeAnimation = trigger("fadeAnimation", [
       ":enter",
       [style({ opacity: 0 }), animate("0.3s", style({ opacity: 1 }))],
       { optional: true }
-    )
-  ])
+    ),
+  ]),
 ]);

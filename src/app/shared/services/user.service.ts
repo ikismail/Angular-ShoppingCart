@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { AngularFireDatabase, AngularFireList } from "angularfire2/database";
+import { AngularFireDatabase, AngularFireList } from "@angular/fire/database";
 
 import * as moment from "moment";
 import { User } from "../models/user";
@@ -11,7 +11,7 @@ export class UserService {
 
   location = {
     lat: null,
-    lon: null
+    lon: null,
   };
 
   constructor(private db: AngularFireDatabase) {
@@ -23,6 +23,8 @@ export class UserService {
     return this.users;
   }
 
+  getUserById(id: string) {}
+
   createUser(data: any) {
     data.location = this.location;
     data.createdOn = moment(new Date()).format("X");
@@ -31,7 +33,7 @@ export class UserService {
   }
 
   isAdmin(emailId: string) {
-    return this.db.list("clients", ref =>
+    return this.db.list("clients", (ref) =>
       ref.orderByChild("email").equalTo(emailId)
     );
   }

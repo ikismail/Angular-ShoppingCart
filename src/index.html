@@ -1,80 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114417643-2"></script>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114417643-2"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-114417643-2');
-  </script>
+  </script> -->
 
-  <meta charset="utf-8">
-  <title>AngularShoppingCart</title>
-  <base href="/">
+    <meta charset="utf-8" />
+    <title>Angular - ShoppingCart</title>
+    <base href="/" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu"
+      rel="stylesheet"
+    />
 
-  <style>
-    .splash {
-      position: absolute;
-      z-index: 2000;
-      background: white;
-      color: gray;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0
-    }
+    <style>
+      .splash {
+        position: absolute;
+        z-index: 2000;
+        background: white;
+        color: gray;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
 
-    .splash-title {
-      text-align: center;
-      max-width: 500px;
-      margin: 15% auto;
-      padding: 20px
-    }
+      .splash-title {
+        text-align: center;
+        max-width: 500px;
+        margin: 15% auto;
+        padding: 20px;
+      }
 
-    .splash-title h1 {
-      font-size: 26px
-    }
+      .splash-title h1 {
+        font-size: 26px;
+      }
 
-    .color-line {
-      border-radius: 4px 4px 0 0
-    }
-  </style>
-  <script>
-    var global = global || window;
-    var Buffer = Buffer || [];
-    var process = process || {
-      env: {
-        DEBUG: undefined
-      },
-      version: []
-    };
+      .color-line {
+        border-radius: 4px 4px 0 0;
+      }
+    </style>
+    <script>
+      var global = global || window;
+      var Buffer = Buffer || [];
+      var process = process || {
+        env: {
+          DEBUG: undefined,
+        },
+        version: [],
+      };
+    </script>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#1976d2" />
+  </head>
 
-  </script>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1976d2">
-</head>
-
-<body class="red-theme">
-  <app-root>
-    <!-- Show simple splash screen-->
-    <div class="splash">
-      <div class="color-line"></div>
-      <div class="splash-title">
-        <h1>Loading ikismail ShoppingCart</h1>
-        <img src="./assets/img/loader.svg" width="64" height="64" />
+  <body class="red-theme">
+    <app-root>
+      <!-- Show simple splash screen-->
+      <div class="splash">
+        <div class="color-line"></div>
+        <div class="splash-title">
+          <h1>Loading ikismail ShoppingCart</h1>
+          <img src="./assets/img/loader.svg" width="64" height="64" />
+        </div>
       </div>
-    </div>
-  </app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
-
-</body>
-
+    </app-root>
+    <noscript
+      >Please enable JavaScript to continue using this application.</noscript
+    >
+  </body>
 </html>

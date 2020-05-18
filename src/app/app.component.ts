@@ -7,7 +7,7 @@ declare var $: any;
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
-  animations: [fadeAnimation]
+  animations: [fadeAnimation],
 })
 export class AppComponent implements OnInit {
   title = "app";
@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    $(document).ready(function() {
+    $(document).ready(() => {
       $(".banner").owlCarousel({
         autoHeight: true,
         center: true,
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
         loop: true,
         autoplay: true,
         autoplayTimeout: 3000,
-        autoplayHoverPause: true
+        autoplayHoverPause: true,
       });
     });
 

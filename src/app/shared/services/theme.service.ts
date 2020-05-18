@@ -1,16 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from "@angular/core";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class ThemeService {
-
-  constructor() { }
+  constructor() {}
 
   updateThemeUrl(theme: string) {
-
     document.getElementsByTagName("body")[0].className = theme;
 
-    localStorage.setItem("theme", JSON.stringify(theme))
+    localStorage.setItem("theme", JSON.stringify(theme));
   }
 }
