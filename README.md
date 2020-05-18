@@ -2,7 +2,7 @@
 
 [![HitCount](http://hits.dwyl.io/ikismail/Angular-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular-ShoppingCart)
 [![GitHub forks](https://img.shields.io/github/forks/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/network)
-[![Github Dependencies](https://david-dm.org/ikismail/Angular-ShoppingCart.svg)](https://david-dm.org/ikismail/Angular-ShoppingCart.svg)
+<!-- [![Github Dependencies](https://david-dm.org/ikismail/Angular-ShoppingCart.svg)](https://david-dm.org/ikismail/Angular-ShoppingCart.svg) -->
 [![GitHub stars](https://img.shields.io/github/stars/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/issues)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/ikismail/Angular-ShoppingCart/blob/master/LICENSE)
