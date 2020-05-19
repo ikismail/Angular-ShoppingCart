@@ -1,4 +1,4 @@
-# Angular-9 - ShoppingCart + MDBootstrap + Firebase + i18n
+# Angular-9 - ShoppingCart + MDBootstrap + Firebase (Realtime Database) + i18n
 
 [![HitCount](http://hits.dwyl.io/ikismail/Angular-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular-ShoppingCart)
 [![GitHub forks](https://img.shields.io/github/forks/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/network) [![GitHub stars](https://img.shields.io/github/stars/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/stargazers)
@@ -36,7 +36,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Tools and Technologies
 
 - Technology: HTML, MDBootstrap, CSS, Angular-9, Firebase, i18n, Drag & Drop, Progressive Web Application, jsPDF (to download Receipt as PDF).
-- Database : Angular Firebase.
+- Database : Angular Firebase (Realtime Database).
 
 #### This Projects covers all fundamentals of Angular
 
@@ -64,7 +64,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
     `Authentication -> Sign-in-method -> Enable Email/Password & Google provider`
 
-7.  Update the Firebase Database Rules
+7.  Update the Firebase _(Realtime Database)_ Rules
 
     `Database -> Rules`
 
