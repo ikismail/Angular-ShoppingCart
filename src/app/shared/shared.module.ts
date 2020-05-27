@@ -26,7 +26,7 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 import { ScrollingModule } from "@angular/cdk/scrolling";
 import { CdkTableModule } from "@angular/cdk/table";
 import { CdkTreeModule } from "@angular/cdk/tree";
-import { FireBaseConfig } from "./../../environments/firebase.config";
+import { FireBaseConfig } from "./../../environments/firebase.configDummy";
 
 @NgModule({
   imports: [
