@@ -38,8 +38,7 @@ testem.log
 .DS_Store
 Thumbs.db
 
-
 #Personal Config
-/src/environments/firebaseConfigDummy.ts
+/src/environments/firebase.ConfigDummy.ts
 firebase.json
 .travis.yml
