@@ -17,18 +17,11 @@ export class ProductService {
   favouriteProducts: AngularFireList<FavouriteProduct>;
   cartProducts: AngularFireList<FavouriteProduct>;
 
-  // NavbarCounts
-  navbarCartCount = 0;
-  navbarFavProdCount = 0;
-
   constructor(
     private db: AngularFireDatabase,
     private authService: AuthService,
     private toastrService: ToastrService
-  ) {
-    this.calculateLocalFavProdCounts();
-    this.calculateLocalCartProdCounts();
-  }
+  ) {}
 
   getProducts() {
     this.products = this.db.list("products");
@@ -67,13 +60,11 @@ export class ProductService {
 
   // Adding New product to favourite if logged else to localStorage
   addFavouriteProduct(data: Product): void {
-    let a: Product[];
-    a = JSON.parse(localStorage.getItem("avf_item")) || [];
+    const a: Product[] = JSON.parse(localStorage.getItem("avf_item")) || [];
     a.push(data);
     this.toastrService.wait("Adding Product", "Adding Product as Favourite");
     setTimeout(() => {
       localStorage.setItem("avf_item", JSON.stringify(a));
-      this.calculateLocalFavProdCounts();
     }, 1500);
   }
 
@@ -102,13 +93,6 @@ export class ProductService {
     }
     // ReAdding the products after remove
     localStorage.setItem("avf_item", JSON.stringify(products));
-
-    this.calculateLocalFavProdCounts();
-  }
-
-  // Returning Local Products Count
-  calculateLocalFavProdCounts() {
-    this.navbarFavProdCount = this.getLocalFavouriteProducts().length;
   }
 
   /*
@@ -117,18 +101,15 @@ export class ProductService {
 
   // Adding new Product to cart db if logged in else localStorage
   addToCart(data: Product): void {
-    let a: Product[];
-
-    a = JSON.parse(localStorage.getItem("avct_item")) || [];
-
+    const a: Product[] = JSON.parse(localStorage.getItem("avct_item")) || [];
     a.push(data);
+
     this.toastrService.wait(
       "Adding Product to Cart",
       "Product Adding to the cart"
     );
     setTimeout(() => {
       localStorage.setItem("avct_item", JSON.stringify(a));
-      this.calculateLocalCartProdCounts();
     }, 500);
   }
 
@@ -144,8 +125,6 @@ export class ProductService {
     }
     // ReAdding the products after remove
     localStorage.setItem("avct_item", JSON.stringify(products));
-
-    this.calculateLocalCartProdCounts();
   }
 
   // Fetching Locat CartsProducts
@@ -154,11 +133,6 @@ export class ProductService {
       JSON.parse(localStorage.getItem("avct_item")) || [];
 
     return products;
-  }
-
-  // returning LocalCarts Product Count
-  calculateLocalCartProdCounts() {
-    this.navbarCartCount = this.getLocalCartProducts().length;
   }
 }
 
