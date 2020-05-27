@@ -57,7 +57,9 @@
             [routerLink]="['/products/favourite-products']"
           >
             <i class="fa fa-heart">
-              <span class="mt-2"> {{ productService.navbarFavProdCount }}</span>
+              <span class="mt-2">
+                {{ productService.getLocalFavouriteProducts().length }}</span
+              >
             </i>
           </a>
         </div>
@@ -70,7 +72,9 @@
             [routerLink]="['/products/cart-items']"
           >
             <i class="fa fa-shopping-cart">
-              <span class="mt-2"> {{ productService.navbarCartCount }}</span>
+              <span class="mt-2">
+                {{ productService.getLocalCartProducts().length }}</span
+              >
             </i>
           </a>
         </div>
