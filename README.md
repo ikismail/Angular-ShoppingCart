@@ -1,4 +1,4 @@
-# Angular-9 - ShoppingCart + MDBootstrap + Firebase (Realtime Database) + i18n
+# Angular-10 - ShoppingCart + MDBootstrap + Firebase (Realtime Database) + i18n
 
 [![HitCount](http://hits.dwyl.io/ikismail/Angular-ShoppingCart.svg)](http://hits.dwyl.io/ikismail/Angular-ShoppingCart)
 [![GitHub forks](https://img.shields.io/github/forks/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/network) [![GitHub stars](https://img.shields.io/github/stars/ikismail/Angular-ShoppingCart.svg)](https://github.com/ikismail/Angular-ShoppingCart/stargazers)
@@ -10,11 +10,11 @@
 <!-- [![Github Dependencies](https://david-dm.org/ikismail/Angular-ShoppingCart.svg)](https://david-dm.org/ikismail/Angular-ShoppingCart.svg) -->
 <!-- [![Build Status](https://travis-ci.org/ikismail/Angular-ShoppingCart.svg?branch=master)](https://travis-ci.org/ikismail/Angular-ShoppingCart) -->
 
-Developing a **ShoppingCart (Ecommerce) Application using Angular-9**.
+Developing a **ShoppingCart (Ecommerce) Application using Angular-10**.
 
 **Live Demo** : [Angular-shopping-cart](https://angular-shoppingcart.firebaseapp.com/)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
 ## Functionalities
 
@@ -35,7 +35,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Tools and Technologies
 
-- Technology: HTML, MDBootstrap, CSS, Angular-9, Firebase, i18n, Drag & Drop, Progressive Web Application, jsPDF (to download Receipt as PDF).
+- Technology: HTML, MDBootstrap, CSS, Angular-10, Firebase, i18n, Drag & Drop, Progressive Web Application, jsPDF (to download Receipt as PDF).
 - Database : Angular Firebase (Realtime Database).
 
 #### This Projects covers all fundamentals of Angular
@@ -106,7 +106,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     Now you can able to access the Admin Privileges like `Creating Product, Removing Product, etc..`
 
 10. Run the Server.
-
 
 ## How can I support the developer ?
 
