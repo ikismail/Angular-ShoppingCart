@@ -2,8 +2,16 @@ import { Component, OnInit, Input } from "@angular/core";
 
 @Component({
   selector: "app-card-loader",
-  templateUrl: "./card-loader.component.html",
-  styleUrls: ["./card-loader.component.scss"],
+  template: `
+    <div class="row">
+      <div class="col-3" *ngFor="let number of arrayOne(loop)">
+        <ngx-content-loading [height]="height">
+          <svg:g ngx-instagram-preset></svg:g>
+        </ngx-content-loading>
+      </div>
+    </div>
+  `,
+  styleUrls: [],
 })
 export class CardLoaderComponent implements OnInit {
   @Input() loop: number;

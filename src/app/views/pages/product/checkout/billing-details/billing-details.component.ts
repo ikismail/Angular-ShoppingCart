@@ -42,23 +42,22 @@ export class BillingDetailsComponent implements OnInit {
   ngOnInit() {}
 
   updateUserDetails(form: NgForm) {
-    const data = form.value;
-
-    data["emailId"] = this.userDetails.emailId;
-    data["userId"] = this.userDetails.$key;
     let totalPrice = 0;
     const products = [];
     this.products.forEach((product) => {
-      delete product["$key"];
+      delete product.$key;
       totalPrice += product.productPrice;
       products.push(product);
     });
 
-    data["products"] = products;
-
-    data["totalPrice"] = totalPrice;
-
-    data["billingDate"] = Date.now();
+    const data = {
+      ...form.value,
+      emailId: this.userDetails.emailId,
+      userId: this.userDetails.$key,
+      products,
+      totalPrice,
+      billingDate: Date.now(),
+    };
 
     this.billingService.createBillings(data);
 

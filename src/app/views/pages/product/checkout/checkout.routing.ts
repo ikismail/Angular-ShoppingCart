@@ -5,7 +5,7 @@ import { BillingDetailsComponent } from "./billing-details/billing-details.compo
 import { ProductsComponent } from "./products/products.component";
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { AuthGuard } from "../../../../shared/services/auth_gaurd";
+import { AuthGuard } from "../../../../shared/guards/auth_gaurd";
 
 export const checkoutRoutes: Routes = [
   {

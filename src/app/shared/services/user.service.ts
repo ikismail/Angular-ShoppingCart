@@ -26,10 +26,13 @@ export class UserService {
   getUserById(id: string) {}
 
   createUser(data: any) {
-    data.location = this.location;
-    data.createdOn = moment(new Date()).format("X");
-    data.isAdmin = false;
-    this.users.push(data);
+    const updatedData = {
+      ...data,
+      location: this.location,
+      createdOn: moment(new Date()).format("X"),
+      isAdmin: false,
+    };
+    this.users.push(updatedData);
   }
 
   isAdmin(emailId: string) {
@@ -42,8 +45,7 @@ export class UserService {
     this.users.update(user.$key, user);
   }
 
-  setLocation(lat, lon) {
-    this.location.lat = lat;
-    this.location.lon = lon;
+  setLocation(lat: any, lon: any) {
+    this.location = { lat, lon };
   }
 }

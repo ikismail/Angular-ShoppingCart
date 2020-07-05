@@ -28,14 +28,10 @@ export class ProductDetailComponent implements OnInit, OnDestroy {
   }
 
   getProductDetail(id: string) {
-    // this.spinnerService.show();
     const x = this.productService.getProductById(id);
     x.snapshotChanges().subscribe(
       (product) => {
-        // this.spinnerService.hide();
-        const y = product.payload.toJSON() as Product;
-
-        y.$key = id;
+        const y = { ...(product.payload.toJSON() as Product), $key: id };
         this.product = y;
       },
       (error) => {

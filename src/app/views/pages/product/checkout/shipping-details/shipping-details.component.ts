@@ -2,7 +2,7 @@ import { Product } from "../../../../../shared/models/product";
 import { ShippingService } from "../../../../../shared/services/shipping.service";
 import { UserDetail, User } from "../../../../../shared/models/user";
 import { AuthService } from "../../../../../shared/services/auth.service";
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 import { ProductService } from "../../../../../shared/services/product.service";
@@ -43,25 +43,21 @@ export class ShippingDetailsComponent implements OnInit {
   ngOnInit() {}
 
   updateUserDetails(form: NgForm) {
-    const data = form.value;
-
-    data.emailId = this.userDetails.emailId;
-    data.userId = this.userDetails.$key;
     const products = [];
-
     let totalPrice = 0;
-
     this.products.forEach((product) => {
       delete product.$key;
       totalPrice += product.productPrice;
       products.push(product);
     });
-
-    data.products = products;
-
-    data.totalPrice = totalPrice;
-
-    data.shippingDate = Date.now();
+    const data = {
+      ...form.value,
+      emailId: this.userDetails.emailId,
+      userId: this.userDetails.$key,
+      products,
+      totalPrice,
+      shippingDate: Date.now(),
+    };
 
     this.shippingService.createshippings(data);
 

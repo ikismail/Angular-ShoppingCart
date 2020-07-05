@@ -5,28 +5,35 @@ declare var $: any;
 
 @Component({
   selector: "app-root",
-  templateUrl: "./app.component.html",
+  template: `
+    <div class="container">
+      <app-navbar></app-navbar>
+
+      <main [@fadeAnimation]="o.isActivated ? o.activatedRoute : ''">
+        <router-outlet #o="outlet"></router-outlet>
+      </main>
+
+      <!-- <app-footer></app-footer> -->
+      <app-loader-spinner></app-loader-spinner>
+    </div>
+  `,
   styleUrls: ["./app.component.scss"],
   animations: [fadeAnimation],
 })
 export class AppComponent implements OnInit {
-  title = "app";
-
   constructor(private userService: UserService) {}
 
   ngOnInit() {
-    $(document).ready(() => {
-      $(".banner").owlCarousel({
-        autoHeight: true,
-        center: true,
-        nav: true,
-        items: 1,
-        margin: 30,
-        loop: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: true,
-      });
+    $(".banner").owlCarousel({
+      autoHeight: true,
+      center: true,
+      nav: true,
+      items: 1,
+      margin: 30,
+      loop: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      autoplayHoverPause: true,
     });
 
     if (navigator.geolocation) {
@@ -34,10 +41,10 @@ export class AppComponent implements OnInit {
     }
   }
 
-  setGeoLocation(position: any) {
-    this.userService.setLocation(
-      position["coords"].latitude,
-      position["coords"].longitude
-    );
+  setGeoLocation(position: { coords: { latitude: any; longitude: any } }) {
+    const {
+      coords: { latitude, longitude },
+    } = position;
+    this.userService.setLocation(latitude, longitude);
   }
 }

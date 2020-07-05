@@ -6,20 +6,20 @@ declare var toastr: any;
 export class ToastrService {
   constructor() {}
 
-  success(title, msg) {
+  success(title: any, msg: any) {
     toastr.success(msg, title);
   }
-  info(title, msg) {
+  info(title: any, msg: any) {
     toastr.info(msg, title);
   }
-  warning(title, msg) {
+  warning(title: any, msg: any) {
     toastr.warning(msg, title);
   }
-  error(title, msg) {
+  error(title: any, msg: any) {
     toastr.error(msg, title);
   }
 
-  wait(title, msg) {
+  wait(title: any, msg: any) {
     toastr.info(msg, title, { timeOut: 3000 });
   }
 }

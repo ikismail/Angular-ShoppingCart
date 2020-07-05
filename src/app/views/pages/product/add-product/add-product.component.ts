@@ -21,27 +21,26 @@ export class AddProductComponent implements OnInit {
   ngOnInit() {}
 
   createProduct(productForm: NgForm) {
-    productForm.value["productId"] = "PROD_" + shortId.generate();
-    productForm.value["productAdded"] = moment().unix();
-    productForm.value["ratings"] = Math.floor(Math.random() * 5 + 1);
-    if (productForm.value["productImageUrl"] === undefined) {
-      productForm.value["productImageUrl"] =
+    const payload: Product = {
+      ...productForm.value,
+      productId: "PROD_" + shortId.generate(),
+      productAdded: moment().unix(),
+      ratings: Math.floor(Math.random() * 5 + 1),
+      favourite: false,
+    };
+
+    if (productForm.value.productImageUrl === undefined) {
+      payload.productImageUrl =
         "http://via.placeholder.com/640x360/007bff/ffffff";
     }
 
-    productForm.value["favourite"] = false;
-
-    const date = productForm.value["productAdded"];
-
-    this.productService.createProduct(productForm.value);
-
-    this.product = new Product();
-
-    $("#exampleModalLong").modal("hide");
-
-    toastr.success(
-      "product " + productForm.value["productName"] + "is added successfully",
-      "Product Creation"
-    );
+    this.productService.createProduct(payload, () => {
+      this.product = new Product();
+      $("#exampleModalLong").modal("hide");
+      toastr.success(
+        "product " + payload.productName + "is added successfully",
+        "Product Creation"
+      );
+    });
   }
 }

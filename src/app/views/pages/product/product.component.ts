@@ -3,8 +3,10 @@ import { AuthService } from "src/app/shared/services/auth.service";
 
 @Component({
   selector: "app-product",
-  templateUrl: "./product.component.html",
-  styleUrls: ["./product.component.scss"],
+  template: ` <p>
+    product works!
+  </p>`,
+  styleUrls: [],
 })
 export class ProductComponent implements OnInit {
   constructor(private authService: AuthService) {}

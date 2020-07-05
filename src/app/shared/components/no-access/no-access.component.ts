@@ -2,8 +2,10 @@ import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "app-no-access",
-  templateUrl: "./no-access.component.html",
-  styleUrls: ["./no-access.component.scss"]
+  template: `<p>
+    no-access works!
+  </p>`,
+  styleUrls: [],
 })
 export class NoAccessComponent implements OnInit {
   constructor() {}

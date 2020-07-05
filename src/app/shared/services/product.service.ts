@@ -28,8 +28,9 @@ export class ProductService {
     return this.products;
   }
 
-  createProduct(data: Product) {
+  createProduct(data: Product, callback: () => void) {
     this.products.push(data);
+    callback();
   }
 
   getProductById(key: string) {

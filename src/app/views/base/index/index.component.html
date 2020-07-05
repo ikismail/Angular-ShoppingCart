@@ -19,51 +19,21 @@
     <!--/.Indicators-->
     <!--Slides-->
     <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active">
+      <div
+        *ngFor="let carouselItem of carouselList; let i = index"
+        class="carousel-item {{ i === 0 ? 'active' : '' }}"
+      >
         <div class="view">
           <img
             class="d-block w-100"
-            src="./assets/banner_img/img_1.jpg"
+            [src]="carouselItem.bannerImg"
             alt="First slide"
           />
           <div class="mask rgba-black-light"></div>
         </div>
         <div class="carousel-caption">
-          <h3 class="h3-responsive">Apple iPhone</h3>
-          <p>Explore iPhone, the world's most powerful personal device</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <!--Mask color-->
-        <div class="view">
-          <img
-            class="d-block w-100"
-            src="./assets/banner_img/img_3.jpg"
-            alt="Third slide"
-          />
-          <div class="mask rgba-black-slight"></div>
-        </div>
-        <div class="carousel-caption">
-          <h3 class="h3-responsive">Never Settle - OnePlus</h3>
-          <p>
-            OnePlus creates beautifully designed products with premium build
-            quality & brings the best technology to users around the world
-          </p>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <!--Mask color-->
-        <div class="view">
-          <img
-            class="d-block w-100"
-            src="./assets/banner_img/img_4.jpg"
-            alt="Third slide"
-          />
-          <div class="mask rgba-black-slight"></div>
-        </div>
-        <div class="carousel-caption">
-          <h3 class="h3-responsive">Google Pixel</h3>
-          <p>Discover a better way to capture, store, and see the world</p>
+          <h3 class="h3-responsive">{{ carouselItem.title }}</h3>
+          <p>{{ carouselItem.description }}</p>
         </div>
       </div>
     </div>

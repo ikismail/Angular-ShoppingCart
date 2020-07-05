@@ -100,61 +100,22 @@
           role="menu"
         >
           <div class="row p-2" style="margin: 0;">
-            <div
-              class="col-sm-6 hover-effect"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Purple Theme"
-              style="padding: 0;"
-            >
-              <div
-                class="color-container"
-                (click)="updateTheme('purple-theme')"
-              >
-                <div class="colorDiv color-purple"></div>
-              </div>
-            </div>
-            <div
-              class="col-sm-6 hover-effect"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Blue Theme"
-              style="padding: 0;"
-            >
-              <div class="color-container" (click)="updateTheme('blue-theme')">
-                <div class="colorDiv color-blue"></div>
-              </div>
-            </div>
+            <ng-container
+              *ngFor="let theme of colorPallet1"
+              [ngTemplateOutlet]="themeTemplate"
+              [ngTemplateOutletContext]="{
+                item: theme
+              }"
+            ></ng-container>
           </div>
           <div class="row p-2" style="margin: 0;">
-            <div
-              class="col-sm hover-effect"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Red Theme"
-              style="padding: 0;"
-            >
-              <div class="color-container">
-                <div
-                  class="colorDiv color-red"
-                  (click)="updateTheme('red-theme')"
-                ></div>
-              </div>
-            </div>
-            <div
-              class="col-sm hover-effect"
-              data-toggle="tooltip"
-              data-placement="bottom"
-              title="Violet Theme"
-              style="padding: 0;"
-            >
-              <div class="color-container">
-                <div
-                  class="colorDiv color-violet"
-                  (click)="updateTheme('violet-theme')"
-                ></div>
-              </div>
-            </div>
+            <ng-container
+              *ngFor="let theme of colorPallet2"
+              [ngTemplateOutlet]="themeTemplate"
+              [ngTemplateOutletContext]="{
+                item: theme
+              }"
+            ></ng-container>
           </div>
         </div>
       </li>
@@ -174,42 +135,11 @@
           <a
             class="dropdown-item waves-light"
             href="javascript:;;"
-            (click)="setLang('en')"
+            (click)="setLang(lang.langCode)"
+            *ngFor="let lang of languageList"
           >
             <i class="fa fa-flag-o mr-2"></i>
-            English (en)</a
-          >
-          <a
-            class="dropdown-item waves-light"
-            href="javascript:;;"
-            (click)="setLang('fr')"
-          >
-            <i class="fa fa-flag-o mr-2"></i>
-            French (fr)</a
-          >
-          <a
-            class="dropdown-item waves-light"
-            href="javascript:;;"
-            (click)="setLang('fa')"
-          >
-            <i class="fa fa-flag-o mr-2"></i>
-            Persian (fa)</a
-          >
-          <a
-            class="dropdown-item waves-light"
-            href="javascript:;;"
-            (click)="setLang('ja')"
-          >
-            <i class="fa fa-flag-o mr-2"></i>
-            Japanese (ja)</a
-          >
-          <a
-            class="dropdown-item waves-light"
-            href="javascript:;;"
-            (click)="setLang('hin')"
-          >
-            <i class="fa fa-flag-o mr-2"></i>
-            Hindi (hin)</a
+            {{ lang.language }} ({{ lang.langCode }})</a
           >
         </div>
       </li>
@@ -235,3 +165,21 @@
   <!-- Collapsible content -->
 </nav>
 <!--/.Navbar-->
+
+<!-- Theme Template -->
+<ng-template #themeTemplate let-item="item">
+  <div
+    class="col-sm hover-effect"
+    data-toggle="tooltip"
+    data-placement="bottom"
+    [title]="item.title"
+    style="padding: 0;"
+  >
+    <div class="color-container">
+      <div
+        class="colorDiv {{ item.color }}"
+        (click)="updateTheme(item.id)"
+      ></div>
+    </div>
+  </div>
+</ng-template>

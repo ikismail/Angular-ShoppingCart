@@ -15,6 +15,39 @@ declare var $: any;
 export class NavbarComponent implements OnInit {
   angularVersion = VERSION;
 
+  colorPallet1 = [
+    {
+      title: "Purple Theme",
+      color: "color-purple",
+      id: "purple-theme",
+    },
+    {
+      title: "Blue Theme",
+      color: "color-blue",
+      id: "blue-theme",
+    },
+  ];
+
+  colorPallet2 = [
+    {
+      title: "Red Theme",
+      color: "color-red",
+      id: "red-theme",
+    },
+    {
+      title: "Violet Theme",
+      color: "color-violet",
+      id: "violet-theme",
+    },
+  ];
+  languageList = [
+    { language: "English", langCode: "en" },
+    { language: "French", langCode: "fr" },
+    { language: "Persian", langCode: "fa" },
+    { language: "Japanese", langCode: "ja" },
+    { language: "Hindi", langCode: "hin" },
+  ];
+
   constructor(
     public authService: AuthService,
     private router: Router,

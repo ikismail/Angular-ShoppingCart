@@ -1,11 +1,12 @@
 import { Injectable } from "@angular/core";
-import * as firebase from "firebase/app";
-import { Observable, Subject, BehaviorSubject } from "rxjs";
-import { User } from "../models/user";
 import { AngularFireAuth } from "@angular/fire/auth";
 import { Router } from "@angular/router";
+import * as firebase from "firebase/app";
+import { BehaviorSubject, Observable } from "rxjs";
+import { filter, map } from "rxjs/operators";
+
+import { User } from "../models/user";
 import { UserService } from "./user.service";
-import { filter, map, tap, shareReplay } from "rxjs/operators";
 
 export const ANONYMOUS_USER: User = new User();
 
@@ -46,7 +47,6 @@ export class AuthService {
           .subscribe((data) => {
             data.forEach((el) => {
               const y: any = el.payload.toJSON();
-              console.log("constructor isAdmin", y);
               this.subject.next({
                 $key: y.uid,
                 userName: user.displayName || "Anonymous User",
@@ -74,7 +74,7 @@ export class AuthService {
     return this.firebaseAuth.createUserWithEmailAndPassword(emailID, password);
   }
 
-  signInRegular(email, password) {
+  signInRegular(email: string, password: string) {
     const credential = firebase.auth.EmailAuthProvider.credential(
       email,
       password
