@@ -1,7 +1,7 @@
 import { TranslateService } from "./../../../../shared/services/translate.service";
 import { Component, OnInit, VERSION } from "@angular/core";
 import { Router } from "@angular/router";
-import { AuthService } from "./../../../../shared/services/auth.service";
+// import { AuthService } from "./../../../../shared/services/auth.service";
 import { ProductService } from "./../../../../shared/services/product.service";
 
 import { ThemeService } from "src/app/shared/services/theme.service";
@@ -49,7 +49,7 @@ export class NavbarComponent implements OnInit {
   ];
 
   constructor(
-    public authService: AuthService,
+    // public authService: AuthService,
     private router: Router,
     public productService: ProductService,
     public translate: TranslateService,
@@ -60,7 +60,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {}
   logout() {
-    this.authService.logout();
+    // this.authService.logout();
     this.router.navigate(["/"]);
   }
 

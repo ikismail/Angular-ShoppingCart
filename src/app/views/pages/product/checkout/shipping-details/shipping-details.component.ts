@@ -1,7 +1,7 @@
 import { Product } from "../../../../../shared/models/product";
 import { ShippingService } from "../../../../../shared/services/shipping.service";
 import { UserDetail, User } from "../../../../../shared/models/user";
-import { AuthService } from "../../../../../shared/services/auth.service";
+// import { AuthService } from "../../../../../shared/services/auth.service";
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -13,14 +13,14 @@ import { map } from "rxjs/operators";
   styleUrls: ["./shipping-details.component.scss"],
 })
 export class ShippingDetailsComponent implements OnInit {
-  userDetails: User;
+  userDetails: User = new User();
 
-  userDetail: UserDetail;
+  userDetail: UserDetail = new UserDetail();
 
   products: Product[];
 
   constructor(
-    authService: AuthService,
+    // authService: AuthService,
     private shippingService: ShippingService,
     productService: ProductService,
     private router: Router
@@ -31,13 +31,13 @@ export class ShippingDetailsComponent implements OnInit {
     document.getElementById("productsTab").style.display = "none";
     document.getElementById("resultTab").style.display = "none";
 
-    this.userDetail = new UserDetail();
     this.products = productService.getLocalCartProducts();
-    authService.user$.pipe(
-      map((user) => {
-        this.userDetails = user;
-      })
-    );
+    // authService.user$.pipe(
+    //   map((user) => {
+    //     console.log({ user });
+    //     this.userDetails = user;
+    //   })
+    // );
   }
 
   ngOnInit() {}
@@ -59,7 +59,9 @@ export class ShippingDetailsComponent implements OnInit {
       shippingDate: Date.now(),
     };
 
-    this.shippingService.createshippings(data);
+    console.log({ data });
+
+    // this.shippingService.createshippings(data);
 
     this.router.navigate([
       "checkouts",

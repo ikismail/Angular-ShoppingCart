@@ -40,15 +40,22 @@ export class AuthService {
     this.user = firebaseAuth.authState;
 
     this.user.subscribe((user) => {
+      console.log({ user });
       if (user) {
         this.userService
           .isAdmin(user.email)
           .snapshotChanges()
           .subscribe((data) => {
+            if (!data.length) {
+              this.subject.next(ANONYMOUS_USER);
+              return;
+            }
+
             data.forEach((el) => {
               const y: any = el.payload.toJSON();
+              console.log({ y });
               this.subject.next({
-                $key: y.uid,
+                $key: y.uid || y.id,
                 userName: user.displayName || "Anonymous User",
                 emailId: y.email,
                 phoneNumber: user.phoneNumber,

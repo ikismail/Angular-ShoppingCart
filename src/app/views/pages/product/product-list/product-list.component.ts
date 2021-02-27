@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Product } from "../../../../shared/models/product";
-import { AuthService } from "../../../../shared/services/auth.service";
+// import { AuthService } from "../../../../shared/services/auth.service";
 import { ProductService } from "../../../../shared/services/product.service";
 import { ToastrService } from "src/app/shared/services/toastr.service";
 @Component({
@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
 
   page = 1;
   constructor(
-    public authService: AuthService,
+    // public authService: AuthService,
     private productService: ProductService,
     private toastrService: ToastrService
   ) {}

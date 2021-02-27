@@ -75,9 +75,9 @@ import { FireBaseConfig } from "./../../environments/firebase.config";
     ScrollingModule,
   ],
   providers: [
-    AuthService,
-    AuthGuard,
-    AdminGaurd,
+    // AuthService,
+    // AuthGuard,
+    // AdminGaurd,
     ProductService,
     UserService,
     FormBuilder,

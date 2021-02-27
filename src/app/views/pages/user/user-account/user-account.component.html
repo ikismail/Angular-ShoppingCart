@@ -1,5 +1,5 @@
 <form>
-  <div class="row" *ngIf="this.authService.user$ | async as user">
+  <!-- <div class="row" *ngIf="this.authService.user$ | async as user">
     <ng-container *ngIf="user && user?.avatar; else elseTemplate">
       <img
         [src]="user?.avatar"
@@ -23,5 +23,5 @@
       <label for="emailId">Email Id</label>
       <p style="font-size: 15px;">{{ user.emailId }}</p>
     </div>
-  </div>
+  </div> -->
 </form>
