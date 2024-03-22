@@ -1,0 +1,81 @@
+{
+  "-L1HnndxVc2-KaJ10Skc": {
+    "favourite": false,
+    "productAdded": 1514291542,
+    "productCategory": "Smartphone",
+    "productDescription": "The iPhone X models have a 5.8\" (diagonal) widescreen LED-backlit True Tone, wide color (P3) \"Super Retina\" with 3D Touch and a 2436x1125 native resolution at 458 ppi",
+    "productId": "PROD_ryA8baJmz",
+    "productImageUrl": "https://i.ibb.co/ZVGQZsb/iphone-x-in-hand.jpg",
+    "productName": "Apple iPhone X 64,GB ",
+    "productPrice": 87049,
+    "productQuatity": "5",
+    "productSeller": "Apple",
+    "ratings": 4
+  },
+  "-LG0nDkGo2w9ey5JLhaf": {
+    "favourite": false,
+    "productAdded": 1530112000,
+    "productCategory": "Smartphone",
+    "productDescription": "13MP primary camera with beautify, filter, HDR, panorama, ultra HD and 8MP front facing camera\n15.2 centimeters (6-inch) 1080p FHD capacitive touchscreen with 2160 x 1080 pixels resolution and 403 ppi pixel density\nAndroid v8.1 Oreo operating system with 2GHz MTK Helio P60 AI octa core processor with 8-cores CPU, 4GB RAM, 64GB internal memory expandable up to 256GB and dual SIM (nano+nano) dual-standby (4G+4G)\n3410mAH lithium-ion battery providing talk-time of 30 hours and standby time of 380 hours\n1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including batteries from the date of purchase",
+    "productId": "PROD_Bkt-uQbf7",
+    "productImageUrl": "https://i.ibb.co/5jnXDv7/realme1.jpg",
+    "productName": "RealMe 1 (Silver)",
+    "productPrice": 10990,
+    "productQuatity": "5",
+    "productSeller": "Realme",
+    "ratings": 2
+  },
+  "-LG0ndKVM8VGYxVUH7qC": {
+    "favourite": false,
+    "productAdded": 1530112109,
+    "productCategory": "Smartphone",
+    "productDescription": "12+5MP dual rear cameras (f/1.8, single LED flash) with creative camera system; 16MP front facing camera with low light mode and LED flash\nUnlock your phone by simply letting the camera see your face. It knows who you are thanks to the face recognition software, so you don’t need to enter your password\n14.5cm (5.7) FHD+ 18:9 Max Vision display with 1080*2160 pixels resolution; Premium 3D glass black\n4GB RAM and 64GB internal memory expandable up to 256GB; Android v8.0 Oreo operating system with Snapdragon 450 1.8GHz Octa-core processor\n3000mAh battery with 15W TurboPowerTM charging\n1 year manufacturer warranty for device and 6 months manufacturer warranty for in-box accessories including battery from the date of purchase",
+    "productId": "PROD_S1Uud7WMm",
+    "productImageUrl": "https://i.ibb.co/d5QB740/moto-g6-2.jpg",
+    "productInCart": false,
+    "productName": "Moto G6 (Indigo Black)",
+    "productPrice": 15999,
+    "productQuatity": "3",
+    "productSeller": "Motorolla",
+    "ratings": 2
+  },
+  "-LIj11ZwXMhvnB6K8fae": {
+    "favourite": false,
+    "productAdded": 1533018238,
+    "productCategory": "SmartPhone",
+    "productDescription": "13MP primary Camera with beautify, filter",
+    "productId": "PROD_SJwFlY6NQ",
+    "productImageUrl": "https://i.ibb.co/5jnXDv7/realme1.jpg",
+    "productName": "Realme 1 (Diamond)",
+    "productPrice": 10990,
+    "productQuatity": "3",
+    "productSeller": "Oppo",
+    "ratings": 4
+  },
+  "-LXsNL10yYF0mTXCwiTl": {
+    "favourite": false,
+    "productAdded": 1549281558,
+    "productCategory": "Smartphone",
+    "productDescription": "3 GB RAM | 32 GB ROM | Expandable Upto 256 GB\n15.75 cm (6.2 inch) HD+ Display\n13MP + 2MP | 8MP Front Camera\n4230 mAh Li-ion Battery\nQualcomm Snapdragon 450 Octa Core 1.8 GHz Processor",
+    "productId": "PROD_jgXckxCTh",
+    "productImageUrl": "https://i.ibb.co/wKWY2gF/realme-2-640x360.jpg",
+    "productName": "Realme 2",
+    "productPrice": 9500,
+    "productQuatity": "5",
+    "productSeller": "Realme",
+    "ratings": 5
+  },
+  "-LXsQ2ImqAdLlHJFAwor": {
+    "favourite": false,
+    "productAdded": 1549282268,
+    "productCategory": "Smartphone",
+    "productDescription": "4 GB RAM | 64 GB ROM |\n15.7 cm (6.18 inch) Full HD+ Display\n12MP + 13MP | 20MP Front Camera\n3500 mAh Battery\nQualcomm Snapdragon 710 Processor",
+    "productId": "PROD_TFgix_QQq",
+    "productImageUrl": "https://i.ibb.co/g9Vk9jc/nokia8-1.jpg",
+    "productName": "Nokia 8.1",
+    "productPrice": 26000,
+    "productQuatity": "3",
+    "productSeller": "Nokia",
+    "ratings": 1
+  }
+}

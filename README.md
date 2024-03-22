@@ -90,7 +90,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     };
     ```
 
-9.  For Admin Role `Register or SignIn with Google Auth`
+<!-- 9.  For Admin Role `Register or SignIn with Google Auth`
 
     your registered data will be saved inside the firebase **clients** table.
 
@@ -103,7 +103,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
                 ...
     ```
 
-    Now you can able to access the Admin Privileges like `Creating Product, Removing Product, etc..`
+    Now you can able to access the Admin Privileges like `Creating Product, Removing Product, etc..` -->
+
+9. Import Products json to realtime database [Products JSON](https://github.com/ikismail/Angular-ShoppingCart/blob/master/products.json)
+
+![alt text](https://github.com/ikismail/Angular-ShoppingCart/blob/master/screenshots/image.png "Products JSON Structure")
 
 10. Run the Server.
 
